@@ -63,7 +63,6 @@
 
 #include "bsp.h"
 #include "InitDevice.h"
-#include "disp.h"
 #include "function_generator.h"
 
 //-----------------------------------------------------------------------------
@@ -89,7 +88,6 @@ int main(void)
   // Enable all interrupts
   IE_EA = 1;
 
-  DISP_Init();
   FunctionGenerator_main();
 
   while (1);

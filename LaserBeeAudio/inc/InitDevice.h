@@ -12,30 +12,51 @@
 // USER PROTOTYPES
 
 // $[Mode Transition Prototypes]
-extern void enter_DefaultMode_from_RESET(void);
+extern void
+enter_DefaultMode_from_RESET (void);
 // [Mode Transition Prototypes]$
 
 // $[Config(Per-Module Mode)Transition Prototypes]
-extern void WDT_0_enter_DefaultMode_from_RESET(void);
-extern void PORTS_0_enter_DefaultMode_from_RESET(void);
-extern void PORTS_1_enter_DefaultMode_from_RESET(void);
-extern void PORTS_2_enter_DefaultMode_from_RESET(void);
-extern void PORTS_3_enter_DefaultMode_from_RESET(void);
-extern void PBCFG_0_enter_DefaultMode_from_RESET(void);
-extern void ADC_0_enter_DefaultMode_from_RESET(void);
-extern void DAC_0_enter_DefaultMode_from_RESET(void);
-extern void DAC_1_enter_DefaultMode_from_RESET(void);
-extern void DAC_2_enter_DefaultMode_from_RESET(void);
-extern void DAC_3_enter_DefaultMode_from_RESET(void);
-extern void DACGCF_0_enter_DefaultMode_from_RESET(void);
-extern void VREF_0_enter_DefaultMode_from_RESET(void);
-extern void CLOCK_0_enter_DefaultMode_from_RESET(void);
-extern void TIMER01_0_enter_DefaultMode_from_RESET(void);
-extern void TIMER16_3_enter_DefaultMode_from_RESET(void);
-extern void TIMER16_4_enter_DefaultMode_from_RESET(void);
-extern void TIMER_SETUP_0_enter_DefaultMode_from_RESET(void);
-extern void SPI_0_enter_DefaultMode_from_RESET(void);
-extern void INTERRUPT_0_enter_DefaultMode_from_RESET(void);
+extern void
+WDT_0_enter_DefaultMode_from_RESET (void);
+extern void
+PORTS_0_enter_DefaultMode_from_RESET (void);
+extern void
+PORTS_1_enter_DefaultMode_from_RESET (void);
+extern void
+PORTS_2_enter_DefaultMode_from_RESET (void);
+extern void
+PORTS_3_enter_DefaultMode_from_RESET (void);
+extern void
+PBCFG_0_enter_DefaultMode_from_RESET (void);
+extern void
+ADC_0_enter_DefaultMode_from_RESET (void);
+extern void
+DAC_0_enter_DefaultMode_from_RESET (void);
+extern void
+DAC_1_enter_DefaultMode_from_RESET (void);
+extern void
+DAC_2_enter_DefaultMode_from_RESET (void);
+extern void
+DAC_3_enter_DefaultMode_from_RESET (void);
+extern void
+DACGCF_0_enter_DefaultMode_from_RESET (void);
+extern void
+VREF_0_enter_DefaultMode_from_RESET (void);
+extern void
+CLOCK_0_enter_DefaultMode_from_RESET (void);
+extern void
+TIMER01_0_enter_DefaultMode_from_RESET (void);
+extern void
+TIMER16_3_enter_DefaultMode_from_RESET (void);
+extern void
+TIMER16_4_enter_DefaultMode_from_RESET (void);
+extern void
+TIMER_SETUP_0_enter_DefaultMode_from_RESET (void);
+extern void
+SPI_0_enter_DefaultMode_from_RESET (void);
+extern void
+INTERRUPT_0_enter_DefaultMode_from_RESET (void);
 // [Config(Per-Module Mode)Transition Prototypes]$
 
 #endif

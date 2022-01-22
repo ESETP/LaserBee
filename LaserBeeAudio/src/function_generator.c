@@ -41,7 +41,6 @@
 
 #include "bsp.h"
 #include "tick.h"
-#include "disp.h"
 #include "render.h"
 #include "joystick.h"
 #include "thinfont.h"
@@ -58,14 +57,15 @@
 #include "waveform_tables.h"
 #include "retargetserial.h"
 
-#include <math.h>
 
 ///////////////////////////////////////////////////////////////////////////////
 // Globals
 ///////////////////////////////////////////////////////////////////////////////
 
-// Generic line buffer
-SI_SEGMENT_VARIABLE(Line[DISP_BUF_SIZE], uint8_t, RENDER_LINE_SEG);
+// Pins
+SI_SBIT(IN1, SFR_P1, 4);                  // P1.4 IN1
+//SI_SBIT(IN2, SFR_P1, 5);                  // P1.5 IN2
+//SI_SBIT(IN3, SFR_P1, 6);                  // P1.6 IN3
 
 // Demo state variables
 static DemoState currentDemoState = DEMO_SINE;
@@ -90,11 +90,8 @@ static uint8_t currentFreqIndex = 3;
 
 // Phase offset (updated when frequency is changed)
 static uint16_t phaseOffset1 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
-static uint16_t phaseOffset2 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
-static uint16_t new_freq = 440;
-
-// Kill splash
-KillSpash killSplashFlag = SHOW_SPLASH;
+//static uint16_t phaseOffset2 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
+//static uint16_t new_freq = 440;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Supporting Functions
@@ -222,8 +219,8 @@ static void transitionDemoFrequency(uint8_t dir)
   }
 
   phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
-  new_freq = frequency[currentFreqIndex] * 1.26;
-  phaseOffset2 = (new_freq) * PHASE_PRECISION / SAMPLE_RATE_DAC;
+  //new_freq = frequency[currentFreqIndex] * 1.26;
+  //phaseOffset2 = (new_freq) * PHASE_PRECISION / SAMPLE_RATE_DAC;
 }
 
 //-----------------------------------------------------------------------------
@@ -286,174 +283,29 @@ static uint8_t getWaitJoystick(void)
 static void processInput(uint8_t dir)
 {
   // process input
-  if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
-  {
-    transitionDemoWaveform(dir);
-  }
-  else if ((dir == JOYSTICK_N) || (dir == JOYSTICK_S))
-  {
-    transitionDemoFrequency(dir);
-  }
-}
+  //if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
+  //{
+  //  transitionDemoWaveform(dir);
+  //}
+  //else if ((dir == JOYSTICK_N) || (dir == JOYSTICK_S))
+  //{
+  //  transitionDemoFrequency(dir);
+  //}
 
-//-----------------------------------------------------------------------------
-// drawScreenText
-//-----------------------------------------------------------------------------
-//
-// Show one line of text on the screen
-//
-// str - pointer to string text (0 - 21 characters) to display
-// rowNum - row number of the screen (0 - 127)
-// fontScale - font scaler (1 - 4)
-//
-static void drawScreenText(SI_VARIABLE_SEGMENT_POINTER(str, char, RENDER_STR_SEG), uint8_t rowNum)
-{
-  uint8_t i;
-
-  for (i = 0; i < FONT_HEIGHT; i++)
-  {
-    RENDER_ClrLine(Line);
-    RENDER_StrLine(Line, 4, i, str);
-    DISP_WriteLine(rowNum + i, Line);
+  if (IN1 == 1){
+      currentFreqIndex = 0;
+      phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+  }
+  else if (IN1 == 0){
+      currentFreqIndex = 1;
+      phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+  }
+  else{
+      phaseOffset1 = 0;
+      //phaseOffset2 = 0;
   }
 }
 
-//-----------------------------------------------------------------------------
-// drawScreenSprite
-//-----------------------------------------------------------------------------
-//
-// Displays a sprite on the screen
-//
-// sprite - pointer to sprite/picture
-// width  - width of sprite
-// height - height of sprite
-// xPos - beginning row number on the screen (0 - 127)
-// yPos - beginning col number on the screen (0 - 127)
-//
-static void drawScreenSprite(SI_VARIABLE_SEGMENT_POINTER(sprite, uint8_t, RENDER_SPRITE_SEG),
-                         uint8_t width, uint8_t height,
-                         uint8_t xPos, uint8_t yPos)
-{
-  uint8_t i;
-
-  for (i = 0; i < height; i++)
-  {
-    RENDER_ClrLine(Line);
-    RENDER_SpriteLine(Line, xPos, i, sprite, width);
-    DISP_WriteLine(yPos + i, Line);
-  }
-}
-
-//-----------------------------------------------------------------------------
-// drawScreenWaveform
-//-----------------------------------------------------------------------------
-//
-// Draw screen waveform and left/right arrows
-//
-static void drawScreenWaveform(void)
-{
-  uint8_t i; // row index for waveform sprite
-  uint8_t j = 0; // row index for nav sprites
-
-  for (i = 0; i < sine_height; i++)
-  {
-  RENDER_ClrLine(Line);
-  RENDER_SpriteLine(Line, X_POS_WAVEFORM, i, currentWaveform, sine_width);
-
-  if ((i >= Y_POS_NAV_ARROW_LEFT_RIGHT) && (i < Y_POS_NAV_ARROW_LEFT_RIGHT + nav_left_height))
-  {
-    RENDER_SpriteLine(Line, X_POS_NAV_ARROW_LEFT, j, nav_left_bits, nav_left_width);
-    RENDER_SpriteLine(Line, X_POS_NAV_ARROW_RIGHT, j, nav_right_bits, nav_right_width);
-    j++;
-  }
-  DISP_WriteLine(Y_POS_WAVEFORM + i, Line);
-  }
-
-}
-
-//-----------------------------------------------------------------------------
-// drawScreenFrequency
-//-----------------------------------------------------------------------------
-//
-// Update the function frequency on the screen. Format:
-//   f = 1000 Hz
-//
-static void drawScreenFrequency(void)
-{
-  char freqStr[22];
-
-  // display frequency on screen
-  RETARGET_SPRINTF(freqStr, "     f = %d Hz", frequency[currentFreqIndex]);
-
-  drawScreenText(freqStr, Y_POS_FREQ);
-}
-
-//-----------------------------------------------------------------------------
-// drawSplash
-//-----------------------------------------------------------------------------
-//
-// Display splash screen with instructions.
-//
-static void drawSplash(void)
-{
-  uint16_t ticks = GetTickCount();
-
-  drawScreenText(" __________________", 7);
-  drawScreenText(" FUNCTION GENERATOR", 4);
-
-  drawScreenText("USE SCOPE TO OBSERVE", 48);
-  drawScreenText("    DAC OUTPUTS:", 58);
-  drawScreenText("    P3.0 - P3.3", 74);
-
-  // kill splash if timeout elapses, any button is pressed, or joystick
-  // is moved in any direction
-  while (((GetTickCount() - ticks) < SPASH_TIMEOUT) &&
-      (killSplashFlag == SHOW_SPLASH) &&
-      (getWaitJoystick() == JOYSTICK_NONE));
-}
-
-//-----------------------------------------------------------------------------
-// drawScreenStaticSprites
-//-----------------------------------------------------------------------------
-//
-// Draw static/non-changing sprites on screen. Static sprites are up and down
-// arrows. Left/right arrows are drawn with waveform.
-//
-static void drawScreenStaticSprites(void)
-{
-  drawScreenSprite(nav_up_bits, nav_up_width, nav_up_height,
-               X_POS_NAV_ARROW_UP_DOWN, Y_POS_NAV_ARROW_UP);
-  drawScreenSprite(nav_down_bits, nav_down_width, nav_down_height,
-               X_POS_NAV_ARROW_UP_DOWN, Y_POS_NAV_ARROW_DOWN);
-}
-
-//-----------------------------------------------------------------------------
-// drawScreen
-//-----------------------------------------------------------------------------
-//
-// Draw dynamic/changeable sprites and info (waveform and frequency) on screen.
-//
-static void drawScreen(void)
-{
-  drawScreenWaveform();
-  drawScreenFrequency();
-}
-
-//-----------------------------------------------------------------------------
-// synchFrame
-//-----------------------------------------------------------------------------
-//
-// Delay until start of next frame
-//
-static void synchFrame(void)
-{
-  static uint16_t lastTick = 0;
-  uint16_t tick;
-
-  // Render at 50 Hz
-  while (((tick = GetTickCount()) - lastTick) < HZ_TO_MS(DEMO_FRAME_RATE));
-  lastTick = tick;
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Interrupt Service Routines
@@ -462,7 +314,7 @@ static void synchFrame(void)
 SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
 {
   static uint16_t phaseAcc1 = 0;       // Holds phase accumulator
-  static uint16_t phaseAcc2 = 0;       // Holds phase accumulator
+  //static uint16_t phaseAcc2 = 0;       // Holds phase accumulator
 
   SI_UU16_t temp;   // The temporary value that holds
                     // value before being written
@@ -471,10 +323,10 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
   TMR4CN0 &= ~TMR3CN0_TF3H__BMASK;    // Clear Timer4 overflow flag
 
   phaseAcc1 += phaseOffset1;            // Increment phase accumulator
-  phaseAcc2 += phaseOffset2;            // Increment phase accumulator
+  //phaseAcc2 += phaseOffset2;            // Increment phase accumulator
 
   // Read the table value
-  temp.u16 = (currentTable[phaseAcc1 >> 8] + currentTable[phaseAcc2 >> 8]) / 2;
+  temp.u16 = currentTable[phaseAcc1 >> 8];
 
   // Set the value of <temp> to the next output of DAC at full-scale
   // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be
@@ -499,12 +351,6 @@ SI_INTERRUPT(PMATCH_ISR, PMATCH_IRQn)
 {
   uint8_t SFRPAGE_save = SFRPAGE;
 
-  // Kill splash and run demo if user presses any button
-  if((BSP_PB0 == BSP_PB_PRESSED) || (BSP_PB1 == BSP_PB_PRESSED))
-  {
-    killSplashFlag = KILL_SPLASH;
-  }
-
   SFRPAGE = PG2_PAGE;
 
   EIE1 &= ~0x02;                     // Disable Port Match interrupts to
@@ -520,15 +366,9 @@ SI_INTERRUPT(PMATCH_ISR, PMATCH_IRQn)
 
 void FunctionGenerator_main(void)
 {
-  drawSplash();
-
-  DISP_ClearAll();
-  drawScreenStaticSprites();
 
   while(1)
   {
     processInput(getWaitJoystick());
-    drawScreen();
-    synchFrame();
   }
 }
