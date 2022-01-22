@@ -182,48 +182,6 @@ static void transitionDemoWaveform(uint8_t dir)
 }
 
 //-----------------------------------------------------------------------------
-// transitionDemoFrequency
-//-----------------------------------------------------------------------------
-//
-// Change frequency of the function.
-// Up   - increase frequency
-// Down - decrease frequency
-//
-// dir - valid arguments are: JOYSTICK_N, JOYSTICK_S
-//
-static void transitionDemoFrequency(uint8_t dir)
-{
-  if (dir == JOYSTICK_N)
-  {
-    // increase freq
-    if(currentFreqIndex == SUPPORTED_NUM_FREQ-1)
-    {
-      currentFreqIndex = 0;
-    }
-    else
-    {
-      currentFreqIndex++;
-    }
-  }
-  else if (dir == JOYSTICK_S)
-  {
-    // decrease freq
-    if (currentFreqIndex == 0)
-    {
-      currentFreqIndex = SUPPORTED_NUM_FREQ-1;
-    }
-    else
-    {
-      currentFreqIndex--;
-    }
-  }
-
-  phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
-  //new_freq = frequency[currentFreqIndex] * 1.26;
-  //phaseOffset2 = (new_freq) * PHASE_PRECISION / SAMPLE_RATE_DAC;
-}
-
-//-----------------------------------------------------------------------------
 // getJoystick
 //-----------------------------------------------------------------------------
 //
@@ -271,38 +229,20 @@ static uint8_t getWaitJoystick(void)
 
   return dirSave;
 }
-
-//-----------------------------------------------------------------------------
-// getJoystickDemo
-//-----------------------------------------------------------------------------
-//
-// Get and process joystick input.
-// Left/Right = change function/waveform
-// Up/Down    = change frequency
 //
 static void processInput(uint8_t dir)
 {
-  // process input
-  //if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
-  //{
-  //  transitionDemoWaveform(dir);
-  //}
-  //else if ((dir == JOYSTICK_N) || (dir == JOYSTICK_S))
-  //{
-  //  transitionDemoFrequency(dir);
-  //}
-
+  if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
+    {
+      transitionDemoWaveform(dir);
+    }
   if (IN1 == 1){
-      currentFreqIndex = 0;
+      currentFreqIndex = 4;
       phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
   }
   else if (IN1 == 0){
-      currentFreqIndex = 1;
+      currentFreqIndex = 5;
       phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
-  }
-  else{
-      phaseOffset1 = 0;
-      //phaseOffset2 = 0;
   }
 }
 
@@ -331,33 +271,11 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
   // Set the value of <temp> to the next output of DAC at full-scale
   // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be
   // written first.
-
   SFRPAGE = PG4_PAGE;
+
 
   DAC3L = DAC2L = DAC1L = DAC0L = temp.u8[LSB];
   DAC3H = DAC2H = DAC1H = DAC0H = temp.u8[MSB];
-}
-
-//-----------------------------------------------------------------------------
-// PMATCH_ISR
-//-----------------------------------------------------------------------------
-//
-// The Port Match interrupt occurs whenever (Pn & PnMASK) != (PnMAT & PnMASK).
-// We must disable the interrupt and wait until the button is released in
-// main, or else the interrupt will trigger multiple times.  It is generally
-// not good practice to sit in an ISR for int32_t periods of time.
-//
-SI_INTERRUPT(PMATCH_ISR, PMATCH_IRQn)
-{
-  uint8_t SFRPAGE_save = SFRPAGE;
-
-  SFRPAGE = PG2_PAGE;
-
-  EIE1 &= ~0x02;                     // Disable Port Match interrupts to
-                                     // prevent multiple interrupts from
-                                     // occurring while the button is
-                                     // pressed
-  SFRPAGE = SFRPAGE_save;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -366,7 +284,6 @@ SI_INTERRUPT(PMATCH_ISR, PMATCH_IRQn)
 
 void FunctionGenerator_main(void)
 {
-
   while(1)
   {
     processInput(getWaitJoystick());
