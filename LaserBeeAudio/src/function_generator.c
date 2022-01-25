@@ -63,13 +63,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 //pins
-//SI_SBIT(C1, SFR_P1, 4);
-//SI_SBIT(D, SFR_P1, 5);
-//sbit Ds = 0x90^6;
+SI_SBIT(C1, SFR_P1, 4);
+SI_SBIT(D, SFR_P1, 5);
+SI_SBIT(Ds, SFR_P1, 6);
 
 
 #define NUM_KEYS 3
-static sbit keys[] = {0x90^4, 0x90^5, 0x90^6};
 
 // Demo state variables
 static DemoState currentDemoState = DEMO_SINE;
@@ -91,7 +90,8 @@ static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA
 
 // Current Frequency Selection
 #define NUM_VOICES 2
-static uint8_t currentFreqIndex[NUM_VOICES] = {0};
+#define EMPTY 100
+static uint8_t currentFreqIndex[NUM_VOICES] = {EMPTY};
 static uint8_t countPressed = 0;
 
 // Phase offset (updated when frequency is changed)
@@ -234,11 +234,23 @@ static uint8_t getWaitJoystick(void)
 
   return dirSave;
 }
-//
+
+
+static void clear(){
+  uint8_t i;
+
+  for (i = 0; i < NUM_VOICES; i++){
+      currentFreqIndex[i] = EMPTY;
+      phaseOffset[i] = 0;
+  }
+
+  countPressed = 0;
+}
+
+
 static void processInput(uint8_t dir)
 {
   uint8_t i;
-  uint8_t j;
 
   if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
     {
@@ -247,23 +259,43 @@ static void processInput(uint8_t dir)
 
   //check current pressed keys
   for (i = 0; i < NUM_VOICES; i++){
-      if (currentFreqIndex[i] != 0){
-          if (keys[currentFreqIndex[i] - 1] == 0){
-              for (j=0; i< NUM_VOICES; j++) currentFreqIndex[j] = 0;
-              countPressed = 0;
-              break;
-          }
+      switch (currentFreqIndex[i]){
+        case 0 :
+          if (C1) clear(); break;
+        case 1 :
+          if (D) clear(); break;
+        case 2 :
+          if (Ds) clear();
       }
   }
 
 
   //check each key for pressed
-  for (i = 0; i < NUM_KEYS; i++){
-      if (keys[i] == 1 && countPressed < NUM_VOICES){
-          currentFreqIndex[countPressed] = i+1;
-          phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+
+  if (countPressed < NUM_VOICES){
+    if (!C1){
+        for (i = 0; i < NUM_VOICES; i++){
+            if (currentFreqIndex[i] == 0) break;
+        }
+        currentFreqIndex[countPressed] = 0;
+        phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+    }
+    else if (!D){
+        for (i = 0; i < NUM_VOICES; i++){
+                  if (currentFreqIndex[i] == 1) break;
+              }
+        currentFreqIndex[countPressed] = 1;
+        phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+      }
+    else if (!Ds){
+        for (i = 0; i < NUM_VOICES; i++){
+                  if (currentFreqIndex[i] == 2) break;
+              }
+        currentFreqIndex[countPressed] = 2;
+        phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
       }
   }
+
 
 
 }
