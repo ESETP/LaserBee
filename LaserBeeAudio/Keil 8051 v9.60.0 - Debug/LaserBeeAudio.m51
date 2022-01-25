@@ -1,4 +1,4 @@
-LX51 LINKER/LOCATER V4.66.97.0                                                          01/25/2022  14:17:50  PAGE 1
+LX51 LINKER/LOCATER V4.66.97.0                                                          01/25/2022  14:51:00  PAGE 1
 
 
 LX51 LINKER/LOCATER V4.66.97.0, INVOKED BY:
@@ -64,14 +64,14 @@ ACTIVE MEMORY CLASSES OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 
 BASE        START       END         USED      MEMORY CLASS
 ==========================================================
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 2
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 2
 
 
 C:000000H   C:000000H   C:00FBFEH             ECODE
 C:000000H   C:000000H   C:00FBFEH             HCONST
 X:000000H   X:000000H   X:000FFFH   000010H   XDATA
 X:000000H   X:000000H   X:000FFFH             HDATA
-C:000000H   C:000000H   C:00FFFFH   000A27H   CODE
+C:000000H   C:000000H   C:00FFFFH   000AB4H   CODE
 I:000000H   I:000000H   I:00007FH   00003AH   DATA
 C:000000H   C:000000H   C:00FFFFH   00201AH   CONST
 X:000000H   X:000000H   X:0000FFH   000014H   PDATA
@@ -115,43 +115,43 @@ START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
 000076H   00008AH   000015H   BYTE   UNIT     CODE           ?PR?TIMER_SETUP_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
 00008BH   00008DH   000003H   BYTE   OFFS..   CODE           ?FUNCTION_GENERATOR?0008B
 00008EH   000283H   0001F6H   BYTE   UNIT     CODE           ?C?LIB_CODE
-000284H   0003F7H   000174H   BYTE   UNIT     CODE           ?PR?_JOYSTICK_CONVERT_MV_TO_DIRECTION?JOYSTICK
-0003F8H   0004F4H   0000FDH   BYTE   UNIT     CODE           ?PR?_PROCESSINPUT?FUNCTION_GENERATOR
-0004F5H   00058EH   00009AH   BYTE   UNIT     CODE           ?PR?SPI0_ISR?SPI_0
-00058FH   000625H   000097H   BYTE   UNIT     CODE           ?PR?TIMER4_ISR?FUNCTION_GENERATOR
-000626H   0006B4H   00008FH   BYTE   UNIT     CODE           ?C_C51STARTUP
-0006B5H   000740H   00008CH   BYTE   UNIT     CODE           ?PR?_TRANSITIONDEMOWAVEFORM?FUNCTION_GENERATOR
-000741H   0007A1H   000061H   BYTE   UNIT     CODE           ?PR?TIMER2_ISR?SPI
-0007A2H   0007FBH   00005AH   BYTE   UNIT     CODE           ?C_INITSEG
-0007FCH   00084DH   000052H   BYTE   UNIT     CODE           ?PR?_SPI0_TRANSFER?SPI_0
-00084EH   000898H   00004BH   BYTE   UNIT     CODE           ?PR?WDT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000899H   0008DCH   000044H   BYTE   UNIT     CODE           ?C?LDIV
-0008DDH   00091FH   000043H   BYTE   UNIT     CODE           ?PR?ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000920H   00093DH   00001EH   BYTE   UNIT     CODE           ?PR?GETJOYSTICK?FUNCTION_GENERATOR
-00093EH   000953H   000016H   BYTE   UNIT     CODE           ?PR?INTERRUPT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 3
+000284H   00040DH   00018AH   BYTE   UNIT     CODE           ?PR?_PROCESSINPUT?FUNCTION_GENERATOR
+00040EH   000581H   000174H   BYTE   UNIT     CODE           ?PR?_JOYSTICK_CONVERT_MV_TO_DIRECTION?JOYSTICK
+000582H   00061BH   00009AH   BYTE   UNIT     CODE           ?PR?SPI0_ISR?SPI_0
+00061CH   0006B2H   000097H   BYTE   UNIT     CODE           ?PR?TIMER4_ISR?FUNCTION_GENERATOR
+0006B3H   000741H   00008FH   BYTE   UNIT     CODE           ?C_C51STARTUP
+000742H   0007CDH   00008CH   BYTE   UNIT     CODE           ?PR?_TRANSITIONDEMOWAVEFORM?FUNCTION_GENERATOR
+0007CEH   00082EH   000061H   BYTE   UNIT     CODE           ?PR?TIMER2_ISR?SPI
+00082FH   000888H   00005AH   BYTE   UNIT     CODE           ?C_INITSEG
+000889H   0008DAH   000052H   BYTE   UNIT     CODE           ?PR?_SPI0_TRANSFER?SPI_0
+0008DBH   000925H   00004BH   BYTE   UNIT     CODE           ?PR?WDT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000926H   000969H   000044H   BYTE   UNIT     CODE           ?C?LDIV
+00096AH   0009ACH   000043H   BYTE   UNIT     CODE           ?PR?ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+0009ADH   0009CAH   00001EH   BYTE   UNIT     CODE           ?PR?GETJOYSTICK?FUNCTION_GENERATOR
+0009CBH   0009E0H   000016H   BYTE   UNIT     CODE           ?PR?INTERRUPT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 3
 
 
-000954H   000967H   000014H   BYTE   UNIT     CODE           ?PR?SPI0_TRANSFERCOMPLETECB?SPI
-000968H   00097AH   000013H   BYTE   UNIT     CODE           ?PR?TIMER01_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-00097BH   00098DH   000013H   BYTE   UNIT     CODE           ?PR?ADC_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-00098EH   00099EH   000011H   BYTE   UNIT     CODE           ?PR?SPI0_INTERNALINIT?SPI_0
-00099FH   0009AEH   000010H   BYTE   UNIT     CODE           ?PR?TIMER3_ISR?TICK
-0009AFH   0009BEH   000010H   BYTE   UNIT     CODE           ?PR?GETWAITJOYSTICK?FUNCTION_GENERATOR
-0009BFH   0009CBH   00000DH   BYTE   UNIT     CODE           ?PR?PORTS_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0009CCH   0009D8H   00000DH   BYTE   UNIT     CODE           ?PR?SPI_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0009D9H   0009E2H   00000AH   BYTE   UNIT     CODE           ?PR?PORTS_1_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0009E3H   0009ECH   00000AH   BYTE   UNIT     CODE           ?PR?PORTS_2_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0009EDH   0009F6H   00000AH   BYTE   UNIT     CODE           ?PR?CLOCK_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0009F7H   000A00H   00000AH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
-000A01H   000A08H   000008H   BYTE   UNIT     CODE           ?PR?FUNCTIONGENERATOR_MAIN?FUNCTION_GENERATOR
-000A09H   000A0FH   000007H   BYTE   UNIT     CODE           ?PR?PBCFG_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000A10H   000A16H   000007H   BYTE   UNIT     CODE           ?PR?DAC_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000A17H   000A1DH   000007H   BYTE   UNIT     CODE           ?PR?VREF_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000A1EH   000A21H   000004H   BYTE   UNIT     CODE           ?PR?DAC_3_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000A22H   000A25H   000004H   BYTE   UNIT     CODE           ?PR?DACGCF_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000A26H   000A29H   000004H   BYTE   UNIT     CODE           ?PR?PORTS_3_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000A2AH   002A43H   00201AH   BYTE   UNIT     CONST          ?CO?FUNCTION_GENERATOR
+0009E1H   0009F4H   000014H   BYTE   UNIT     CODE           ?PR?SPI0_TRANSFERCOMPLETECB?SPI
+0009F5H   000A07H   000013H   BYTE   UNIT     CODE           ?PR?TIMER01_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A08H   000A1AH   000013H   BYTE   UNIT     CODE           ?PR?ADC_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A1BH   000A2BH   000011H   BYTE   UNIT     CODE           ?PR?SPI0_INTERNALINIT?SPI_0
+000A2CH   000A3BH   000010H   BYTE   UNIT     CODE           ?PR?TIMER3_ISR?TICK
+000A3CH   000A4BH   000010H   BYTE   UNIT     CODE           ?PR?GETWAITJOYSTICK?FUNCTION_GENERATOR
+000A4CH   000A58H   00000DH   BYTE   UNIT     CODE           ?PR?PORTS_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A59H   000A65H   00000DH   BYTE   UNIT     CODE           ?PR?SPI_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A66H   000A6FH   00000AH   BYTE   UNIT     CODE           ?PR?PORTS_1_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A70H   000A79H   00000AH   BYTE   UNIT     CODE           ?PR?PORTS_2_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A7AH   000A83H   00000AH   BYTE   UNIT     CODE           ?PR?CLOCK_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A84H   000A8DH   00000AH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
+000A8EH   000A95H   000008H   BYTE   UNIT     CODE           ?PR?FUNCTIONGENERATOR_MAIN?FUNCTION_GENERATOR
+000A96H   000A9CH   000007H   BYTE   UNIT     CODE           ?PR?PBCFG_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000A9DH   000AA3H   000007H   BYTE   UNIT     CODE           ?PR?DAC_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000AA4H   000AAAH   000007H   BYTE   UNIT     CODE           ?PR?VREF_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000AABH   000AAEH   000004H   BYTE   UNIT     CODE           ?PR?DAC_3_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000AAFH   000AB2H   000004H   BYTE   UNIT     CODE           ?PR?DACGCF_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000AB3H   000AB6H   000004H   BYTE   UNIT     CODE           ?PR?PORTS_3_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000AB7H   002AD0H   00201AH   BYTE   UNIT     CONST          ?CO?FUNCTION_GENERATOR
 
 * * * * * * * * * * *  X D A T A   M E M O R Y  * * * * * * * * * * * * *
 000000H   000013H   000014H   BYTE   INPAGE   PDATA          ?PD?SPI
@@ -194,7 +194,7 @@ START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
    *DEL*:           00000DH   BYTE   UNIT     CODE           ?PR?SPI0_GETINTFLAGS?SPI_0
    *DEL*:           00000EH   BYTE   UNIT     CODE           ?PR?_SPI0_CLEARINTFLAGS?SPI_0
    *DEL*:           000013H   BYTE   UNIT     CODE           ?PR?_SPI0_WRITEBYTE?SPI_0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 4
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 4
 
 
    *DEL*:           000000H.1 BIT    UNIT     BIT            ?BI?_SPI0_WRITEBYTE?SPI_0
@@ -259,7 +259,7 @@ SPI0_TRANSFERCOMPLETECB/SPI                   ----- -----  ----- -----
 
 ?C_C51STARTUP                                 ----- -----  ----- -----
   +--> SILABS_STARTUP/MAIN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 5
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 5
 
 
   +--> MAIN/MAIN
@@ -324,7 +324,7 @@ DAC_2_ENTER_DEFAULTMODE_FROM_RESET/INITD+     ----- -----  ----- -----
 ... EVICE
 
 DAC_3_ENTER_DEFAULTMODE_FROM_RESET/INITD+     ----- -----  ----- -----
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 6
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 6
 
 
 ... EVICE
@@ -370,7 +370,7 @@ GETJOYSTICK/FUNCTION_GENERATOR                ----- -----  ----- -----
 _JOYSTICK_CONVERT_MV_TO_DIRECTION/JOYSTI+     ----- -----  0028H 002CH
 ... CK
 
-_PROCESSINPUT/FUNCTION_GENERATOR              ----- -----  0027H 0027H
+_PROCESSINPUT/FUNCTION_GENERATOR              ----- -----  0027H 0028H
   +--> _TRANSITIONDEMOWAVEFORM/FUNCTION_GENERATOR
   +--> CLEAR/FUNCTION_GENERATOR
 
@@ -389,7 +389,7 @@ TIMER4_ISR/FUNCTION_GENERATOR                 ----- -----  002DH 002EH
 
 PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 7
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 7
 
 
 
@@ -406,18 +406,18 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000000H   NUMBER   ---       ?C?CODESEG
       01000257H   CODE     ---       ?C?LIMUL
       01000129H   CODE     ---       ?C?LMUL
-      01000899H   CODE     ---       ?C?SLDIV
+      01000926H   CODE     ---       ?C?SLDIV
       010000D4H   CODE     ---       ?C?UIDIV
       01000246H   CODE     ---       ?C?ULCMP
       010001B4H   CODE     ---       ?C?ULDIV
       00000000H   NUMBER   ---       ?C?XDATASEG
-      01000670H   CODE     ---       ?C_START
+      010006FDH   CODE     ---       ?C_START
       01000000H   CODE     NEAR LAB  ?C_STARTUP
 *DEL*:00000000H   CODE     ---       _BitReverse
 *DEL*:00000000H   CODE     ---       _DISP_ClearLine
 *DEL*:00000000H   CODE     ---       _DISP_WriteLine
 *DEL*:00000000H   CODE     ---       _getkey
-      01000284H   CODE     ---       _JOYSTICK_convert_mv_to_direction
+      0100040EH   CODE     ---       _JOYSTICK_convert_mv_to_direction
 *DEL*:00000000H   CODE     ---       _putchar
 *DEL*:00000000H   CODE     ---       _RENDER_ClrLine
 *DEL*:00000000H   CODE     ---       _RENDER_GetStrSize
@@ -434,7 +434,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *DEL*:00000000H   CODE     ---       _SPI0_pollTransfer
 *DEL*:00000000H   CODE     ---       _SPI0_pollWriteByte
 *DEL*:00000000H   CODE     ---       _SPI0_setClockDivider
-      010007FCH   CODE     ---       _SPI0_transfer
+      01000889H   CODE     ---       _SPI0_transfer
 *DEL*:00000000H   CODE     ---       _SPI0_writeByte
 *DEL*:00000000H   CODE     ---       _SPI_StartTransfer
 *DEL*:00000000H   CODE     ---       _Wait
@@ -454,7 +454,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000B5H   DATA     BYTE      ADC0ASAL
 *SFR* 000000A1H   DATA     BYTE      ADC0ASCF
 *SFR* 000000C7H   DATA     BYTE      ADC0ASCT
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 8
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 8
 
 
 *SFR* 000000BCH   DATA     BYTE      ADC0CF0
@@ -480,7 +480,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000C6H   DATA     BYTE      ADC0LTH
 *SFR* 000000C5H   DATA     BYTE      ADC0LTL
 *SFR* 000000BBH   DATA     BYTE      ADC0MX
-      0100097BH   CODE     ---       ADC_0_enter_DefaultMode_from_RESET
+      01000A08H   CODE     ---       ADC_0_enter_DefaultMode_from_RESET
 *SFR* 000000F0H   DATA     BYTE      B
 *SFR* 000000F0H.0 DATA     BIT       B_B0
 *SFR* 000000F0H.1 DATA     BIT       B_B1
@@ -514,12 +514,12 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000E8H.6 DATA     BIT       CLIF0_C3FIF
 *SFR* 000000E8H.7 DATA     BIT       CLIF0_C3RIF
 *SFR* 000000A9H   DATA     BYTE      CLKSEL
-      010009EDH   CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
+      01000A7AH   CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
 *SFR* 000000D1H   DATA     BYTE      CLOUT0
 *SFR* 000000B1H   DATA     BYTE      CLU0CF
 *SFR* 000000AFH   DATA     BYTE      CLU0FN
 *SFR* 00000084H   DATA     BYTE      CLU0MX
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 9
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 9
 
 
 *SFR* 000000B3H   DATA     BYTE      CLU1CF
@@ -564,10 +564,10 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 0000009CH   DATA     BYTE      DAC3CF1
 *SFR* 0000008EH   DATA     BYTE      DAC3H
 *SFR* 0000008DH   DATA     BYTE      DAC3L
-      01000A10H   CODE     ---       DAC_0_enter_DefaultMode_from_RESET
+      01000A9DH   CODE     ---       DAC_0_enter_DefaultMode_from_RESET
       01000026H   CODE     ---       DAC_1_enter_DefaultMode_from_RESET
       0100002EH   CODE     ---       DAC_2_enter_DefaultMode_from_RESET
-      01000A1EH   CODE     ---       DAC_3_enter_DefaultMode_from_RESET
+      01000AABH   CODE     ---       DAC_3_enter_DefaultMode_from_RESET
 *SFR* 00000088H   DATA     BYTE      DACGCF0
 *SFR* 00000088H.3 DATA     BIT       DACGCF0_D01REFSL
 *SFR* 00000088H.2 DATA     BIT       DACGCF0_D1AMEN
@@ -583,8 +583,8 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 00000098H.2 DATA     BIT       DACGCF1_D2UDIS
 *SFR* 00000098H.3 DATA     BIT       DACGCF1_D3UDIS
 *SFR* 000000A2H   DATA     BYTE      DACGCF2
-      01000A22H   CODE     ---       DACGCF_0_enter_DefaultMode_from_RESET
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 10
+      01000AAFH   CODE     ---       DACGCF_0_enter_DefaultMode_from_RESET
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 10
 
 
 *SFR* 000000ADH   DATA     BYTE      DERIVID
@@ -603,7 +603,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000EDH   DATA     BYTE      EIP2
 *SFR* 000000F6H   DATA     BYTE      EIP2H
 *SFR* 000000E7H   DATA     BYTE      EMI0CN
-      010008DDH   CODE     ---       enter_DefaultMode_from_RESET
+      0100096AH   CODE     ---       enter_DefaultMode_from_RESET
 *SFR* 000000A8H.4 DATA     BIT       ES
 *SFR* 000000A8H.1 DATA     BIT       ET0
 *SFR* 000000A8H.3 DATA     BIT       ET1
@@ -611,7 +611,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000A8H.2 DATA     BIT       EX1
 *SFR* 000000D0H.5 DATA     BIT       F0
 *SFR* 000000B7H   DATA     BYTE      FLKEY
-      01000A01H   CODE     ---       FunctionGenerator_main
+      01000A8EH   CODE     ---       FunctionGenerator_main
 *DEL*:00000000H   CODE     ---       GetTickCount
 *SFR* 000000C7H   DATA     BYTE      HFO0CAL
 *SFR* 000000D6H   DATA     BYTE      HFO1CAL
@@ -638,7 +638,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000A8H.2 DATA     BIT       IE_EX1
 *SFR* 000000B0H.2 DATA     BIT       INT0
 *SFR* 000000B0H.3 DATA     BIT       INT1
-      0100093EH   CODE     ---       INTERRUPT_0_enter_DefaultMode_from_RESET
+      010009CBH   CODE     ---       INTERRUPT_0_enter_DefaultMode_from_RESET
 *SFR* 000000B8H   DATA     BYTE      IP
 *SFR* 000000B8H.4 DATA     BIT       IP_PS0
 *SFR* 000000B8H.6 DATA     BIT       IP_PSPI0
@@ -649,14 +649,14 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000B8H.2 DATA     BIT       IP_PX1
 *SFR* 000000F2H   DATA     BYTE      IPH
 *SFR* 00000088H.0 DATA     BIT       IT0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 11
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 11
 
 
 *SFR* 000000E4H   DATA     BYTE      IT01CF
 *SFR* 00000088H.2 DATA     BIT       IT1
       00000035H   DATA     WORD      LastVcomToggle
 *SFR* 000000B1H   DATA     BYTE      LFO0CN
-      010009F7H   CODE     ---       main
+      01000A84H   CODE     ---       main
 *SFR* 000000D0H.2 DATA     BIT       OV
 *SFR* 000000D0H.0 DATA     BIT       P
 *SFR* 00000080H   DATA     BYTE      P0
@@ -709,12 +709,12 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000B0H.7 DATA     BIT       P3_B7
 *SFR* 000000F4H   DATA     BYTE      P3MDIN
 *SFR* 0000009CH   DATA     BYTE      P3MDOUT
-      01000A09H   CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
+      01000A96H   CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
 *SFR* 000000F9H   DATA     WORD      PCA0
 *SFR* 0000009EH   DATA     BYTE      PCA0CENT
 *SFR* 0000009CH   DATA     BYTE      PCA0CLR
 *SFR* 000000D8H   DATA     BYTE      PCA0CN0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 12
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 12
 
 
 *SFR* 000000D8H.0 DATA     BIT       PCA0CN0_CCF0
@@ -758,10 +758,10 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 00000087H   DATA     BYTE      PCON0
 *SFR* 000000CDH   DATA     BYTE      PCON1
 *SFR* 000000C1H   DATA     BYTE      PFE0CN
-      010009BFH   CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
-      010009D9H   CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
-      010009E3H   CODE     ---       PORTS_2_enter_DefaultMode_from_RESET
-      01000A26H   CODE     ---       PORTS_3_enter_DefaultMode_from_RESET
+      01000A4CH   CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
+      01000A66H   CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
+      01000A70H   CODE     ---       PORTS_2_enter_DefaultMode_from_RESET
+      01000AB3H   CODE     ---       PORTS_3_enter_DefaultMode_from_RESET
 *SFR* 000000A0H   DATA     BYTE      PPAGE_SFR
 *SFR* 000000F6H   DATA     BYTE      PRTDRV
 *SFR* 000000B8H.4 DATA     BIT       PS
@@ -779,7 +779,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000B8H.1 DATA     BIT       PT0
 *SFR* 000000B8H.3 DATA     BIT       PT1
 *SFR* 000000B8H.0 DATA     BIT       PX0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 13
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 13
 
 
 *SFR* 000000B8H.2 DATA     BIT       PX1
@@ -795,7 +795,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000D0H.4 DATA     BIT       RS1
 *SFR* 000000EFH   DATA     BYTE      RSTSRC
 *SFR* 000000B0H.0 DATA     BIT       RXD
-      01002644H   CONST    ---       sawtoothTable
+      010026D1H   CONST    ---       sawtoothTable
 *SFR* 00000094H   DATA     BYTE      SBCON1
 *SFR* 00000096H   DATA     BYTE      SBRLH1
 *SFR* 00000095H   DATA     BYTE      SBRLL1
@@ -823,7 +823,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000BCH   DATA     BYTE      SFRPGCN
 *SFR* 000000D7H   DATA     BYTE      SFRSTACK
       0100002AH   CODE     ---       SILABS_STARTUP
-      01002044H   CONST    ---       sineTable
+      010020D1H   CONST    ---       sineTable
 *SFR* 00000098H.7 DATA     BIT       SM0
 *SFR* 00000098H.6 DATA     BIT       SM1
 *SFR* 00000098H.5 DATA     BIT       SM2
@@ -844,7 +844,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000C4H   DATA     BYTE      SMB0FCN1
 *SFR* 000000EFH   DATA     BYTE      SMB0FCT
 *SFR* 000000C5H   DATA     BYTE      SMB0RXLN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 14
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 14
 
 
 *SFR* 000000ACH   DATA     BYTE      SMB0TC
@@ -858,7 +858,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *DEL*:00000000H   CODE     ---       SPI0_isBusy
 *DEL*:00000000H   CODE     ---       SPI0_isFifoRxReq
 *DEL*:00000000H   CODE     ---       SPI0_isFifoTxReq
-      010004F5H   CODE     ---       SPI0_ISR
+      01000582H   CODE     ---       SPI0_ISR
 *DEL*:00000000H   CODE     ---       SPI0_isRxEmpty
 *DEL*:00000000H   CODE     ---       SPI0_isShiftEmpty
 *DEL*:00000000H   CODE     ---       SPI0_isSlaveSelected
@@ -866,7 +866,7 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *DEL*:00000000H   CODE     ---       SPI0_pollReadByte
 *DEL*:00000000H   CODE     ---       SPI0_readByte
 *DEL*:00000000H   CODE     ---       SPI0_reset
-      01000954H   CODE     ---       SPI0_transferCompleteCb
+      010009E1H   CODE     ---       SPI0_transferCompleteCb
 *SFR* 000000A1H   DATA     BYTE      SPI0CFG
 *SFR* 000000A2H   DATA     BYTE      SPI0CKR
 *SFR* 000000F8H   DATA     BYTE      SPI0CN0
@@ -883,8 +883,8 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 0000009BH   DATA     BYTE      SPI0FCN1
 *SFR* 000000F7H   DATA     BYTE      SPI0FCT
 *SFR* 000000DFH   DATA     BYTE      SPI0PCF
-      010009CCH   CODE     ---       SPI_0_enter_DefaultMode_from_RESET
-      01002244H   CONST    ---       squareTable
+      01000A59H   CODE     ---       SPI_0_enter_DefaultMode_from_RESET
+      010022D1H   CONST    ---       squareTable
 *SFR* 000000B0H.4 DATA     BIT       T0
 *SFR* 000000B0H.5 DATA     BIT       T1
 *SFR* 00000098H.3 DATA     BIT       TB8
@@ -902,14 +902,14 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 0000008CH   DATA     BYTE      TH0
 *SFR* 0000008DH   DATA     BYTE      TH1
 *SFR* 00000098H.1 DATA     BIT       TI
-      01000968H   CODE     ---       TIMER01_0_enter_DefaultMode_from_RESET
+      010009F5H   CODE     ---       TIMER01_0_enter_DefaultMode_from_RESET
       01000058H   CODE     ---       TIMER16_3_enter_DefaultMode_from_RESET
       01000036H   CODE     ---       TIMER16_4_enter_DefaultMode_from_RESET
-      01000741H   CODE     ---       TIMER2_ISR
-      0100099FH   CODE     ---       TIMER3_ISR
-      0100058FH   CODE     ---       TIMER4_ISR
+      010007CEH   CODE     ---       TIMER2_ISR
+      01000A2CH   CODE     ---       TIMER3_ISR
+      0100061CH   CODE     ---       TIMER4_ISR
       01000076H   CODE     ---       TIMER_SETUP_0_enter_DefaultMode_from_RESET
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 15
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 15
 
 
 *SFR* 0000008AH   DATA     BYTE      TL0
@@ -973,8 +973,8 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 000000D2H   DATA     BYTE      TMR5RLL
 *SFR* 00000088H.4 DATA     BIT       TR0
 *SFR* 00000088H.6 DATA     BIT       TR1
-      01002444H   CONST    ---       triangleTable
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 16
+      010024D1H   CONST    ---       triangleTable
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 16
 
 
 *SFR* 000000B0H.1 DATA     BIT       TXD
@@ -993,10 +993,10 @@ PUBLIC SYMBOLS OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
 *SFR* 0000009EH   DATA     BYTE      UART1LIN
 *SFR* 000000DAH   DATA     BYTE      UART1PCF
 *SFR* 000000FFH   DATA     BYTE      VDM0CN
-      01000A17H   CODE     ---       VREF_0_enter_DefaultMode_from_RESET
-      0100084EH   CODE     ---       WDT_0_enter_DefaultMode_from_RESET
+      01000AA4H   CODE     ---       VREF_0_enter_DefaultMode_from_RESET
+      010008DBH   CODE     ---       WDT_0_enter_DefaultMode_from_RESET
 *SFR* 00000097H   DATA     BYTE      WDTCN
-      01002844H   CONST    ---       windowedSineTable
+      010028D1H   CONST    ---       windowedSineTable
 *SFR* 000000B0H.6 DATA     BIT       WR
 *SFR* 000000E1H   DATA     BYTE      XBR0
 *SFR* 000000E2H   DATA     BYTE      XBR1
@@ -1010,7 +1010,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       VALUE       REP       CLASS    TYPE      SYMBOL NAME
       ====================================================
       ---         MODULE    ---      ---       JOYSTICK
-      01000284H   PUBLIC    CODE     ---       _JOYSTICK_convert_mv_to_direction
+      0100040EH   PUBLIC    CODE     ---       _JOYSTICK_convert_mv_to_direction
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
       000000C8H.6 SFRSYM    DATA     BIT       SCON1_PERR
@@ -1039,7 +1039,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A7H   SFRSYM    DATA     BYTE      SFRPAGE
       000000A4H   SFRSYM    DATA     BYTE      P0MDOUT
       000000A5H   SFRSYM    DATA     BYTE      P1MDOUT
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 17
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 17
 
 
       000000E8H.5 SFRSYM    DATA     BIT       ADC0CN0_ADINT
@@ -1104,7 +1104,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E1H   SFRSYM    DATA     BYTE      XBR0
       000000C4H   SFRSYM    DATA     BYTE      SMB0FCN1
       000000C1H   SFRSYM    DATA     BYTE      SMB0CF
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 18
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 18
 
 
       000000E2H   SFRSYM    DATA     BYTE      XBR1
@@ -1169,7 +1169,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000BEH   SFRSYM    DATA     BYTE      CLU3FN
       00000096H   SFRSYM    DATA     BYTE      SBRLH1
       000000FEH   SFRSYM    DATA     BYTE      P0MASK
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 19
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 19
 
 
       000000D8H.5 SFRSYM    DATA     BIT       UART1FCN1_TXHOLD
@@ -1234,7 +1234,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000091H   SFRSYM    DATA     BYTE      CLU2MX
       000000B3H   SFRSYM    DATA     BYTE      ADC0CN2
       00000090H.5 SFRSYM    DATA     BIT       BSP_LED_B
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 20
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 20
 
 
       000000C8H.7 SFRSYM    DATA     BIT       SCON1_OVR
@@ -1299,7 +1299,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000D0H.5 SFRSYM    DATA     BIT       PSW_F0
       000000A8H.6 SFRSYM    DATA     BIT       IE_ESPI0
       0000008BH   SFRSYM    DATA     BYTE      TL1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 21
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 21
 
 
       000000F9H   SFRSYM    DATA     BYTE      PCA0L
@@ -1364,7 +1364,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C7H   SFRSYM    DATA     BYTE      HFO0CAL
       00000088H.5 SFRSYM    DATA     BIT       TCON_TF0
       00000098H.0 SFRSYM    DATA     BIT       SCON0_RI
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 22
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 22
 
 
       000000D6H   SFRSYM    DATA     BYTE      HFO1CAL
@@ -1429,7 +1429,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000EFH   SFRSYM    DATA     BYTE      HFOCN
       000000D3H   SFRSYM    DATA     BYTE      CRC0CNT
       000000A5H   SFRSYM    DATA     BYTE      TMR4H
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 23
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 23
 
 
       00000098H.4 SFRSYM    DATA     BIT       TMR4CN0_TF4CEN
@@ -1467,57 +1467,57 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H.6 SFRSYM    DATA     BIT       CLIF0_C3FIF
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
 
-      01000284H   BLOCK     CODE     ---       LVL=0
+      0100040EH   BLOCK     CODE     ---       LVL=0
       00000028H   SYMBOL    DATA     DWORD     mV
-      0100028CH   BLOCK     CODE     NEAR LAB  LVL=1
+      01000416H   BLOCK     CODE     NEAR LAB  LVL=1
       0000002CH   SYMBOL    DATA     BYTE      joystickDirection
       ---         BLOCKEND  ---      ---       LVL=1
-      01000284H   LINE      CODE     ---       #32
-      0100028CH   LINE      CODE     ---       #33
-      0100028CH   LINE      CODE     ---       #37
-      010002A0H   LINE      CODE     ---       #38
-      010002A0H   LINE      CODE     ---       #39
-      010002A3H   LINE      CODE     ---       #40
-      010002A6H   LINE      CODE     ---       #41
-      010002CAH   LINE      CODE     ---       #43
-      010002CAH   LINE      CODE     ---       #44
-      010002CDH   LINE      CODE     ---       #45
-      010002D0H   LINE      CODE     ---       #46
-      010002F4H   LINE      CODE     ---       #48
-      010002F4H   LINE      CODE     ---       #49
-      010002F7H   LINE      CODE     ---       #50
-      010002FAH   LINE      CODE     ---       #51
-      0100031EH   LINE      CODE     ---       #53
-      0100031EH   LINE      CODE     ---       #54
-      01000321H   LINE      CODE     ---       #55
-      01000324H   LINE      CODE     ---       #56
-      01000348H   LINE      CODE     ---       #58
-      01000348H   LINE      CODE     ---       #59
-      0100034BH   LINE      CODE     ---       #60
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 24
+      0100040EH   LINE      CODE     ---       #32
+      01000416H   LINE      CODE     ---       #33
+      01000416H   LINE      CODE     ---       #37
+      0100042AH   LINE      CODE     ---       #38
+      0100042AH   LINE      CODE     ---       #39
+      0100042DH   LINE      CODE     ---       #40
+      01000430H   LINE      CODE     ---       #41
+      01000454H   LINE      CODE     ---       #43
+      01000454H   LINE      CODE     ---       #44
+      01000457H   LINE      CODE     ---       #45
+      0100045AH   LINE      CODE     ---       #46
+      0100047EH   LINE      CODE     ---       #48
+      0100047EH   LINE      CODE     ---       #49
+      01000481H   LINE      CODE     ---       #50
+      01000484H   LINE      CODE     ---       #51
+      010004A8H   LINE      CODE     ---       #53
+      010004A8H   LINE      CODE     ---       #54
+      010004ABH   LINE      CODE     ---       #55
+      010004AEH   LINE      CODE     ---       #56
+      010004D2H   LINE      CODE     ---       #58
+      010004D2H   LINE      CODE     ---       #59
+      010004D5H   LINE      CODE     ---       #60
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 24
 
 
-      0100034EH   LINE      CODE     ---       #62
-      01000372H   LINE      CODE     ---       #64
-      01000372H   LINE      CODE     ---       #65
-      01000375H   LINE      CODE     ---       #66
-      01000377H   LINE      CODE     ---       #67
-      0100039BH   LINE      CODE     ---       #69
-      0100039BH   LINE      CODE     ---       #70
-      0100039EH   LINE      CODE     ---       #71
-      010003A0H   LINE      CODE     ---       #72
-      010003C4H   LINE      CODE     ---       #74
-      010003C4H   LINE      CODE     ---       #75
-      010003C7H   LINE      CODE     ---       #76
-      010003C9H   LINE      CODE     ---       #77
-      010003EDH   LINE      CODE     ---       #79
-      010003EDH   LINE      CODE     ---       #80
-      010003F0H   LINE      CODE     ---       #81
-      010003F2H   LINE      CODE     ---       #84
-      010003F2H   LINE      CODE     ---       #85
-      010003F5H   LINE      CODE     ---       #86
-      010003F5H   LINE      CODE     ---       #88
-      010003F7H   LINE      CODE     ---       #89
+      010004D8H   LINE      CODE     ---       #62
+      010004FCH   LINE      CODE     ---       #64
+      010004FCH   LINE      CODE     ---       #65
+      010004FFH   LINE      CODE     ---       #66
+      01000501H   LINE      CODE     ---       #67
+      01000525H   LINE      CODE     ---       #69
+      01000525H   LINE      CODE     ---       #70
+      01000528H   LINE      CODE     ---       #71
+      0100052AH   LINE      CODE     ---       #72
+      0100054EH   LINE      CODE     ---       #74
+      0100054EH   LINE      CODE     ---       #75
+      01000551H   LINE      CODE     ---       #76
+      01000553H   LINE      CODE     ---       #77
+      01000577H   LINE      CODE     ---       #79
+      01000577H   LINE      CODE     ---       #80
+      0100057AH   LINE      CODE     ---       #81
+      0100057CH   LINE      CODE     ---       #84
+      0100057CH   LINE      CODE     ---       #85
+      0100057FH   LINE      CODE     ---       #86
+      0100057FH   LINE      CODE     ---       #88
+      01000581H   LINE      CODE     ---       #89
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       DISP
@@ -1559,7 +1559,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A3H   SFRSYM    DATA     BYTE      TMR4RLH
       000000BBH   SFRSYM    DATA     BYTE      EIP1
       000000D3H   SFRSYM    DATA     BYTE      TMR5RLH
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 25
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 25
 
 
       000000EDH   SFRSYM    DATA     BYTE      EIP2
@@ -1624,7 +1624,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000BBH   SFRSYM    DATA     BYTE      ADC0MX
       000000E0H.0 SFRSYM    DATA     BIT       ACC_ACC0
       000000D1H   SFRSYM    DATA     BYTE      REF0CN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 26
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 26
 
 
       000000B3H   SFRSYM    DATA     BYTE      CLU1CF
@@ -1689,7 +1689,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000BAH   SFRSYM    DATA     BYTE      I2C0CN0
       000000D2H   SFRSYM    DATA     BYTE      CRC0ST
       000000F8H.4 SFRSYM    DATA     BIT       SPI0CN0_RXOVRN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 27
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 27
 
 
       000000D0H.4 SFRSYM    DATA     BIT       PSW_RS1
@@ -1754,7 +1754,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A9H   SFRSYM    DATA     BYTE      CLKSEL
       000000F8H.0 SFRSYM    DATA     BIT       SPI0CN0_SPIEN
       00000085H   SFRSYM    DATA     BYTE      DAC0H
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 28
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 28
 
 
       000000F0H   SFRSYM    DATA     BYTE      B
@@ -1819,7 +1819,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000080H.1 SFRSYM    DATA     BIT       P0_B1
       000000B8H.2 SFRSYM    DATA     BIT       IP_PX1
       00000088H.7 SFRSYM    DATA     BIT       DACGCF0_D23REFSL
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 29
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 29
 
 
       0000009EH   SFRSYM    DATA     BYTE      UART1LIN
@@ -1884,7 +1884,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000F2H   SFRSYM    DATA     BYTE      IPH
       000000C3H   SFRSYM    DATA     BYTE      ADC0GTL
       00000098H.7 SFRSYM    DATA     BIT       TMR4CN0_TF4H
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 30
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 30
 
 
       00000098H.3 SFRSYM    DATA     BIT       TMR4CN0_T4SPLIT
@@ -1949,7 +1949,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000F8H.7 SFRSYM    DATA     BIT       SPI0CN0_SPIF
       00000094H   SFRSYM    DATA     BYTE      TMR3L
       000000A8H.7 SFRSYM    DATA     BIT       IE_EA
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 31
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 31
 
 
       000000A4H   SFRSYM    DATA     BYTE      TMR4L
@@ -2014,7 +2014,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A5H   SFRSYM    DATA     BYTE      P1MDOUT
       000000E8H.5 SFRSYM    DATA     BIT       ADC0CN0_ADINT
       000000CBH   SFRSYM    DATA     BYTE      TMR2RLH
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 32
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 32
 
 
       000000A6H   SFRSYM    DATA     BYTE      P2MDOUT
@@ -2079,7 +2079,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C1H   SFRSYM    DATA     BYTE      SMB0CF
       000000E2H   SFRSYM    DATA     BYTE      XBR1
       000000C1H   SFRSYM    DATA     BYTE      PFE0CN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 33
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 33
 
 
       000000E7H   SFRSYM    DATA     BYTE      EMI0CN
@@ -2144,7 +2144,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000FEH   SFRSYM    DATA     BYTE      P0MASK
       000000D8H.5 SFRSYM    DATA     BIT       UART1FCN1_TXHOLD
       000000EEH   SFRSYM    DATA     BYTE      P1MASK
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 34
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 34
 
 
       000000FCH   SFRSYM    DATA     BYTE      P2MASK
@@ -2209,7 +2209,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000090H.5 SFRSYM    DATA     BIT       BSP_LED_B
       000000C8H.7 SFRSYM    DATA     BIT       SCON1_OVR
       000000AAH   SFRSYM    DATA     BYTE      PSTAT0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 35
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 35
 
 
       000000AEH   SFRSYM    DATA     BYTE      CLU3MX
@@ -2274,7 +2274,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       0000008BH   SFRSYM    DATA     BYTE      TL1
       000000F9H   SFRSYM    DATA     BYTE      PCA0L
       000000C0H.0 SFRSYM    DATA     BIT       SMB0CN0_SI
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 36
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 36
 
 
       000000D0H.1 SFRSYM    DATA     BIT       PSW_F1
@@ -2339,7 +2339,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000098H.0 SFRSYM    DATA     BIT       SCON0_RI
       000000D6H   SFRSYM    DATA     BYTE      HFO1CAL
       00000082H   SFRSYM    DATA     BYTE      DPL
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 37
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 37
 
 
       00000088H.7 SFRSYM    DATA     BIT       TCON_TF1
@@ -2404,7 +2404,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A5H   SFRSYM    DATA     BYTE      TMR4H
       00000098H.4 SFRSYM    DATA     BIT       TMR4CN0_TF4CEN
       000000D5H   SFRSYM    DATA     BYTE      TMR5H
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 38
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 38
 
 
       000000EFH   SFRSYM    DATA     BYTE      SMB0FCT
@@ -2469,7 +2469,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000D0H.6 SFRSYM    DATA     BIT       AC
       000000B0H.5 SFRSYM    DATA     BIT       T1
       000000A8H.7 SFRSYM    DATA     BIT       EA
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 39
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 39
 
 
       000000A8H   SFRSYM    DATA     BYTE      IE
@@ -2531,10 +2531,10 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000007H   SYMBOL    DATA     CHAR      c
 
       ---         MODULE    ---      ---       SPI
-      01000741H   PUBLIC    CODE     ---       TIMER2_ISR
-      01000954H   PUBLIC    CODE     ---       SPI0_transferCompleteCb
+      010007CEH   PUBLIC    CODE     ---       TIMER2_ISR
+      010009E1H   PUBLIC    CODE     ---       SPI0_transferCompleteCb
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 40
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 40
 
 
       00000080H   SFRSYM    DATA     BYTE      P0
@@ -2599,7 +2599,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000DAH   SFRSYM    DATA     BYTE      PCA0CPM0
       000000E9H   SFRSYM    DATA     BYTE      PCA0CPL1
       000000DEH   SFRSYM    DATA     BYTE      PCA0CPH5
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 41
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 41
 
 
       000000D8H.7 SFRSYM    DATA     BIT       UART1FCN1_TFRQ
@@ -2664,7 +2664,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C7H   SFRSYM    DATA     BYTE      ADC0ASCT
       000000D8H.2 SFRSYM    DATA     BIT       PCA0CN0_CCF2
       000000E0H.7 SFRSYM    DATA     BIT       ACC_ACC7
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 42
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 42
 
 
       00000094H   SFRSYM    DATA     WORD      TMR3
@@ -2729,7 +2729,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       0000009FH   SFRSYM    DATA     BYTE      CMP0MX
       00000098H.0 SFRSYM    DATA     BIT       TMR4CN0_T4XCLK0
       000000A8H.1 SFRSYM    DATA     BIT       IE_ET0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 43
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 43
 
 
       000000AAH   SFRSYM    DATA     BYTE      CMP1MX
@@ -2794,7 +2794,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E9H   SFRSYM    DATA     WORD      PCA0CP1
       00000088H   SFRSYM    DATA     BYTE      DACGCF0
       000000EBH   SFRSYM    DATA     WORD      PCA0CP2
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 44
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 44
 
 
       000000BCH   SFRSYM    DATA     BYTE      I2C0DIN
@@ -2859,7 +2859,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000080H.5 SFRSYM    DATA     BIT       P0_B5
       00000098H.0 SFRSYM    DATA     BIT       DACGCF1_D0UDIS
       000000D8H.1 SFRSYM    DATA     BIT       UART1FCN1_RXTO0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 45
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 45
 
 
       000000B0H.3 SFRSYM    DATA     BIT       P3_B3
@@ -2924,7 +2924,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H.4 SFRSYM    DATA     BIT       ADC0CN0_ADBUSY
       000000D6H   SFRSYM    DATA     BYTE      SMB0ADM
       000000C5H   SFRSYM    DATA     BYTE      ADC0LTL
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 46
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 46
 
 
       000000F8H.5 SFRSYM    DATA     BIT       SPI0CN0_MODF
@@ -2989,7 +2989,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H.6 SFRSYM    DATA     BIT       CLIF0_C3FIF
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
       02000000H   SYMBOL    PDATA    ---       TxBuffer
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 47
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 47
 
 
       00000037H   SYMBOL    DATA     BYTE      TransferState
@@ -2998,40 +2998,40 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000007H   SYMBOL    DATA     BYTE      sfrPageSave
       00000007H   SYMBOL    DATA     BYTE      i
 
-      01000954H   BLOCK     CODE     ---       LVL=0
-      01000954H   BLOCK     CODE     NEAR LAB  LVL=1
+      010009E1H   BLOCK     CODE     ---       LVL=0
+      010009E1H   BLOCK     CODE     NEAR LAB  LVL=1
       00000007H   SYMBOL    DATA     BYTE      sfrPageSave
       ---         BLOCKEND  ---      ---       LVL=1
-      01000954H   LINE      CODE     ---       #71
-      01000954H   LINE      CODE     ---       #72
-      01000954H   LINE      CODE     ---       #76
-      01000957H   LINE      CODE     ---       #78
-      01000959H   LINE      CODE     ---       #79
-      0100095CH   LINE      CODE     ---       #83
-      01000962H   LINE      CODE     ---       #84
-      01000965H   LINE      CODE     ---       #86
-      01000967H   LINE      CODE     ---       #87
+      010009E1H   LINE      CODE     ---       #71
+      010009E1H   LINE      CODE     ---       #72
+      010009E1H   LINE      CODE     ---       #76
+      010009E4H   LINE      CODE     ---       #78
+      010009E6H   LINE      CODE     ---       #79
+      010009E9H   LINE      CODE     ---       #83
+      010009EFH   LINE      CODE     ---       #84
+      010009F2H   LINE      CODE     ---       #86
+      010009F4H   LINE      CODE     ---       #87
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000741H   BLOCK     CODE     ---       LVL=0
-      01000741H   LINE      CODE     ---       #98
-      0100075EH   LINE      CODE     ---       #100
-      01000761H   LINE      CODE     ---       #103
-      01000764H   LINE      CODE     ---       #106
-      0100076BH   LINE      CODE     ---       #107
-      0100076BH   LINE      CODE     ---       #108
-      0100076EH   LINE      CODE     ---       #109
-      0100077AH   LINE      CODE     ---       #110
-      0100077CH   LINE      CODE     ---       #112
-      01000783H   LINE      CODE     ---       #113
-      01000783H   LINE      CODE     ---       #115
-      01000785H   LINE      CODE     ---       #118
-      01000787H   LINE      CODE     ---       #119
-      01000787H   LINE      CODE     ---       #120
+      010007CEH   BLOCK     CODE     ---       LVL=0
+      010007CEH   LINE      CODE     ---       #98
+      010007EBH   LINE      CODE     ---       #100
+      010007EEH   LINE      CODE     ---       #103
+      010007F1H   LINE      CODE     ---       #106
+      010007F8H   LINE      CODE     ---       #107
+      010007F8H   LINE      CODE     ---       #108
+      010007FBH   LINE      CODE     ---       #109
+      01000807H   LINE      CODE     ---       #110
+      01000809H   LINE      CODE     ---       #112
+      01000810H   LINE      CODE     ---       #113
+      01000810H   LINE      CODE     ---       #115
+      01000812H   LINE      CODE     ---       #118
+      01000814H   LINE      CODE     ---       #119
+      01000814H   LINE      CODE     ---       #120
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       TICK
-      0100099FH   PUBLIC    CODE     ---       TIMER3_ISR
+      01000A2CH   PUBLIC    CODE     ---       TIMER3_ISR
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
       000000C8H.6 SFRSYM    DATA     BIT       SCON1_PERR
@@ -3054,7 +3054,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000080H.2 SFRSYM    DATA     BIT       BSP_PB0
       000000E8H.7 SFRSYM    DATA     BIT       CLIF0_C3RIF
       000000E4H   SFRSYM    DATA     BYTE      IT01CF
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 48
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 48
 
 
       00000080H.3 SFRSYM    DATA     BIT       BSP_PB1
@@ -3119,7 +3119,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000F0H.7 SFRSYM    DATA     BIT       B_B7
       000000AFH   SFRSYM    DATA     BYTE      PCA0CPM4
       000000DDH   SFRSYM    DATA     BYTE      PCA0CPL5
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 49
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 49
 
 
       000000C3H   SFRSYM    DATA     BYTE      SMB0FCN0
@@ -3184,7 +3184,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000F3H   SFRSYM    DATA     BYTE      P2MDIN
       000000B5H   SFRSYM    DATA     BYTE      CLU2FN
       000000C0H.4 SFRSYM    DATA     BIT       SMB0CN0_STO
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 50
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 50
 
 
       000000F4H   SFRSYM    DATA     BYTE      P3MDIN
@@ -3249,7 +3249,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000088H.4 SFRSYM    DATA     BIT       DACGCF0_D3SRC0
       00000085H   SFRSYM    DATA     BYTE      CLU1MX
       000000B2H   SFRSYM    DATA     BYTE      ADC0CN1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 51
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 51
 
 
       000000D8H.6 SFRSYM    DATA     BIT       PCA0CN0_CR
@@ -3314,7 +3314,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000088H.3 SFRSYM    DATA     BIT       DACGCF0_D01REFSL
       000000B5H   SFRSYM    DATA     WORD      ADC0ASA
       000000E8H   SFRSYM    DATA     BYTE      CLIF0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 52
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 52
 
 
       000000C0H.2 SFRSYM    DATA     BIT       SMB0CN0_ARBLOST
@@ -3379,7 +3379,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000083H   SFRSYM    DATA     BYTE      DPH
       000000C4H   SFRSYM    DATA     BYTE      ADC0GTH
       000000C8H.7 SFRSYM    DATA     BIT       TMR2CN0_TF2H
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 53
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 53
 
 
       000000C8H.3 SFRSYM    DATA     BIT       TMR2CN0_T2SPLIT
@@ -3444,7 +3444,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000088H.6 SFRSYM    DATA     BIT       TCON_TR1
       000000C2H   SFRSYM    DATA     BYTE      SMB0DAT
       000000A0H.6 SFRSYM    DATA     BIT       BSP_DISP_CS
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 54
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 54
 
 
       000000CFH   SFRSYM    DATA     BYTE      TMR2H
@@ -3493,23 +3493,23 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000002H   SYMBOL    DATA     WORD      ms
       00000082H   SYMBOL    DATA     WORD      ticks
 
-      0100099FH   BLOCK     CODE     ---       LVL=0
-      0100099FH   LINE      CODE     ---       #79
-      010009A1H   LINE      CODE     ---       #82
-      010009A4H   LINE      CODE     ---       #84
-      010009ACH   LINE      CODE     ---       #85
+      01000A2CH   BLOCK     CODE     ---       LVL=0
+      01000A2CH   LINE      CODE     ---       #79
+      01000A2EH   LINE      CODE     ---       #82
+      01000A31H   LINE      CODE     ---       #84
+      01000A39H   LINE      CODE     ---       #85
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       SPI_0
-      010004F5H   PUBLIC    CODE     ---       SPI0_ISR
+      01000582H   PUBLIC    CODE     ---       SPI0_ISR
       00000021H   PUBLIC    DATA     BYTE      ?_SPI0_transfer?BYTE
-      010007FCH   PUBLIC    CODE     ---       _SPI0_transfer
+      01000889H   PUBLIC    CODE     ---       _SPI0_transfer
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
       000000C8H.6 SFRSYM    DATA     BIT       SCON1_PERR
       000000D0H.2 SFRSYM    DATA     BIT       PSW_OV
       00000086H   SFRSYM    DATA     BYTE      XOSC0CN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 55
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 55
 
 
       00000090H   SFRSYM    DATA     BYTE      P1
@@ -3574,7 +3574,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000EBH   SFRSYM    DATA     BYTE      PCA0CPL2
       000000A1H   SFRSYM    DATA     BYTE      ADC0ASCF
       000000B6H   SFRSYM    DATA     BYTE      ADC0ASAH
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 56
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 56
 
 
       000000F0H.5 SFRSYM    DATA     BIT       B_B5
@@ -3639,7 +3639,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000D8H.3 SFRSYM    DATA     BIT       PCA0CN0_CCF3
       000000A4H   SFRSYM    DATA     WORD      TMR4
       00000094H   SFRSYM    DATA     BYTE      SBCON1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 57
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 57
 
 
       000000D8H.4 SFRSYM    DATA     BIT       PCA0CN0_CCF4
@@ -3704,7 +3704,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000D4H   SFRSYM    DATA     BYTE      P0SKIP
       000000D1H   SFRSYM    DATA     BYTE      CLOUT0
       000000D8H.0 SFRSYM    DATA     BIT       UART1FCN1_RIE
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 58
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 58
 
 
       000000C0H.0 SFRSYM    DATA     BIT       TMR5CN0_T5XCLK0
@@ -3769,7 +3769,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000B8H.4 SFRSYM    DATA     BIT       IP_PS0
       00000084H   SFRSYM    DATA     WORD      PCA0CP4
       000000FAH   SFRSYM    DATA     BYTE      UART1FCT
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 59
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 59
 
 
       0000008DH   SFRSYM    DATA     BYTE      TH1
@@ -3834,7 +3834,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A0H.5 SFRSYM    DATA     BIT       P2_B5
       00000090H.6 SFRSYM    DATA     BIT       P1_B6
       00000080H.7 SFRSYM    DATA     BIT       P0_B7
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 60
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 60
 
 
       00000098H.2 SFRSYM    DATA     BIT       DACGCF1_D2UDIS
@@ -3899,7 +3899,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000FDH   SFRSYM    DATA     BYTE      TMR2CN1
       00000098H   SFRSYM    DATA     BYTE      TMR4CN0
       000000FEH   SFRSYM    DATA     BYTE      TMR3CN1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 61
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 61
 
 
       000000C0H   SFRSYM    DATA     BYTE      TMR5CN0
@@ -3960,18 +3960,18 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000032H   SYMBOL    DATA     ---       pRxBuf
       00000034H   SYMBOL    DATA     ---       pTxBuf
       00000020H.4 SYMBOL    BIT      BIT       initIsValid
-      0100098EH   SYMBOL    CODE     ---       SPI0_internalInit
+      01000A1BH   SYMBOL    CODE     ---       SPI0_internalInit
 
-      0100098EH   BLOCK     CODE     ---       LVL=0
-      0100098EH   LINE      CODE     ---       #50
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 62
+      01000A1BH   BLOCK     CODE     ---       LVL=0
+      01000A1BH   LINE      CODE     ---       #50
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 62
 
 
-      0100098EH   LINE      CODE     ---       #51
-      0100098EH   LINE      CODE     ---       #53
-      01000994H   LINE      CODE     ---       #54
-      0100099CH   LINE      CODE     ---       #57
-      0100099EH   LINE      CODE     ---       #58
+      01000A1BH   LINE      CODE     ---       #51
+      01000A1BH   LINE      CODE     ---       #53
+      01000A21H   LINE      CODE     ---       #54
+      01000A29H   LINE      CODE     ---       #57
+      01000A2BH   LINE      CODE     ---       #58
       ---         BLOCKEND  ---      ---       LVL=0
       00000006H   SYMBOL    DATA     BYTE      ret
       00000007H   SYMBOL    DATA     BYTE      savedPage
@@ -4012,137 +4012,137 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000004H   SYMBOL    DATA     BYTE      fifoCtrl
       00000006H   SYMBOL    DATA     BYTE      savedPage
 
-      010007FCH   BLOCK     CODE     ---       LVL=0
+      01000889H   BLOCK     CODE     ---       LVL=0
       00000007H   SYMBOL    DATA     ---       pTxBuffer
       00000004H   SYMBOL    DATA     ---       pRxBuffer
       00000003H   SYMBOL    DATA     BYTE      dir
       00000025H   SYMBOL    DATA     BYTE      xferCount
-      010007FCH   BLOCK     CODE     NEAR LAB  LVL=1
+      01000889H   BLOCK     CODE     NEAR LAB  LVL=1
       00000007H   SYMBOL    DATA     BYTE      savedPage
       ---         BLOCKEND  ---      ---       LVL=1
-      010007FCH   LINE      CODE     ---       #591
-      010007FCH   LINE      CODE     ---       #597
-      010007FCH   LINE      CODE     ---       #600
-      010007FFH   LINE      CODE     ---       #601
-      01000802H   LINE      CODE     ---       #602
-      01000805H   LINE      CODE     ---       #603
-      01000807H   LINE      CODE     ---       #604
-      0100080BH   LINE      CODE     ---       #605
-      0100080FH   LINE      CODE     ---       #606
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 63
+      01000889H   LINE      CODE     ---       #591
+      01000889H   LINE      CODE     ---       #597
+      01000889H   LINE      CODE     ---       #600
+      0100088CH   LINE      CODE     ---       #601
+      0100088FH   LINE      CODE     ---       #602
+      01000892H   LINE      CODE     ---       #603
+      01000894H   LINE      CODE     ---       #604
+      01000898H   LINE      CODE     ---       #605
+      0100089CH   LINE      CODE     ---       #606
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 63
 
 
-      01000814H   LINE      CODE     ---       #608
-      01000819H   LINE      CODE     ---       #611
-      0100081CH   LINE      CODE     ---       #612
-      0100081CH   LINE      CODE     ---       #613
-      0100081FH   LINE      CODE     ---       #614
-      0100081FH   LINE      CODE     ---       #618
-      0100081FH   LINE      CODE     ---       #620
-      01000822H   LINE      CODE     ---       #621
-      01000822H   LINE      CODE     ---       #634
-      01000825H   LINE      CODE     ---       #637
-      01000828H   LINE      CODE     ---       #638
-      0100082BH   LINE      CODE     ---       #641
-      01000831H   LINE      CODE     ---       #642
-      01000831H   LINE      CODE     ---       #643
-      01000833H   LINE      CODE     ---       #644
-      01000833H   LINE      CODE     ---       #648
-      0100083AH   LINE      CODE     ---       #649
-      0100083AH   LINE      CODE     ---       #651
-      0100083DH   LINE      CODE     ---       #652
-      0100083DH   LINE      CODE     ---       #653
-      01000842H   LINE      CODE     ---       #654
-      01000844H   LINE      CODE     ---       #655
-      01000846H   LINE      CODE     ---       #659
-      01000846H   LINE      CODE     ---       #660
-      01000849H   LINE      CODE     ---       #661
-      01000849H   LINE      CODE     ---       #662
-      0100084BH   LINE      CODE     ---       #663
-      0100084BH   LINE      CODE     ---       #684
-      0100084DH   LINE      CODE     ---       #687
+      010008A1H   LINE      CODE     ---       #608
+      010008A6H   LINE      CODE     ---       #611
+      010008A9H   LINE      CODE     ---       #612
+      010008A9H   LINE      CODE     ---       #613
+      010008ACH   LINE      CODE     ---       #614
+      010008ACH   LINE      CODE     ---       #618
+      010008ACH   LINE      CODE     ---       #620
+      010008AFH   LINE      CODE     ---       #621
+      010008AFH   LINE      CODE     ---       #634
+      010008B2H   LINE      CODE     ---       #637
+      010008B5H   LINE      CODE     ---       #638
+      010008B8H   LINE      CODE     ---       #641
+      010008BEH   LINE      CODE     ---       #642
+      010008BEH   LINE      CODE     ---       #643
+      010008C0H   LINE      CODE     ---       #644
+      010008C0H   LINE      CODE     ---       #648
+      010008C7H   LINE      CODE     ---       #649
+      010008C7H   LINE      CODE     ---       #651
+      010008CAH   LINE      CODE     ---       #652
+      010008CAH   LINE      CODE     ---       #653
+      010008CFH   LINE      CODE     ---       #654
+      010008D1H   LINE      CODE     ---       #655
+      010008D3H   LINE      CODE     ---       #659
+      010008D3H   LINE      CODE     ---       #660
+      010008D6H   LINE      CODE     ---       #661
+      010008D6H   LINE      CODE     ---       #662
+      010008D8H   LINE      CODE     ---       #663
+      010008D8H   LINE      CODE     ---       #684
+      010008DAH   LINE      CODE     ---       #687
       ---         BLOCKEND  ---      ---       LVL=0
       00000007H   SYMBOL    DATA     BYTE      savedPage
 
-      010004F5H   BLOCK     CODE     ---       LVL=0
-      01000512H   BLOCK     CODE     NEAR LAB  LVL=1
+      01000582H   BLOCK     CODE     ---       LVL=0
+      0100059FH   BLOCK     CODE     NEAR LAB  LVL=1
       00000007H   SYMBOL    DATA     BYTE      intFlags
       00000007H   SYMBOL    DATA     BYTE      fifoFlags
-      01000543H   BLOCK     CODE     NEAR LAB  LVL=2
+      010005D0H   BLOCK     CODE     NEAR LAB  LVL=2
       00000026H   SYMBOL    DATA     BYTE      dummy
       ---         BLOCKEND  ---      ---       LVL=2
       ---         BLOCKEND  ---      ---       LVL=1
-      010004F5H   LINE      CODE     ---       #733
-      01000512H   LINE      CODE     ---       #740
-      01000515H   LINE      CODE     ---       #743
-      01000519H   LINE      CODE     ---       #744
-      0100051EH   LINE      CODE     ---       #749
-      01000520H   LINE      CODE     ---       #754
-      01000524H   LINE      CODE     ---       #755
-      01000524H   LINE      CODE     ---       #761
-      0100052DH   LINE      CODE     ---       #763
-      0100052DH   LINE      CODE     ---       #765
-      01000530H   LINE      CODE     ---       #766
-      01000530H   LINE      CODE     ---       #767
-      01000539H   LINE      CODE     ---       #768
-      01000541H   LINE      CODE     ---       #769
-      01000543H   LINE      CODE     ---       #773
-      01000543H   LINE      CODE     ---       #774
-      01000546H   LINE      CODE     ---       #775
-      01000546H   LINE      CODE     ---       #776
-      01000548H   LINE      CODE     ---       #780
-      0100054CH   LINE      CODE     ---       #781
-      0100054CH   LINE      CODE     ---       #783
-      01000552H   LINE      CODE     ---       #784
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 64
+      01000582H   LINE      CODE     ---       #733
+      0100059FH   LINE      CODE     ---       #740
+      010005A2H   LINE      CODE     ---       #743
+      010005A6H   LINE      CODE     ---       #744
+      010005ABH   LINE      CODE     ---       #749
+      010005ADH   LINE      CODE     ---       #754
+      010005B1H   LINE      CODE     ---       #755
+      010005B1H   LINE      CODE     ---       #761
+      010005BAH   LINE      CODE     ---       #763
+      010005BAH   LINE      CODE     ---       #765
+      010005BDH   LINE      CODE     ---       #766
+      010005BDH   LINE      CODE     ---       #767
+      010005C6H   LINE      CODE     ---       #768
+      010005CEH   LINE      CODE     ---       #769
+      010005D0H   LINE      CODE     ---       #773
+      010005D0H   LINE      CODE     ---       #774
+      010005D3H   LINE      CODE     ---       #775
+      010005D3H   LINE      CODE     ---       #776
+      010005D5H   LINE      CODE     ---       #780
+      010005D9H   LINE      CODE     ---       #781
+      010005D9H   LINE      CODE     ---       #783
+      010005DFH   LINE      CODE     ---       #784
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 64
 
 
-      01000552H   LINE      CODE     ---       #785
-      01000554H   LINE      CODE     ---       #786
-      01000554H   LINE      CODE     ---       #788
-      01000557H   LINE      CODE     ---       #789
-      01000559H   LINE      CODE     ---       #794
-      01000559H   LINE      CODE     ---       #795
-      0100055CH   LINE      CODE     ---       #796
-      0100055CH   LINE      CODE     ---       #797
-      0100055CH   LINE      CODE     ---       #804
-      01000563H   LINE      CODE     ---       #806
-      01000563H   LINE      CODE     ---       #808
-      01000566H   LINE      CODE     ---       #809
-      01000566H   LINE      CODE     ---       #810
-      0100056BH   LINE      CODE     ---       #811
-      0100056DH   LINE      CODE     ---       #812
-      0100056FH   LINE      CODE     ---       #816
-      0100056FH   LINE      CODE     ---       #817
-      01000572H   LINE      CODE     ---       #818
-      01000572H   LINE      CODE     ---       #819
-      01000574H   LINE      CODE     ---       #820
-      01000574H   LINE      CODE     ---       #821
-      01000574H   LINE      CODE     ---       #833
+      010005DFH   LINE      CODE     ---       #785
+      010005E1H   LINE      CODE     ---       #786
+      010005E1H   LINE      CODE     ---       #788
+      010005E4H   LINE      CODE     ---       #789
+      010005E6H   LINE      CODE     ---       #794
+      010005E6H   LINE      CODE     ---       #795
+      010005E9H   LINE      CODE     ---       #796
+      010005E9H   LINE      CODE     ---       #797
+      010005E9H   LINE      CODE     ---       #804
+      010005F0H   LINE      CODE     ---       #806
+      010005F0H   LINE      CODE     ---       #808
+      010005F3H   LINE      CODE     ---       #809
+      010005F3H   LINE      CODE     ---       #810
+      010005F8H   LINE      CODE     ---       #811
+      010005FAH   LINE      CODE     ---       #812
+      010005FCH   LINE      CODE     ---       #816
+      010005FCH   LINE      CODE     ---       #817
+      010005FFH   LINE      CODE     ---       #818
+      010005FFH   LINE      CODE     ---       #819
+      01000601H   LINE      CODE     ---       #820
+      01000601H   LINE      CODE     ---       #821
+      01000601H   LINE      CODE     ---       #833
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       INITDEVICE
-      01000A26H   PUBLIC    CODE     ---       PORTS_3_enter_DefaultMode_from_RESET
-      0100097BH   PUBLIC    CODE     ---       ADC_0_enter_DefaultMode_from_RESET
-      0100093EH   PUBLIC    CODE     ---       INTERRUPT_0_enter_DefaultMode_from_RESET
-      010009CCH   PUBLIC    CODE     ---       SPI_0_enter_DefaultMode_from_RESET
+      01000AB3H   PUBLIC    CODE     ---       PORTS_3_enter_DefaultMode_from_RESET
+      01000A08H   PUBLIC    CODE     ---       ADC_0_enter_DefaultMode_from_RESET
+      010009CBH   PUBLIC    CODE     ---       INTERRUPT_0_enter_DefaultMode_from_RESET
+      01000A59H   PUBLIC    CODE     ---       SPI_0_enter_DefaultMode_from_RESET
       01000076H   PUBLIC    CODE     ---       TIMER_SETUP_0_enter_DefaultMode_from_RESET
       01000036H   PUBLIC    CODE     ---       TIMER16_4_enter_DefaultMode_from_RESET
       01000058H   PUBLIC    CODE     ---       TIMER16_3_enter_DefaultMode_from_RESET
-      01000968H   PUBLIC    CODE     ---       TIMER01_0_enter_DefaultMode_from_RESET
-      010009EDH   PUBLIC    CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
-      01000A17H   PUBLIC    CODE     ---       VREF_0_enter_DefaultMode_from_RESET
-      01000A22H   PUBLIC    CODE     ---       DACGCF_0_enter_DefaultMode_from_RESET
-      01000A1EH   PUBLIC    CODE     ---       DAC_3_enter_DefaultMode_from_RESET
+      010009F5H   PUBLIC    CODE     ---       TIMER01_0_enter_DefaultMode_from_RESET
+      01000A7AH   PUBLIC    CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
+      01000AA4H   PUBLIC    CODE     ---       VREF_0_enter_DefaultMode_from_RESET
+      01000AAFH   PUBLIC    CODE     ---       DACGCF_0_enter_DefaultMode_from_RESET
+      01000AABH   PUBLIC    CODE     ---       DAC_3_enter_DefaultMode_from_RESET
       0100002EH   PUBLIC    CODE     ---       DAC_2_enter_DefaultMode_from_RESET
       01000026H   PUBLIC    CODE     ---       DAC_1_enter_DefaultMode_from_RESET
-      01000A10H   PUBLIC    CODE     ---       DAC_0_enter_DefaultMode_from_RESET
-      01000A09H   PUBLIC    CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
-      010009E3H   PUBLIC    CODE     ---       PORTS_2_enter_DefaultMode_from_RESET
-      010009D9H   PUBLIC    CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
-      010009BFH   PUBLIC    CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
-      0100084EH   PUBLIC    CODE     ---       WDT_0_enter_DefaultMode_from_RESET
-      010008DDH   PUBLIC    CODE     ---       enter_DefaultMode_from_RESET
+      01000A9DH   PUBLIC    CODE     ---       DAC_0_enter_DefaultMode_from_RESET
+      01000A96H   PUBLIC    CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
+      01000A70H   PUBLIC    CODE     ---       PORTS_2_enter_DefaultMode_from_RESET
+      01000A66H   PUBLIC    CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
+      01000A4CH   PUBLIC    CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
+      010008DBH   PUBLIC    CODE     ---       WDT_0_enter_DefaultMode_from_RESET
+      0100096AH   PUBLIC    CODE     ---       enter_DefaultMode_from_RESET
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
       000000C8H.6 SFRSYM    DATA     BIT       SCON1_PERR
@@ -4159,7 +4159,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C0H.1 SFRSYM    DATA     BIT       SMB0CN0_ACK
       000000E8H.1 SFRSYM    DATA     BIT       CLIF0_C0RIF
       000000F3H   SFRSYM    DATA     BYTE      EIE2
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 65
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 65
 
 
       000000E8H.3 SFRSYM    DATA     BIT       CLIF0_C1RIF
@@ -4224,7 +4224,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000AEH   SFRSYM    DATA     BYTE      PCA0CPM3
       00000084H   SFRSYM    DATA     BYTE      PCA0CPL4
       000000D8H.6 SFRSYM    DATA     BIT       UART1FCN1_TXNF
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 66
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 66
 
 
       00000098H.5 SFRSYM    DATA     BIT       SCON0_MCE
@@ -4289,7 +4289,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000ACH   SFRSYM    DATA     BYTE      SMB0TC
       000000F2H   SFRSYM    DATA     BYTE      P1MDIN
       000000B2H   SFRSYM    DATA     BYTE      CLU1FN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 67
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 67
 
 
       000000C8H.4 SFRSYM    DATA     BIT       SCON1_REN
@@ -4354,7 +4354,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H   SFRSYM    DATA     BYTE      ADC0CN0
       000000D8H.4 SFRSYM    DATA     BIT       UART1FCN1_TIE
       000000A8H.0 SFRSYM    DATA     BIT       IE_EX0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 68
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 68
 
 
       00000088H.4 SFRSYM    DATA     BIT       DACGCF0_D3SRC0
@@ -4419,7 +4419,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000B5H   SFRSYM    DATA     WORD      ADC0ASA
       000000E8H   SFRSYM    DATA     BYTE      CLIF0
       000000C0H.2 SFRSYM    DATA     BIT       SMB0CN0_ARBLOST
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 69
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 69
 
 
       000000B8H.5 SFRSYM    DATA     BIT       IP_PT2
@@ -4484,7 +4484,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C4H   SFRSYM    DATA     BYTE      ADC0GTH
       000000C8H.7 SFRSYM    DATA     BIT       TMR2CN0_TF2H
       000000C8H.3 SFRSYM    DATA     BIT       TMR2CN0_T2SPLIT
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 70
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 70
 
 
       000000D0H.6 SFRSYM    DATA     BIT       PSW_AC
@@ -4549,7 +4549,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000CFH   SFRSYM    DATA     BYTE      TMR2H
       000000A1H   SFRSYM    DATA     BYTE      SPI0CFG
       00000095H   SFRSYM    DATA     BYTE      TMR3H
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 71
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 71
 
 
       000000EFH   SFRSYM    DATA     BYTE      HFOCN
@@ -4590,106 +4590,106 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H.6 SFRSYM    DATA     BIT       CLIF0_C3FIF
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
 
-      010008DDH   BLOCK     CODE     ---       LVL=0
-      010008DDH   BLOCK     CODE     NEAR LAB  LVL=1
+      0100096AH   BLOCK     CODE     ---       LVL=0
+      0100096AH   BLOCK     CODE     NEAR LAB  LVL=1
       00000027H   SYMBOL    DATA     BYTE      SFRPAGE_save
       ---         BLOCKEND  ---      ---       LVL=1
-      010008DDH   LINE      CODE     ---       #18
-      010008DDH   LINE      CODE     ---       #19
-      010008DDH   LINE      CODE     ---       #22
-      010008E0H   LINE      CODE     ---       #23
-      010008E3H   LINE      CODE     ---       #24
-      010008E6H   LINE      CODE     ---       #25
-      010008E9H   LINE      CODE     ---       #26
-      010008ECH   LINE      CODE     ---       #27
-      010008EFH   LINE      CODE     ---       #28
-      010008F2H   LINE      CODE     ---       #29
-      010008F5H   LINE      CODE     ---       #30
-      010008F8H   LINE      CODE     ---       #31
-      010008FBH   LINE      CODE     ---       #32
-      010008FEH   LINE      CODE     ---       #33
-      01000901H   LINE      CODE     ---       #34
-      01000904H   LINE      CODE     ---       #35
-      01000907H   LINE      CODE     ---       #36
-      0100090AH   LINE      CODE     ---       #37
-      0100090DH   LINE      CODE     ---       #38
-      01000910H   LINE      CODE     ---       #39
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 72
+      0100096AH   LINE      CODE     ---       #18
+      0100096AH   LINE      CODE     ---       #19
+      0100096AH   LINE      CODE     ---       #22
+      0100096DH   LINE      CODE     ---       #23
+      01000970H   LINE      CODE     ---       #24
+      01000973H   LINE      CODE     ---       #25
+      01000976H   LINE      CODE     ---       #26
+      01000979H   LINE      CODE     ---       #27
+      0100097CH   LINE      CODE     ---       #28
+      0100097FH   LINE      CODE     ---       #29
+      01000982H   LINE      CODE     ---       #30
+      01000985H   LINE      CODE     ---       #31
+      01000988H   LINE      CODE     ---       #32
+      0100098BH   LINE      CODE     ---       #33
+      0100098EH   LINE      CODE     ---       #34
+      01000991H   LINE      CODE     ---       #35
+      01000994H   LINE      CODE     ---       #36
+      01000997H   LINE      CODE     ---       #37
+      0100099AH   LINE      CODE     ---       #38
+      0100099DH   LINE      CODE     ---       #39
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 72
 
 
-      01000913H   LINE      CODE     ---       #40
-      01000916H   LINE      CODE     ---       #41
-      01000919H   LINE      CODE     ---       #42
-      0100091CH   LINE      CODE     ---       #44
-      0100091FH   LINE      CODE     ---       #47
+      010009A0H   LINE      CODE     ---       #40
+      010009A3H   LINE      CODE     ---       #41
+      010009A6H   LINE      CODE     ---       #42
+      010009A9H   LINE      CODE     ---       #44
+      010009ACH   LINE      CODE     ---       #47
       ---         BLOCKEND  ---      ---       LVL=0
 
-      0100084EH   BLOCK     CODE     ---       LVL=0
-      0100084EH   BLOCK     CODE     NEAR LAB  LVL=1
+      010008DBH   BLOCK     CODE     ---       LVL=0
+      010008DBH   BLOCK     CODE     NEAR LAB  LVL=1
       00000028H   SYMBOL    DATA     DWORD     i
       00000020H.5 SYMBOL    BIT      BIT       ea
       ---         BLOCKEND  ---      ---       LVL=1
-      0100084EH   LINE      CODE     ---       #50
-      0100084EH   LINE      CODE     ---       #51
-      0100084EH   LINE      CODE     ---       #62
-      01000851H   LINE      CODE     ---       #65
-      01000854H   LINE      CODE     ---       #68
-      01000870H   LINE      CODE     ---       #69
-      01000870H   LINE      CODE     ---       #70
-      01000871H   LINE      CODE     ---       #71
-      01000888H   LINE      CODE     ---       #74
-      0100088CH   LINE      CODE     ---       #75
-      0100088EH   LINE      CODE     ---       #76
-      01000891H   LINE      CODE     ---       #77
-      01000894H   LINE      CODE     ---       #78
-      01000898H   LINE      CODE     ---       #82
+      010008DBH   LINE      CODE     ---       #50
+      010008DBH   LINE      CODE     ---       #51
+      010008DBH   LINE      CODE     ---       #62
+      010008DEH   LINE      CODE     ---       #65
+      010008E1H   LINE      CODE     ---       #68
+      010008FDH   LINE      CODE     ---       #69
+      010008FDH   LINE      CODE     ---       #70
+      010008FEH   LINE      CODE     ---       #71
+      01000915H   LINE      CODE     ---       #74
+      01000919H   LINE      CODE     ---       #75
+      0100091BH   LINE      CODE     ---       #76
+      0100091EH   LINE      CODE     ---       #77
+      01000921H   LINE      CODE     ---       #78
+      01000925H   LINE      CODE     ---       #82
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009BFH   BLOCK     CODE     ---       LVL=0
-      010009BFH   LINE      CODE     ---       #85
-      010009BFH   LINE      CODE     ---       #86
-      010009BFH   LINE      CODE     ---       #101
-      010009C2H   LINE      CODE     ---       #117
-      010009C5H   LINE      CODE     ---       #133
-      010009C8H   LINE      CODE     ---       #155
-      010009CBH   LINE      CODE     ---       #163
+      01000A4CH   BLOCK     CODE     ---       LVL=0
+      01000A4CH   LINE      CODE     ---       #85
+      01000A4CH   LINE      CODE     ---       #86
+      01000A4CH   LINE      CODE     ---       #101
+      01000A4FH   LINE      CODE     ---       #117
+      01000A52H   LINE      CODE     ---       #133
+      01000A55H   LINE      CODE     ---       #155
+      01000A58H   LINE      CODE     ---       #163
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009D9H   BLOCK     CODE     ---       LVL=0
-      010009D9H   LINE      CODE     ---       #166
-      010009D9H   LINE      CODE     ---       #167
-      010009D9H   LINE      CODE     ---       #182
-      010009DCH   LINE      CODE     ---       #199
-      010009DFH   LINE      CODE     ---       #215
-      010009E2H   LINE      CODE     ---       #226
+      01000A66H   BLOCK     CODE     ---       LVL=0
+      01000A66H   LINE      CODE     ---       #166
+      01000A66H   LINE      CODE     ---       #167
+      01000A66H   LINE      CODE     ---       #182
+      01000A69H   LINE      CODE     ---       #199
+      01000A6CH   LINE      CODE     ---       #215
+      01000A6FH   LINE      CODE     ---       #226
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009E3H   BLOCK     CODE     ---       LVL=0
-      010009E3H   LINE      CODE     ---       #229
-      010009E3H   LINE      CODE     ---       #230
-      010009E3H   LINE      CODE     ---       #244
-      010009E6H   LINE      CODE     ---       #259
-      010009E9H   LINE      CODE     ---       #260
-      010009ECH   LINE      CODE     ---       #270
+      01000A70H   BLOCK     CODE     ---       LVL=0
+      01000A70H   LINE      CODE     ---       #229
+      01000A70H   LINE      CODE     ---       #230
+      01000A70H   LINE      CODE     ---       #244
+      01000A73H   LINE      CODE     ---       #259
+      01000A76H   LINE      CODE     ---       #260
+      01000A79H   LINE      CODE     ---       #270
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A09H   BLOCK     CODE     ---       LVL=0
-      01000A09H   LINE      CODE     ---       #273
-      01000A09H   LINE      CODE     ---       #274
-      01000A09H   LINE      CODE     ---       #283
-      01000A0CH   LINE      CODE     ---       #284
-      01000A0FH   LINE      CODE     ---       #298
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 73
+      01000A96H   BLOCK     CODE     ---       LVL=0
+      01000A96H   LINE      CODE     ---       #273
+      01000A96H   LINE      CODE     ---       #274
+      01000A96H   LINE      CODE     ---       #283
+      01000A99H   LINE      CODE     ---       #284
+      01000A9CH   LINE      CODE     ---       #298
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 73
 
 
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A10H   BLOCK     CODE     ---       LVL=0
-      01000A10H   LINE      CODE     ---       #301
-      01000A10H   LINE      CODE     ---       #302
-      01000A10H   LINE      CODE     ---       #310
-      01000A13H   LINE      CODE     ---       #311
-      01000A16H   LINE      CODE     ---       #318
+      01000A9DH   BLOCK     CODE     ---       LVL=0
+      01000A9DH   LINE      CODE     ---       #301
+      01000A9DH   LINE      CODE     ---       #302
+      01000A9DH   LINE      CODE     ---       #310
+      01000AA0H   LINE      CODE     ---       #311
+      01000AA3H   LINE      CODE     ---       #318
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000026H   BLOCK     CODE     ---       LVL=0
@@ -4706,50 +4706,50 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       01000031H   LINE      CODE     ---       #356
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A1EH   BLOCK     CODE     ---       LVL=0
-      01000A1EH   LINE      CODE     ---       #359
-      01000A1EH   LINE      CODE     ---       #360
-      01000A1EH   LINE      CODE     ---       #368
-      01000A21H   LINE      CODE     ---       #375
+      01000AABH   BLOCK     CODE     ---       LVL=0
+      01000AABH   LINE      CODE     ---       #359
+      01000AABH   LINE      CODE     ---       #360
+      01000AABH   LINE      CODE     ---       #368
+      01000AAEH   LINE      CODE     ---       #375
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A22H   BLOCK     CODE     ---       LVL=0
-      01000A22H   LINE      CODE     ---       #378
-      01000A22H   LINE      CODE     ---       #379
-      01000A22H   LINE      CODE     ---       #389
-      01000A25H   LINE      CODE     ---       #397
+      01000AAFH   BLOCK     CODE     ---       LVL=0
+      01000AAFH   LINE      CODE     ---       #378
+      01000AAFH   LINE      CODE     ---       #379
+      01000AAFH   LINE      CODE     ---       #389
+      01000AB2H   LINE      CODE     ---       #397
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A17H   BLOCK     CODE     ---       LVL=0
-      01000A17H   LINE      CODE     ---       #400
-      01000A17H   LINE      CODE     ---       #401
-      01000A17H   LINE      CODE     ---       #406
-      01000A1AH   LINE      CODE     ---       #407
-      01000A1DH   LINE      CODE     ---       #410
+      01000AA4H   BLOCK     CODE     ---       LVL=0
+      01000AA4H   LINE      CODE     ---       #400
+      01000AA4H   LINE      CODE     ---       #401
+      01000AA4H   LINE      CODE     ---       #406
+      01000AA7H   LINE      CODE     ---       #407
+      01000AAAH   LINE      CODE     ---       #410
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009EDH   BLOCK     CODE     ---       LVL=0
-      010009EDH   LINE      CODE     ---       #413
-      010009EDH   LINE      CODE     ---       #414
-      010009EDH   LINE      CODE     ---       #423
-      010009F0H   LINE      CODE     ---       #424
-      010009F6H   LINE      CODE     ---       #428
+      01000A7AH   BLOCK     CODE     ---       LVL=0
+      01000A7AH   LINE      CODE     ---       #413
+      01000A7AH   LINE      CODE     ---       #414
+      01000A7AH   LINE      CODE     ---       #423
+      01000A7DH   LINE      CODE     ---       #424
+      01000A83H   LINE      CODE     ---       #428
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000968H   BLOCK     CODE     ---       LVL=0
-      01000968H   BLOCK     CODE     NEAR LAB  LVL=1
+      010009F5H   BLOCK     CODE     ---       LVL=0
+      010009F5H   BLOCK     CODE     NEAR LAB  LVL=1
       00000007H   SYMBOL    DATA     BYTE      TCON_save
       ---         BLOCKEND  ---      ---       LVL=1
-      01000968H   LINE      CODE     ---       #431
-      01000968H   LINE      CODE     ---       #432
-      01000968H   LINE      CODE     ---       #436
-      0100096AH   LINE      CODE     ---       #438
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 74
+      010009F5H   LINE      CODE     ---       #431
+      010009F5H   LINE      CODE     ---       #432
+      010009F5H   LINE      CODE     ---       #436
+      010009F7H   LINE      CODE     ---       #438
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 74
 
 
-      0100096DH   LINE      CODE     ---       #446
-      01000970H   LINE      CODE     ---       #460
-      0100097AH   LINE      CODE     ---       #464
+      010009FAH   LINE      CODE     ---       #446
+      010009FDH   LINE      CODE     ---       #460
+      01000A07H   LINE      CODE     ---       #464
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000058H   BLOCK     CODE     ---       LVL=0
@@ -4801,49 +4801,49 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       0100008AH   LINE      CODE     ---       #640
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009CCH   BLOCK     CODE     ---       LVL=0
-      010009CCH   LINE      CODE     ---       #643
-      010009CCH   LINE      CODE     ---       #644
-      010009CCH   LINE      CODE     ---       #649
-      010009CFH   LINE      CODE     ---       #656
-      010009D2H   LINE      CODE     ---       #664
-      010009D5H   LINE      CODE     ---       #665
-      010009D8H   LINE      CODE     ---       #677
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 75
+      01000A59H   BLOCK     CODE     ---       LVL=0
+      01000A59H   LINE      CODE     ---       #643
+      01000A59H   LINE      CODE     ---       #644
+      01000A59H   LINE      CODE     ---       #649
+      01000A5CH   LINE      CODE     ---       #656
+      01000A5FH   LINE      CODE     ---       #664
+      01000A62H   LINE      CODE     ---       #665
+      01000A65H   LINE      CODE     ---       #677
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 75
 
 
       ---         BLOCKEND  ---      ---       LVL=0
 
-      0100093EH   BLOCK     CODE     ---       LVL=0
-      0100093EH   LINE      CODE     ---       #680
-      0100093EH   LINE      CODE     ---       #681
-      0100093EH   LINE      CODE     ---       #693
-      01000941H   LINE      CODE     ---       #706
-      01000944H   LINE      CODE     ---       #721
-      01000947H   LINE      CODE     ---       #722
-      0100094AH   LINE      CODE     ---       #738
-      0100094DH   LINE      CODE     ---       #756
-      01000950H   LINE      CODE     ---       #757
-      01000953H   LINE      CODE     ---       #768
+      010009CBH   BLOCK     CODE     ---       LVL=0
+      010009CBH   LINE      CODE     ---       #680
+      010009CBH   LINE      CODE     ---       #681
+      010009CBH   LINE      CODE     ---       #693
+      010009CEH   LINE      CODE     ---       #706
+      010009D1H   LINE      CODE     ---       #721
+      010009D4H   LINE      CODE     ---       #722
+      010009D7H   LINE      CODE     ---       #738
+      010009DAH   LINE      CODE     ---       #756
+      010009DDH   LINE      CODE     ---       #757
+      010009E0H   LINE      CODE     ---       #768
       ---         BLOCKEND  ---      ---       LVL=0
 
-      0100097BH   BLOCK     CODE     ---       LVL=0
-      0100097BH   LINE      CODE     ---       #771
-      0100097BH   LINE      CODE     ---       #772
-      0100097BH   LINE      CODE     ---       #782
-      0100097EH   LINE      CODE     ---       #790
-      01000981H   LINE      CODE     ---       #799
-      01000984H   LINE      CODE     ---       #808
-      01000987H   LINE      CODE     ---       #816
-      0100098AH   LINE      CODE     ---       #841
-      0100098DH   LINE      CODE     ---       #844
+      01000A08H   BLOCK     CODE     ---       LVL=0
+      01000A08H   LINE      CODE     ---       #771
+      01000A08H   LINE      CODE     ---       #772
+      01000A08H   LINE      CODE     ---       #782
+      01000A0BH   LINE      CODE     ---       #790
+      01000A0EH   LINE      CODE     ---       #799
+      01000A11H   LINE      CODE     ---       #808
+      01000A14H   LINE      CODE     ---       #816
+      01000A17H   LINE      CODE     ---       #841
+      01000A1AH   LINE      CODE     ---       #844
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A26H   BLOCK     CODE     ---       LVL=0
-      01000A26H   LINE      CODE     ---       #847
-      01000A26H   LINE      CODE     ---       #848
-      01000A26H   LINE      CODE     ---       #864
-      01000A29H   LINE      CODE     ---       #868
+      01000AB3H   BLOCK     CODE     ---       LVL=0
+      01000AB3H   LINE      CODE     ---       #847
+      01000AB3H   LINE      CODE     ---       #848
+      01000AB3H   LINE      CODE     ---       #864
+      01000AB6H   LINE      CODE     ---       #868
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       ?C_STARTUP
@@ -4857,14 +4857,14 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000000H   SYMBOL    NUMBER   ---       IBPSTACK
       00000100H   SYMBOL    NUMBER   ---       IBPSTACKTOP
       00000080H   SYMBOL    NUMBER   ---       IDATALEN
-      0100062CH   SYMBOL    CODE     NEAR LAB  IDATALOOP
+      010006B9H   SYMBOL    CODE     NEAR LAB  IDATALOOP
       00000000H   SYMBOL    NUMBER   ---       PBPSTACK
       00000100H   SYMBOL    NUMBER   ---       PBPSTACKTOP
       00000000H   SYMBOL    NUMBER   ---       PDATALEN
       00000000H   SYMBOL    NUMBER   ---       PDATASTART
       00000000H   SYMBOL    NUMBER   ---       PPAGE
       00000000H   SYMBOL    NUMBER   ---       PPAGEENABLE
-      01000626H   SYMBOL    CODE     NEAR LAB  STARTUP1
+      010006B3H   SYMBOL    CODE     NEAR LAB  STARTUP1
       00000000H   SYMBOL    NUMBER   ---       XBPSTACK
       00010000H   SYMBOL    NUMBER   ---       XBPSTACKTOP
       00000000H   SYMBOL    NUMBER   ---       XDATALEN
@@ -4874,27 +4874,27 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       01000000H   LINE      CODE     ---       #126
       ---         BLOCKEND  ---      ---       LVL=0
 
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 76
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 76
 
 
-      01000626H   BLOCK     CODE     NEAR LAB  LVL=0
-      01000626H   LINE      CODE     ---       #134
-      01000629H   LINE      CODE     ---       #138
-      0100062BH   LINE      CODE     ---       #139
-      0100062CH   LINE      CODE     ---       #140
-      0100062DH   LINE      CODE     ---       #141
-      0100062FH   LINE      CODE     ---       #190
-      01000632H   LINE      CODE     ---       #201
+      010006B3H   BLOCK     CODE     NEAR LAB  LVL=0
+      010006B3H   LINE      CODE     ---       #134
+      010006B6H   LINE      CODE     ---       #138
+      010006B8H   LINE      CODE     ---       #139
+      010006B9H   LINE      CODE     ---       #140
+      010006BAH   LINE      CODE     ---       #141
+      010006BCH   LINE      CODE     ---       #190
+      010006BFH   LINE      CODE     ---       #201
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       FUNCTION_GENERATOR
-      01002844H   PUBLIC    CONST    ---       windowedSineTable
-      01002644H   PUBLIC    CONST    ---       sawtoothTable
-      01002444H   PUBLIC    CONST    ---       triangleTable
-      01002244H   PUBLIC    CONST    ---       squareTable
-      01002044H   PUBLIC    CONST    ---       sineTable
-      01000A01H   PUBLIC    CODE     ---       FunctionGenerator_main
-      0100058FH   PUBLIC    CODE     ---       TIMER4_ISR
+      010028D1H   PUBLIC    CONST    ---       windowedSineTable
+      010026D1H   PUBLIC    CONST    ---       sawtoothTable
+      010024D1H   PUBLIC    CONST    ---       triangleTable
+      010022D1H   PUBLIC    CONST    ---       squareTable
+      010020D1H   PUBLIC    CONST    ---       sineTable
+      01000A8EH   PUBLIC    CODE     ---       FunctionGenerator_main
+      0100061CH   PUBLIC    CODE     ---       TIMER4_ISR
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
       000000C8H.6 SFRSYM    DATA     BIT       SCON1_PERR
@@ -4939,7 +4939,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000092H   SFRSYM    DATA     BYTE      TMR3RLL
       000000EAH   SFRSYM    DATA     BYTE      PCA0CPH1
       00000098H.3 SFRSYM    DATA     BIT       SCON0_TB8
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 77
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 77
 
 
       000000F0H.0 SFRSYM    DATA     BIT       B_B0
@@ -5004,7 +5004,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000CAH   SFRSYM    DATA     BYTE      CRC0IN
       000000B6H   SFRSYM    DATA     BYTE      CLU2CF
       000000A6H   SFRSYM    DATA     BYTE      CKCON1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 78
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 78
 
 
       000000C8H.2 SFRSYM    DATA     BIT       TMR2CN0_TR2
@@ -5069,7 +5069,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000BCH   SFRSYM    DATA     BYTE      ADC0CF0
       000000C8H.0 SFRSYM    DATA     BIT       TMR2CN0_T2XCLK0
       00000093H   SFRSYM    DATA     BYTE      DAC1CF0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 79
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 79
 
 
       00000092H   SFRSYM    DATA     BYTE      DAC0CF1
@@ -5134,7 +5134,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       0000008AH   SFRSYM    DATA     BYTE      DAC1H
       00000090H.5 SFRSYM    DATA     BIT       D
       00000090H.4 SFRSYM    DATA     BIT       BSP_LED_G
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 80
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 80
 
 
       00000088H.2 SFRSYM    DATA     BIT       DACGCF0_D1AMEN
@@ -5199,7 +5199,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C6H   SFRSYM    DATA     BYTE      CLEN0
       00000088H.1 SFRSYM    DATA     BIT       TCON_IE0
       000000A0H.0 SFRSYM    DATA     BIT       P2_B0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 81
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 81
 
 
       00000090H.1 SFRSYM    DATA     BIT       P1_B1
@@ -5264,7 +5264,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000098H.1 SFRSYM    DATA     BIT       SCON0_TI
       00000092H   SFRSYM    DATA     BYTE      SBUF1
       000000CDH   SFRSYM    DATA     BYTE      PCON1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 82
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 82
 
 
       000000C6H   SFRSYM    DATA     BYTE      ADC0LTH
@@ -5329,7 +5329,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000D4H   SFRSYM    DATA     BYTE      TMR5L
       000000C8H.5 SFRSYM    DATA     BIT       TMR2CN0_TF2LEN
       000000F8H.6 SFRSYM    DATA     BIT       SPI0CN0_WCOL
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 83
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 83
 
 
       000000F8H.2 SFRSYM    DATA     BIT       SPI0CN0_NSSMD0
@@ -5354,132 +5354,132 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H.6 SFRSYM    DATA     BIT       CLIF0_C3FIF
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
       00000014H   SYMBOL    DATA     ---       phaseOffset
-      01000A2AH   SYMBOL    CONST    ---       thinfont_bits
+      01000AB7H   SYMBOL    CONST    ---       thinfont_bits
       00000018H   SYMBOL    DATA     BYTE      countPressed
       01000003H   SYMBOL    CODE     ---       clear
-      01001C6AH   SYMBOL    CONST    ---       windowed_sine_bits
-      010018A2H   SYMBOL    CONST    ---       sawtooth_bits
+      01001CF7H   SYMBOL    CONST    ---       windowed_sine_bits
+      0100192FH   SYMBOL    CONST    ---       sawtooth_bits
       00000019H   SYMBOL    DATA     ---       currentFreqIndex
       0000001BH   SYMBOL    DATA     BYTE      currentDemoState
-      010003F8H   SYMBOL    CODE     ---       _processInput
-      01000920H   SYMBOL    CODE     ---       getJoystick
-      01002032H   SYMBOL    CONST    ---       nav_up_bits
-      010006B5H   SYMBOL    CODE     ---       _transitionDemoWaveform
-      01001112H   SYMBOL    CONST    ---       square_bits
-      010009AFH   SYMBOL    CODE     ---       getWaitJoystick
-      01000D4AH   SYMBOL    CONST    ---       sine_bits
+      01000284H   SYMBOL    CODE     ---       _processInput
+      010009ADH   SYMBOL    CODE     ---       getJoystick
+      010020BFH   SYMBOL    CONST    ---       nav_up_bits
+      01000742H   SYMBOL    CODE     ---       _transitionDemoWaveform
+      0100119FH   SYMBOL    CONST    ---       square_bits
+      01000A3CH   SYMBOL    CODE     ---       getWaitJoystick
+      01000DD7H   SYMBOL    CONST    ---       sine_bits
       0000001CH   SYMBOL    DATA     ---       currentWaveform
       02000014H   SYMBOL    XDATA    ---       frequency
-      0100203FH   SYMBOL    CONST    ---       nav_right_bits
-      0100203AH   SYMBOL    CONST    ---       nav_left_bits
-      010014DAH   SYMBOL    CONST    ---       triangle_bits
+      010020CCH   SYMBOL    CONST    ---       nav_right_bits
+      010020C7H   SYMBOL    CONST    ---       nav_left_bits
+      01001567H   SYMBOL    CONST    ---       triangle_bits
       0000001EH   SYMBOL    DATA     ---       currentTable
-      01002036H   SYMBOL    CONST    ---       nav_down_bits
+      010020C3H   SYMBOL    CONST    ---       nav_down_bits
 
-      010006B5H   BLOCK     CODE     ---       LVL=0
+      01000742H   BLOCK     CODE     ---       LVL=0
       00000007H   SYMBOL    DATA     BYTE      dir
-      010006B5H   LINE      CODE     ---       #115
-      010006B5H   LINE      CODE     ---       #116
-      010006B5H   LINE      CODE     ---       #117
-      010006BDH   LINE      CODE     ---       #118
-      010006BDH   LINE      CODE     ---       #119
-      010006CFH   LINE      CODE     ---       #120
-      010006CFH   LINE      CODE     ---       #121
-      010006CFH   LINE      CODE     ---       #122
-      010006CFH   LINE      CODE     ---       #123
-      010006CFH   LINE      CODE     ---       #124
-      010006CFH   LINE      CODE     ---       #125
-      010006D1H   LINE      CODE     ---       #127
-      010006D1H   LINE      CODE     ---       #128
-      010006D1H   LINE      CODE     ---       #129
-      010006D1H   LINE      CODE     ---       #130
-      010006D1H   LINE      CODE     ---       #131
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 84
+      01000742H   LINE      CODE     ---       #115
+      01000742H   LINE      CODE     ---       #116
+      01000742H   LINE      CODE     ---       #117
+      0100074AH   LINE      CODE     ---       #118
+      0100074AH   LINE      CODE     ---       #119
+      0100075CH   LINE      CODE     ---       #120
+      0100075CH   LINE      CODE     ---       #121
+      0100075CH   LINE      CODE     ---       #122
+      0100075CH   LINE      CODE     ---       #123
+      0100075CH   LINE      CODE     ---       #124
+      0100075CH   LINE      CODE     ---       #125
+      0100075EH   LINE      CODE     ---       #127
+      0100075EH   LINE      CODE     ---       #128
+      0100075EH   LINE      CODE     ---       #129
+      0100075EH   LINE      CODE     ---       #130
+      0100075EH   LINE      CODE     ---       #131
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 84
 
 
-      010006D3H   LINE      CODE     ---       #133
-      010006D3H   LINE      CODE     ---       #134
-      010006D3H   LINE      CODE     ---       #135
-      010006D3H   LINE      CODE     ---       #136
-      010006D3H   LINE      CODE     ---       #137
-      010006D5H   LINE      CODE     ---       #139
-      010006D5H   LINE      CODE     ---       #140
-      010006D5H   LINE      CODE     ---       #141
-      010006D5H   LINE      CODE     ---       #142
-      010006D5H   LINE      CODE     ---       #143
-      010006D7H   LINE      CODE     ---       #145
-      010006D7H   LINE      CODE     ---       #146
-      010006D7H   LINE      CODE     ---       #147
-      010006D7H   LINE      CODE     ---       #148
-      010006D7H   LINE      CODE     ---       #149
-      010006D9H   LINE      CODE     ---       #150
-      010006D9H   LINE      CODE     ---       #151
-      010006D9H   LINE      CODE     ---       #152
-      010006DFH   LINE      CODE     ---       #153
-      010006DFH   LINE      CODE     ---       #154
-      010006F1H   LINE      CODE     ---       #155
-      010006F1H   LINE      CODE     ---       #156
-      010006F1H   LINE      CODE     ---       #157
-      010006F4H   LINE      CODE     ---       #158
-      010006FAH   LINE      CODE     ---       #159
-      01000700H   LINE      CODE     ---       #160
-      01000701H   LINE      CODE     ---       #162
-      01000701H   LINE      CODE     ---       #163
-      01000704H   LINE      CODE     ---       #164
-      0100070AH   LINE      CODE     ---       #165
-      01000710H   LINE      CODE     ---       #166
-      01000711H   LINE      CODE     ---       #168
-      01000711H   LINE      CODE     ---       #169
-      01000714H   LINE      CODE     ---       #170
-      0100071AH   LINE      CODE     ---       #171
-      01000720H   LINE      CODE     ---       #172
-      01000721H   LINE      CODE     ---       #174
-      01000721H   LINE      CODE     ---       #175
-      01000724H   LINE      CODE     ---       #176
-      0100072AH   LINE      CODE     ---       #177
-      01000730H   LINE      CODE     ---       #178
-      01000731H   LINE      CODE     ---       #180
-      01000731H   LINE      CODE     ---       #181
-      01000734H   LINE      CODE     ---       #182
-      0100073AH   LINE      CODE     ---       #183
-      01000740H   LINE      CODE     ---       #184
-      01000740H   LINE      CODE     ---       #185
-      01000740H   LINE      CODE     ---       #186
-      01000740H   LINE      CODE     ---       #187
+      01000760H   LINE      CODE     ---       #133
+      01000760H   LINE      CODE     ---       #134
+      01000760H   LINE      CODE     ---       #135
+      01000760H   LINE      CODE     ---       #136
+      01000760H   LINE      CODE     ---       #137
+      01000762H   LINE      CODE     ---       #139
+      01000762H   LINE      CODE     ---       #140
+      01000762H   LINE      CODE     ---       #141
+      01000762H   LINE      CODE     ---       #142
+      01000762H   LINE      CODE     ---       #143
+      01000764H   LINE      CODE     ---       #145
+      01000764H   LINE      CODE     ---       #146
+      01000764H   LINE      CODE     ---       #147
+      01000764H   LINE      CODE     ---       #148
+      01000764H   LINE      CODE     ---       #149
+      01000766H   LINE      CODE     ---       #150
+      01000766H   LINE      CODE     ---       #151
+      01000766H   LINE      CODE     ---       #152
+      0100076CH   LINE      CODE     ---       #153
+      0100076CH   LINE      CODE     ---       #154
+      0100077EH   LINE      CODE     ---       #155
+      0100077EH   LINE      CODE     ---       #156
+      0100077EH   LINE      CODE     ---       #157
+      01000781H   LINE      CODE     ---       #158
+      01000787H   LINE      CODE     ---       #159
+      0100078DH   LINE      CODE     ---       #160
+      0100078EH   LINE      CODE     ---       #162
+      0100078EH   LINE      CODE     ---       #163
+      01000791H   LINE      CODE     ---       #164
+      01000797H   LINE      CODE     ---       #165
+      0100079DH   LINE      CODE     ---       #166
+      0100079EH   LINE      CODE     ---       #168
+      0100079EH   LINE      CODE     ---       #169
+      010007A1H   LINE      CODE     ---       #170
+      010007A7H   LINE      CODE     ---       #171
+      010007ADH   LINE      CODE     ---       #172
+      010007AEH   LINE      CODE     ---       #174
+      010007AEH   LINE      CODE     ---       #175
+      010007B1H   LINE      CODE     ---       #176
+      010007B7H   LINE      CODE     ---       #177
+      010007BDH   LINE      CODE     ---       #178
+      010007BEH   LINE      CODE     ---       #180
+      010007BEH   LINE      CODE     ---       #181
+      010007C1H   LINE      CODE     ---       #182
+      010007C7H   LINE      CODE     ---       #183
+      010007CDH   LINE      CODE     ---       #184
+      010007CDH   LINE      CODE     ---       #185
+      010007CDH   LINE      CODE     ---       #186
+      010007CDH   LINE      CODE     ---       #187
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000920H   BLOCK     CODE     ---       LVL=0
-      01000920H   BLOCK     CODE     NEAR LAB  LVL=1
+      010009ADH   BLOCK     CODE     ---       LVL=0
+      010009ADH   BLOCK     CODE     NEAR LAB  LVL=1
       00000004H   SYMBOL    DATA     DWORD     mv
       00000007H   SYMBOL    DATA     BYTE      dir
       ---         BLOCKEND  ---      ---       LVL=1
-      01000920H   LINE      CODE     ---       #197
-      01000920H   LINE      CODE     ---       #198
-      01000920H   LINE      CODE     ---       #202
-      01000922H   LINE      CODE     ---       #203
-      01000925H   LINE      CODE     ---       #204
-      01000927H   LINE      CODE     ---       #206
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 85
+      010009ADH   LINE      CODE     ---       #197
+      010009ADH   LINE      CODE     ---       #198
+      010009ADH   LINE      CODE     ---       #202
+      010009AFH   LINE      CODE     ---       #203
+      010009B2H   LINE      CODE     ---       #204
+      010009B4H   LINE      CODE     ---       #206
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 85
 
 
-      0100093BH   LINE      CODE     ---       #208
+      010009C8H   LINE      CODE     ---       #208
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009AFH   BLOCK     CODE     ---       LVL=0
-      010009AFH   BLOCK     CODE     NEAR LAB  LVL=1
+      01000A3CH   BLOCK     CODE     ---       LVL=0
+      01000A3CH   BLOCK     CODE     NEAR LAB  LVL=1
       00000007H   SYMBOL    DATA     BYTE      dir
       00000027H   SYMBOL    DATA     BYTE      dirSave
       ---         BLOCKEND  ---      ---       LVL=1
-      010009AFH   LINE      CODE     ---       #222
-      010009AFH   LINE      CODE     ---       #223
-      010009AFH   LINE      CODE     ---       #226
-      010009B2H   LINE      CODE     ---       #227
-      010009B4H   LINE      CODE     ---       #230
-      010009B7H   LINE      CODE     ---       #231
-      010009B7H   LINE      CODE     ---       #232
-      010009BAH   LINE      CODE     ---       #233
-      010009BCH   LINE      CODE     ---       #235
-      010009BEH   LINE      CODE     ---       #236
+      01000A3CH   LINE      CODE     ---       #222
+      01000A3CH   LINE      CODE     ---       #223
+      01000A3CH   LINE      CODE     ---       #226
+      01000A3FH   LINE      CODE     ---       #227
+      01000A41H   LINE      CODE     ---       #230
+      01000A44H   LINE      CODE     ---       #231
+      01000A44H   LINE      CODE     ---       #232
+      01000A47H   LINE      CODE     ---       #233
+      01000A49H   LINE      CODE     ---       #235
+      01000A4BH   LINE      CODE     ---       #236
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000003H   BLOCK     CODE     ---       LVL=0
@@ -5495,87 +5495,104 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       01000025H   LINE      CODE     ---       #248
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010003F8H   BLOCK     CODE     ---       LVL=0
+      01000284H   BLOCK     CODE     ---       LVL=0
       00000007H   SYMBOL    DATA     BYTE      dir
-      010003F8H   BLOCK     CODE     NEAR LAB  LVL=1
+      01000284H   BLOCK     CODE     NEAR LAB  LVL=1
       00000027H   SYMBOL    DATA     BYTE      i
+      010002D2H   BLOCK     CODE     NEAR LAB  LVL=2
+      00000028H   SYMBOL    DATA     BYTE      flag
+      ---         BLOCKEND  ---      ---       LVL=2
       ---         BLOCKEND  ---      ---       LVL=1
-      010003F8H   LINE      CODE     ---       #251
-      010003F8H   LINE      CODE     ---       #252
-      010003F8H   LINE      CODE     ---       #255
-      01000403H   LINE      CODE     ---       #256
-      01000403H   LINE      CODE     ---       #257
-      01000406H   LINE      CODE     ---       #258
-      01000406H   LINE      CODE     ---       #261
-      01000414H   LINE      CODE     ---       #262
-      01000424H   LINE      CODE     ---       #263
-      01000424H   LINE      CODE     ---       #264
-      01000429H   LINE      CODE     ---       #265
-      01000429H   LINE      CODE     ---       #266
-      0100042EH   LINE      CODE     ---       #267
-      0100042EH   LINE      CODE     ---       #268
-      01000434H   LINE      CODE     ---       #269
-      01000434H   LINE      CODE     ---       #270
-      01000438H   LINE      CODE     ---       #275
-      01000446H   LINE      CODE     ---       #276
-      01000449H   LINE      CODE     ---       #277
-      01000457H   LINE      CODE     ---       #278
-      0100045FH   LINE      CODE     ---       #279
-      01000463H   LINE      CODE     ---       #280
-      0100046AH   LINE      CODE     ---       #281
-      0100046AH   LINE      CODE     ---       #282
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 86
+      01000284H   LINE      CODE     ---       #251
+      01000284H   LINE      CODE     ---       #252
+      01000284H   LINE      CODE     ---       #255
+      0100028FH   LINE      CODE     ---       #256
+      0100028FH   LINE      CODE     ---       #257
+      01000292H   LINE      CODE     ---       #258
+      01000292H   LINE      CODE     ---       #261
+      010002A0H   LINE      CODE     ---       #262
+      010002B0H   LINE      CODE     ---       #263
+      010002B0H   LINE      CODE     ---       #264
+      010002B5H   LINE      CODE     ---       #265
+      010002B5H   LINE      CODE     ---       #266
+      010002BAH   LINE      CODE     ---       #267
+      010002BAH   LINE      CODE     ---       #268
+      010002C0H   LINE      CODE     ---       #269
+      010002C0H   LINE      CODE     ---       #270
+      010002C0H   LINE      CODE     ---       #271
+      010002C0H   LINE      CODE     ---       #272
+      010002C4H   LINE      CODE     ---       #277
+      010002D2H   LINE      CODE     ---       #278
+      010002D5H   LINE      CODE     ---       #279
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 86
 
 
-      0100046CH   LINE      CODE     ---       #283
-      0100046FH   LINE      CODE     ---       #284
-      0100047DH   LINE      CODE     ---       #285
-      01000487H   LINE      CODE     ---       #286
-      0100048BH   LINE      CODE     ---       #287
-      01000492H   LINE      CODE     ---       #288
-      01000492H   LINE      CODE     ---       #289
-      01000494H   LINE      CODE     ---       #290
-      01000497H   LINE      CODE     ---       #291
-      010004A5H   LINE      CODE     ---       #292
-      010004AFH   LINE      CODE     ---       #293
-      010004B3H   LINE      CODE     ---       #294
-      010004BAH   LINE      CODE     ---       #295
-      010004F4H   LINE      CODE     ---       #296
-      010004F4H   LINE      CODE     ---       #297
-      010004F4H   LINE      CODE     ---       #301
+      010002D8H   LINE      CODE     ---       #280
+      010002E5H   LINE      CODE     ---       #281
+      010002F0H   LINE      CODE     ---       #282
+      010002F4H   LINE      CODE     ---       #283
+      010002F8H   LINE      CODE     ---       #284
+      010002FFH   LINE      CODE     ---       #285
+      01000339H   LINE      CODE     ---       #286
+      01000339H   LINE      CODE     ---       #287
+      0100033CH   LINE      CODE     ---       #288
+      0100033CH   LINE      CODE     ---       #289
+      0100033FH   LINE      CODE     ---       #290
+      0100034DH   LINE      CODE     ---       #291
+      0100035AH   LINE      CODE     ---       #292
+      0100035EH   LINE      CODE     ---       #293
+      01000362H   LINE      CODE     ---       #294
+      01000369H   LINE      CODE     ---       #295
+      010003A3H   LINE      CODE     ---       #296
+      010003A3H   LINE      CODE     ---       #297
+      010003A6H   LINE      CODE     ---       #298
+      010003A6H   LINE      CODE     ---       #299
+      010003A9H   LINE      CODE     ---       #300
+      010003B7H   LINE      CODE     ---       #301
+      010003C4H   LINE      CODE     ---       #302
+      010003C8H   LINE      CODE     ---       #303
+      010003CCH   LINE      CODE     ---       #304
+      010003D3H   LINE      CODE     ---       #305
+      0100040DH   LINE      CODE     ---       #306
+      0100040DH   LINE      CODE     ---       #307
+      0100040DH   LINE      CODE     ---       #308
+      0100040DH   LINE      CODE     ---       #312
       ---         BLOCKEND  ---      ---       LVL=0
 
-      0100058FH   BLOCK     CODE     ---       LVL=0
-      0100059CH   BLOCK     CODE     NEAR LAB  LVL=1
+      0100061CH   BLOCK     CODE     ---       LVL=0
+      01000629H   BLOCK     CODE     NEAR LAB  LVL=1
       00000010H   SYMBOL    DATA     ---       phaseAcc
       0000000DH   SYMBOL    DATA     BYTE      i
       0000002DH   SYMBOL    DATA     ---       temp
       ---         BLOCKEND  ---      ---       LVL=1
-      0100058FH   LINE      CODE     ---       #308
-      0100059CH   LINE      CODE     ---       #317
-      0100059FH   LINE      CODE     ---       #319
-      010005A5H   LINE      CODE     ---       #320
-      010005B1H   LINE      CODE     ---       #321
-      010005CAH   LINE      CODE     ---       #323
-      010005F2H   LINE      CODE     ---       #324
-      010005F5H   LINE      CODE     ---       #326
-      01000604H   LINE      CODE     ---       #332
-      01000607H   LINE      CODE     ---       #335
-      01000611H   LINE      CODE     ---       #336
-      0100061BH   LINE      CODE     ---       #337
+      0100061CH   LINE      CODE     ---       #319
+      01000629H   LINE      CODE     ---       #328
+      0100062CH   LINE      CODE     ---       #330
+      01000632H   LINE      CODE     ---       #331
+      0100063EH   LINE      CODE     ---       #332
+      01000657H   LINE      CODE     ---       #334
+      0100067FH   LINE      CODE     ---       #335
+      01000682H   LINE      CODE     ---       #337
+      01000691H   LINE      CODE     ---       #343
+      01000694H   LINE      CODE     ---       #346
+      0100069EH   LINE      CODE     ---       #347
+      010006A8H   LINE      CODE     ---       #348
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000A01H   BLOCK     CODE     ---       LVL=0
-      01000A01H   LINE      CODE     ---       #343
-      01000A01H   LINE      CODE     ---       #344
-      01000A01H   LINE      CODE     ---       #345
-      01000A01H   LINE      CODE     ---       #346
-      01000A01H   LINE      CODE     ---       #347
-      01000A07H   LINE      CODE     ---       #348
+      01000A8EH   BLOCK     CODE     ---       LVL=0
+      01000A8EH   LINE      CODE     ---       #354
+      01000A8EH   LINE      CODE     ---       #355
+      01000A8EH   LINE      CODE     ---       #356
+      01000A8EH   LINE      CODE     ---       #357
+      01000A8EH   LINE      CODE     ---       #358
+      01000A94H   LINE      CODE     ---       #359
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       MAIN
-      010009F7H   PUBLIC    CODE     ---       main
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 87
+
+
+      01000A84H   PUBLIC    CODE     ---       main
       0100002AH   PUBLIC    CODE     ---       SiLabs_Startup
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
@@ -5589,9 +5606,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000B0H   SFRSYM    DATA     BYTE      P3
       000000C0H.7 SFRSYM    DATA     BIT       SMB0CN0_MASTER
       000000F9H   SFRSYM    DATA     WORD      PCA0
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 87
-
-
       000000E6H   SFRSYM    DATA     BYTE      EIE1
       000000C0H.1 SFRSYM    DATA     BIT       SMB0CN0_ACK
       000000E8H.1 SFRSYM    DATA     BIT       CLIF0_C0RIF
@@ -5640,6 +5654,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000085H   SFRSYM    DATA     BYTE      PCA0CPH4
       000000F0H.3 SFRSYM    DATA     BIT       B_B3
       000000D9H   SFRSYM    DATA     BYTE      PCA0MD
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 88
+
+
       000000DAH   SFRSYM    DATA     BYTE      PCA0CPM0
       000000E9H   SFRSYM    DATA     BYTE      PCA0CPL1
       000000DEH   SFRSYM    DATA     BYTE      PCA0CPH5
@@ -5654,9 +5671,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E8H.0 SFRSYM    DATA     BIT       ADC0CN0_TEMPE
       000000DCH   SFRSYM    DATA     BYTE      PCA0CPM2
       000000F4H   SFRSYM    DATA     BYTE      PCA0CPL3
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 88
-
-
       000000B8H   SFRSYM    DATA     BYTE      IP
       000000F0H.6 SFRSYM    DATA     BIT       B_B6
       000000C5H   SFRSYM    DATA     WORD      ADC0LT
@@ -5705,6 +5719,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000E0H.6 SFRSYM    DATA     BIT       ACC_ACC6
       000000CEH   SFRSYM    DATA     WORD      TMR2
       0000009AH   SFRSYM    DATA     BYTE      SPI0FCN0
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 89
+
+
       000000C7H   SFRSYM    DATA     BYTE      ADC0ASCT
       000000D8H.2 SFRSYM    DATA     BIT       PCA0CN0_CCF2
       000000E0H.7 SFRSYM    DATA     BIT       ACC_ACC7
@@ -5719,9 +5736,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C0H.3 SFRSYM    DATA     BIT       SMB0CN0_ACKRQ
       000000D8H.5 SFRSYM    DATA     BIT       PCA0CN0_CCF5
       000000FFH   SFRSYM    DATA     BYTE      VDM0CN
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 89
-
-
       000000F1H   SFRSYM    DATA     BYTE      P0MDIN
       000000AFH   SFRSYM    DATA     BYTE      CLU0FN
       00000098H.4 SFRSYM    DATA     BIT       SCON0_REN
@@ -5770,6 +5784,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000D0H.0 SFRSYM    DATA     BIT       PSW_PARITY
       000000A8H.4 SFRSYM    DATA     BIT       IE_ES0
       0000009CH   SFRSYM    DATA     BYTE      DAC3CF1
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 90
+
+
       0000009FH   SFRSYM    DATA     BYTE      CMP0MX
       00000098H.0 SFRSYM    DATA     BIT       TMR4CN0_T4XCLK0
       000000A8H.1 SFRSYM    DATA     BIT       IE_ET0
@@ -5784,9 +5801,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A8H.5 SFRSYM    DATA     BIT       IE_ET2
       00000088H.0 SFRSYM    DATA     BIT       DACGCF0_D1SRC0
       000000D5H   SFRSYM    DATA     BYTE      P1SKIP
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 90
-
-
       000000C0H.1 SFRSYM    DATA     BIT       TMR5CN0_T5XCLK1
       00000088H.1 SFRSYM    DATA     BIT       DACGCF0_D1SRC1
       000000CCH   SFRSYM    DATA     BYTE      P2SKIP
@@ -5835,6 +5849,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       0000008DH   SFRSYM    DATA     BYTE      DAC3L
       000000FBH   SFRSYM    DATA     WORD      PCA0CP0
       000000DAH   SFRSYM    DATA     BYTE      UART1PCF
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 91
+
+
       000000E9H   SFRSYM    DATA     WORD      PCA0CP1
       00000088H   SFRSYM    DATA     BYTE      DACGCF0
       000000EBH   SFRSYM    DATA     WORD      PCA0CP2
@@ -5849,9 +5866,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       00000084H   SFRSYM    DATA     WORD      PCA0CP4
       000000FAH   SFRSYM    DATA     BYTE      UART1FCT
       0000008DH   SFRSYM    DATA     BYTE      TH1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 91
-
-
       000000FAH   SFRSYM    DATA     BYTE      PCA0H
       000000F5H   SFRSYM    DATA     BYTE      I2C0FCT
       00000090H.6 SFRSYM    DATA     BIT       BSP_LED_R
@@ -5900,6 +5914,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000B0H.2 SFRSYM    DATA     BIT       P3_B2
       000000A0H.3 SFRSYM    DATA     BIT       P2_B3
       00000090H.4 SFRSYM    DATA     BIT       P1_B4
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 92
+
+
       00000080H.5 SFRSYM    DATA     BIT       P0_B5
       00000098H.0 SFRSYM    DATA     BIT       DACGCF1_D0UDIS
       000000D8H.1 SFRSYM    DATA     BIT       UART1FCN1_RXTO0
@@ -5914,9 +5931,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000A0H.5 SFRSYM    DATA     BIT       P2_B5
       00000090H.6 SFRSYM    DATA     BIT       P1_B6
       00000080H.7 SFRSYM    DATA     BIT       P0_B7
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 92
-
-
       00000098H.2 SFRSYM    DATA     BIT       DACGCF1_D2UDIS
       000000C5H   SFRSYM    DATA     BYTE      SMB0RXLN
       000000F6H   SFRSYM    DATA     BYTE      EIP2H
@@ -5965,6 +5979,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000C8H   SFRSYM    DATA     BYTE      SCON1
       000000FBH   SFRSYM    DATA     BYTE      P2MAT
       00000098H.6 SFRSYM    DATA     BIT       TMR4CN0_TF4L
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 93
+
+
       000000E8H.4 SFRSYM    DATA     BIT       ADC0CN0_ADBUSY
       000000D6H   SFRSYM    DATA     BYTE      SMB0ADM
       000000C5H   SFRSYM    DATA     BYTE      ADC0LTL
@@ -5979,9 +5996,6 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000FDH   SFRSYM    DATA     BYTE      TMR2CN1
       00000098H   SFRSYM    DATA     BYTE      TMR4CN0
       000000FEH   SFRSYM    DATA     BYTE      TMR3CN1
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 93
-
-
       000000B0H.4 SFRSYM    DATA     BIT       BSP_DISP_EN
       000000C0H   SFRSYM    DATA     BYTE      TMR5CN0
       000000FFH   SFRSYM    DATA     BYTE      TMR4CN1
@@ -6030,6 +6044,9 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       000000F7H   SFRSYM    DATA     BYTE      SPI0FCT
       000000B6H   SFRSYM    DATA     BYTE      REVID
       000000C0H.5 SFRSYM    DATA     BIT       TMR5CN0_TF5LEN
+LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:51:00  PAGE 94
+
+
       000000E8H.6 SFRSYM    DATA     BIT       CLIF0_C3FIF
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
 
@@ -6039,20 +6056,17 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       0100002AH   LINE      CODE     ---       #79
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010009F7H   BLOCK     CODE     ---       LVL=0
-      010009F7H   LINE      CODE     ---       #84
-      010009F7H   LINE      CODE     ---       #85
-      010009F7H   LINE      CODE     ---       #86
-      010009FAH   LINE      CODE     ---       #89
-LX51 LINKER/LOCATER V4.66.97.0                                                        01/25/2022  14:17:50  PAGE 94
-
-
-      010009FCH   LINE      CODE     ---       #91
-      010009FFH   LINE      CODE     ---       #93
+      01000A84H   BLOCK     CODE     ---       LVL=0
+      01000A84H   LINE      CODE     ---       #84
+      01000A84H   LINE      CODE     ---       #85
+      01000A84H   LINE      CODE     ---       #86
+      01000A87H   LINE      CODE     ---       #89
+      01000A89H   LINE      CODE     ---       #91
+      01000A8CH   LINE      CODE     ---       #93
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       ?C_INIT
-      01000670H   PUBLIC    CODE     ---       ?C_START
+      010006FDH   PUBLIC    CODE     ---       ?C_START
 
       ---         MODULE    ---      ---       ?C?CLDPTR
       0100008EH   PUBLIC    CODE     ---       ?C?CLDPTR
@@ -6070,7 +6084,7 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       010001B4H   PUBLIC    CODE     ---       ?C?ULDIV
 
       ---         MODULE    ---      ---       ?C?SLDIV
-      01000899H   PUBLIC    CODE     ---       ?C?SLDIV
+      01000926H   PUBLIC    CODE     ---       ?C?SLDIV
 
       ---         MODULE    ---      ---       ?C?ULCMP
       01000246H   PUBLIC    CODE     ---       ?C?ULCMP
@@ -6078,5 +6092,5 @@ SYMBOL TABLE OF MODULE:  LASERBEEAUDIO.OMF.CRBUILD (JOYSTICK)
       ---         MODULE    ---      ---       ?C?LIMUL
       01000257H   PUBLIC    CODE     ---       ?C?LIMUL
 
-Program Size: data=59.6 xdata=36 const=8218 code=2599
+Program Size: data=59.6 xdata=36 const=8218 code=2740
 LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

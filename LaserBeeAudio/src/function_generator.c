@@ -265,7 +265,9 @@ static void processInput(uint8_t dir)
         case 1 :
           if (D) clear(); break;
         case 2 :
-          if (Ds) clear();
+          if (Ds) clear(); break;
+        default:
+          break;
       }
   }
 
@@ -273,26 +275,35 @@ static void processInput(uint8_t dir)
   //check each key for pressed
 
   if (countPressed < NUM_VOICES){
+    uint8_t flag = 0;
     if (!C1){
         for (i = 0; i < NUM_VOICES; i++){
-            if (currentFreqIndex[i] == 0) break;
+            if (currentFreqIndex[i] == 0) flag = 1;
         }
-        currentFreqIndex[countPressed] = 0;
-        phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+        if (!flag){
+          currentFreqIndex[countPressed] = 0;
+          phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+        }
+        flag = 0;
     }
-    else if (!D){
+    if (!D){
         for (i = 0; i < NUM_VOICES; i++){
-                  if (currentFreqIndex[i] == 1) break;
+                  if (currentFreqIndex[i] == 1) flag = 1;
               }
+        if (!flag){
         currentFreqIndex[countPressed] = 1;
         phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+        }
+        flag = 0;
       }
-    else if (!Ds){
+    if (!Ds){
         for (i = 0; i < NUM_VOICES; i++){
-                  if (currentFreqIndex[i] == 2) break;
+                  if (currentFreqIndex[i] == 2) flag = 1;
               }
-        currentFreqIndex[countPressed] = 2;
-        phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+        if (!flag){
+          currentFreqIndex[countPressed] = 2;
+          phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+        }
       }
   }
 
