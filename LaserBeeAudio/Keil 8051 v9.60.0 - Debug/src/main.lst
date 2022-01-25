@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   MAIN                                                              01/22/2022 19:49:48 PAGE 1   
+C51 COMPILER V9.60.0.0   MAIN                                                              01/25/2022 13:12:37 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
@@ -63,7 +63,7 @@ line level    source
   41          //    In Simplicity Studio IDE, select Run -> Debug from the menu bar,
   42          //    click the Debug button in the quick menu, or press F11.
   43          // 4) Run the code.
-C51 COMPILER V9.60.0.0   MAIN                                                              01/22/2022 19:49:48 PAGE 2   
+C51 COMPILER V9.60.0.0   MAIN                                                              01/25/2022 13:12:37 PAGE 2   
 
   44          //    In Simplicity Studio IDE, select Run -> Resume from the menu bar,
   45          //    click the Resume button in the quick menu, or press F8.
@@ -128,7 +128,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =   ----    ----
    EDATA SIZE       =   ----    ----
    HDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   MAIN                                                              01/22/2022 19:49:48 PAGE 3   
+C51 COMPILER V9.60.0.0   MAIN                                                              01/25/2022 13:12:37 PAGE 3   
 
    XDATA CONST SIZE =   ----    ----
    FAR CONST SIZE   =   ----    ----

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 1   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE INITDEVICE
@@ -63,7 +63,7 @@ line level    source
   41   1        SPI_0_enter_DefaultMode_from_RESET ();
   42   1        INTERRUPT_0_enter_DefaultMode_from_RESET ();
   43   1        // Restore the SFRPAGE
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 2   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 2   
 
   44   1        SFRPAGE = SFRPAGE_save;
   45   1        // [Config Calls]$
@@ -128,7 +128,7 @@ line level    source
  104   1        // [P0MDOUT - Port 0 Output Mode]$
  105   1      
  106   1        // $[P0MDIN - Port 0 Input Mode]
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 3   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 3   
 
  107   1        /***********************************************************************
  108   1         - P0.0 pin is configured for analog mode
@@ -193,7 +193,7 @@ line level    source
  167          {
  168   1        // $[P1 - Port 1 Pin Latch]
  169   1        // [P1 - Port 1 Pin Latch]$
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 4   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 4   
 
  170   1      
  171   1        // $[P1MDOUT - Port 1 Output Mode]
@@ -236,13 +236,13 @@ line level    source
  208   1         - P1.2 pin is skipped by the crossbar
  209   1         - P1.3 pin is skipped by the crossbar
  210   1         - P1.4 pin is skipped by the crossbar
- 211   1         - P1.5 pin is not skipped by the crossbar
- 212   1         - P1.6 pin is not skipped by the crossbar
+ 211   1         - P1.5 pin is skipped by the crossbar
+ 212   1         - P1.6 pin is skipped by the crossbar
  213   1         - P1.7 pin is skipped by the crossbar
  214   1         ***********************************************************************/
  215   1        P1SKIP = P1SKIP_B0__NOT_SKIPPED | P1SKIP_B1__SKIPPED | P1SKIP_B2__SKIPPED
- 216   1            | P1SKIP_B3__SKIPPED | P1SKIP_B4__SKIPPED | P1SKIP_B5__NOT_SKIPPED
- 217   1            | P1SKIP_B6__NOT_SKIPPED | P1SKIP_B7__SKIPPED;
+ 216   1            | P1SKIP_B3__SKIPPED | P1SKIP_B4__SKIPPED | P1SKIP_B5__SKIPPED
+ 217   1            | P1SKIP_B6__SKIPPED | P1SKIP_B7__SKIPPED;
  218   1        // [P1SKIP - Port 1 Skip]$
  219   1      
  220   1        // $[P1MASK - Port 1 Mask]
@@ -258,7 +258,7 @@ line level    source
  230          {
  231   1        // $[P2 - Port 2 Pin Latch]
  232   1        // [P2 - Port 2 Pin Latch]$
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 5   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 5   
 
  233   1      
  234   1        // $[P2MDOUT - Port 2 Output Mode]
@@ -323,7 +323,7 @@ line level    source
  293   1        // [XBR0 - Port I/O Crossbar 0]$
  294   1      
  295   1        // $[XBR1 - Port I/O Crossbar 1]
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 6   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 6   
 
  296   1        // [XBR1 - Port I/O Crossbar 1]$
  297   1      
@@ -388,7 +388,7 @@ line level    source
  356   1      }
  357          
  358          extern void
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 7   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 7   
 
  359          DAC_3_enter_DefaultMode_from_RESET (void)
  360          {
@@ -453,7 +453,7 @@ line level    source
  419   1        /***********************************************************************
  420   1         - Clock derived from the Internal High Frequency Oscillator 0
  421   1         - SYSCLK is equal to selected clock source divided by 1
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 8   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 8   
 
  422   1         ***********************************************************************/
  423   1        CLKSEL = CLKSEL_CLKSL__HFOSC0 | CLKSEL_CLKDIV__SYSCLK_DIV_1;
@@ -518,7 +518,7 @@ line level    source
  482   1      
  483   1        // $[TMR3H - Timer 3 High Byte]
  484   1        /***********************************************************************
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 9   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 9   
 
  485   1         - Timer 3 High Byte = 0xF8
  486   1         ***********************************************************************/
@@ -583,7 +583,7 @@ line level    source
  545   1         - Timer 4 High Byte = 0xFE
  546   1         ***********************************************************************/
  547   1        TMR4H = (0xFE << TMR4H_TMR4H__SHIFT);
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 10  
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 10  
 
  548   1        // [TMR4H - Timer 4 High Byte]$
  549   1      
@@ -648,7 +648,7 @@ line level    source
  608   1        /***********************************************************************
  609   1         - Timer 4 high byte uses the clock defined by T4XCLK in TMR4CN0
  610   1         - Timer 4 low byte uses the system clock
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 11  
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 11  
 
  611   1         - Timer 5 high byte uses the clock defined by T5XCLK in TMR5CN0
  612   1         - Timer 5 low byte uses the clock defined by T5XCLK in TMR5CN0
@@ -713,7 +713,7 @@ line level    source
  671   1        // $[SPI0FCN0 - SPI0 FIFO Control 0]
  672   1        // [SPI0FCN0 - SPI0 FIFO Control 0]$
  673   1      
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 12  
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 12  
 
  674   1        // $[SPI0FCN1 - SPI0 FIFO Control 1]
  675   1        // [SPI0FCN1 - SPI0 FIFO Control 1]$
@@ -778,7 +778,7 @@ line level    source
  734   1         - Timer 4 interrupt priority LSB set to high
  735   1         - Timer 5 interrupt priority LSB set to low
  736   1         - UART1 interrupt priority LSB set to low
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 13  
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 13  
 
  737   1         ***********************************************************************/
  738   1        EIP2 = EIP2_PCL0__LOW | EIP2_PI2C0__LOW | EIP2_PT4__HIGH | EIP2_PT5__LOW
@@ -843,7 +843,7 @@ line level    source
  797   1         - Power Up Delay Time = 0x1F
  798   1         ***********************************************************************/
  799   1        ADC0CF2 = ADC0CF2_GNDSL__GND_PIN | ADC0CF2_REFSL__VDD_PIN
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 14  
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 14  
 
  800   1            | (0x1F << ADC0CF2_ADPWR__SHIFT);
  801   1        // [ADC0CF2 - ADC0 Power Control]$
@@ -908,7 +908,7 @@ line level    source
  860   1         - P3.3 pin is configured for analog mode
  861   1         - P3.4 pin is configured for digital mode
  862   1         - P3.7 pin is configured for digital mode
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/22/2022 19:49:48 PAGE 15  
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        01/25/2022 12:03:51 PAGE 15  
 
  863   1         ***********************************************************************/
  864   1        P3MDIN = P3MDIN_B0__ANALOG | P3MDIN_B1__ANALOG | P3MDIN_B2__ANALOG

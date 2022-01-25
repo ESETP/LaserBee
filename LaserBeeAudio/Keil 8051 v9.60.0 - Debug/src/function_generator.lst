@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/22/2022 21:08:33 PAGE 1   
+C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/25/2022 13:28:34 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE FUNCTION_GENERATOR
@@ -63,7 +63,7 @@ line level    source
   40          ///////////////////////////////////////////////////////////////////////////////
   41          
   42          #include "bsp.h"
-C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/22/2022 21:08:33 PAGE 2   
+C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/25/2022 13:28:34 PAGE 2   
 
   43          #include "tick.h"
   44          #include "render.h"
@@ -87,258 +87,277 @@ line level    source
   62          // Globals
   63          ///////////////////////////////////////////////////////////////////////////////
   64          
-  65          // Pins
-  66          SI_SBIT(IN1, SFR_P1, 4);                  // P1.4 IN1
-  67          //SI_SBIT(IN2, SFR_P1, 5);                  // P1.5 IN2
-  68          //SI_SBIT(IN3, SFR_P1, 6);                  // P1.6 IN3
+  65          //pins
+  66          //SI_SBIT(C1, SFR_P1, 4);
+  67          //SI_SBIT(D, SFR_P1, 5);
+  68          //sbit Ds = 0x90^6;
   69          
-  70          // Demo state variables
-  71          static DemoState currentDemoState = DEMO_SINE;
-  72          static SI_VARIABLE_SEGMENT_POINTER(currentTable, uint16_t, const SI_SEG_CODE) = sineTable; // current wave
+  70          
+  71          #define NUM_KEYS 3
+  72          sbit keys[] = {0x90^4, 0x90^5, 0x90^6};
+*** ERROR C141 IN LINE 72 OF C:\Users\markh\OneDrive\Documents\Uni\4th Year\Eng\EE4\LaserBee\LaserBeeAudio\src\function_
+             -generator.c: syntax error near '[', expected '='
+*** ERROR C141 IN LINE 72 OF C:\Users\markh\OneDrive\Documents\Uni\4th Year\Eng\EE4\LaserBee\LaserBeeAudio\src\function_
+             -generator.c: syntax error near '}', expected ';'
+  73          
+  74          // Demo state variables
+  75          static DemoState currentDemoState = DEMO_SINE;
+  76          static SI_VARIABLE_SEGMENT_POINTER(currentTable, uint16_t, const SI_SEG_CODE) = sineTable; // current wave
              -form table for DAC output
-  73          static SI_VARIABLE_SEGMENT_POINTER(currentWaveform, uint8_t, const SI_SEG_CODE) = sine_bits; // current wa
+  77          static SI_VARIABLE_SEGMENT_POINTER(currentWaveform, uint8_t, const SI_SEG_CODE) = sine_bits; // current wa
              -veform picture
-  74          
-  75          // Frequency selection
-  76          #define SUPPORTED_NUM_FREQ 8
-  77          static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA) = {
-  78              10L,
-  79              20L,
-  80              50L,
-  81              100L,
-  82              200L,
-  83              440L,
-  84              1000L,
-  85              2000L
-  86          };
-  87          
-  88          // Current Frequency Selection
-  89          static uint8_t currentFreqIndex = 3;
-  90          
-  91          // Phase offset (updated when frequency is changed)
-  92          static uint16_t phaseOffset1 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
-  93          //static uint16_t phaseOffset2 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
-  94          //static uint16_t new_freq = 440;
-  95          
-  96          ///////////////////////////////////////////////////////////////////////////////
-  97          // Supporting Functions
-  98          ///////////////////////////////////////////////////////////////////////////////
+  78          
+  79          // Frequency selection
+  80          #define SUPPORTED_NUM_FREQ 8
+  81          static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA) = {
+  82              261L,
+  83              293L,
+  84              311L,
+  85              100L,
+  86              200L,
+  87              440L,
+  88              1000L,
+  89              2000L
+  90          };
+  91          
+  92          // Current Frequency Selection
+  93          #define NUM_VOICES 2
+  94          static uint8_t currentFreqIndex[NUM_VOICES] = {0};
+  95          static uint8_t countPressed = 0;
+  96          
+  97          // Phase offset (updated when frequency is changed)
+  98          static uint16_t phaseOffset[NUM_VOICES] = {0};
   99          
- 100          //-----------------------------------------------------------------------------
- 101          // transitionDemoWaveform
- 102          //-----------------------------------------------------------------------------
- 103          //
-C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/22/2022 21:08:33 PAGE 3   
+C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/25/2022 13:28:34 PAGE 3   
 
- 104          // Change function/waveform.
- 105          // Left  - change function order: sine < square < triangle < sawtooth < windowed sine
- 106          // Right - change function order: sine > square > triangle > sawtooth > windowed sine
- 107          //
- 108          // dir - valid arguments are: JOYSTICK_E, JOYSTICK_W
- 109          //
- 110          static void transitionDemoWaveform(uint8_t dir)
- 111          {
- 112   1        if (dir == JOYSTICK_E)
- 113   1        {
- 114   2          switch (currentDemoState)
- 115   2          {
- 116   3          case DEMO_SINE:
- 117   3            currentDemoState = DEMO_SQUARE;
- 118   3            currentWaveform = square_bits;
- 119   3            currentTable = squareTable;
- 120   3            break;
- 121   3      
- 122   3          case DEMO_SQUARE:
- 123   3            currentDemoState = DEMO_TRIANGLE;
- 124   3            currentWaveform = triangle_bits;
- 125   3            currentTable = triangleTable;
- 126   3            break;
- 127   3      
- 128   3          case DEMO_TRIANGLE:
- 129   3                currentDemoState = DEMO_SAWTOOTH;
- 130   3            currentWaveform = sawtooth_bits;
- 131   3            currentTable = sawtoothTable;
- 132   3            break;
- 133   3      
- 134   3          case DEMO_SAWTOOTH:
- 135   3            currentDemoState = DEMO_WINDOWED_SINE;
- 136   3            currentWaveform = windowed_sine_bits;
- 137   3            currentTable = windowedSineTable;
- 138   3            break;
- 139   3      
- 140   3          case DEMO_WINDOWED_SINE:
- 141   3            currentDemoState = DEMO_SINE;
- 142   3            currentWaveform = sine_bits;
- 143   3            currentTable = sineTable;
- 144   3            break;
- 145   3          }
- 146   2        }
- 147   1        else if (dir == JOYSTICK_W)
- 148   1        {
- 149   2          switch (currentDemoState)
- 150   2          {
- 151   3          case DEMO_SINE:
- 152   3            currentDemoState = DEMO_WINDOWED_SINE;
- 153   3            currentWaveform = windowed_sine_bits;
- 154   3            currentTable = windowedSineTable;
- 155   3            break;
- 156   3      
- 157   3          case DEMO_SQUARE:
- 158   3            currentDemoState = DEMO_SINE;
- 159   3            currentWaveform = sine_bits;
- 160   3            currentTable = sineTable;
- 161   3            break;
- 162   3      
- 163   3          case DEMO_TRIANGLE:
- 164   3            currentDemoState = DEMO_SQUARE;
- 165   3            currentWaveform = square_bits;
- 166   3            currentTable = squareTable;
-C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/22/2022 21:08:33 PAGE 4   
+ 100          
+ 101          ///////////////////////////////////////////////////////////////////////////////
+ 102          // Supporting Functions
+ 103          ///////////////////////////////////////////////////////////////////////////////
+ 104          
+ 105          //-----------------------------------------------------------------------------
+ 106          // transitionDemoWaveform
+ 107          //-----------------------------------------------------------------------------
+ 108          //
+ 109          // Change function/waveform.
+ 110          // Left  - change function order: sine < square < triangle < sawtooth < windowed sine
+ 111          // Right - change function order: sine > square > triangle > sawtooth > windowed sine
+ 112          //
+ 113          // dir - valid arguments are: JOYSTICK_E, JOYSTICK_W
+ 114          //
+ 115          static void transitionDemoWaveform(uint8_t dir)
+ 116          {
+ 117   1        if (dir == JOYSTICK_E)
+ 118   1        {
+ 119   2          switch (currentDemoState)
+ 120   2          {
+ 121   3          case DEMO_SINE:
+ 122   3            currentDemoState = DEMO_SQUARE;
+ 123   3            currentWaveform = square_bits;
+ 124   3            currentTable = squareTable;
+ 125   3            break;
+ 126   3      
+ 127   3          case DEMO_SQUARE:
+ 128   3            currentDemoState = DEMO_TRIANGLE;
+ 129   3            currentWaveform = triangle_bits;
+ 130   3            currentTable = triangleTable;
+ 131   3            break;
+ 132   3      
+ 133   3          case DEMO_TRIANGLE:
+ 134   3                currentDemoState = DEMO_SAWTOOTH;
+ 135   3            currentWaveform = sawtooth_bits;
+ 136   3            currentTable = sawtoothTable;
+ 137   3            break;
+ 138   3      
+ 139   3          case DEMO_SAWTOOTH:
+ 140   3            currentDemoState = DEMO_WINDOWED_SINE;
+ 141   3            currentWaveform = windowed_sine_bits;
+ 142   3            currentTable = windowedSineTable;
+ 143   3            break;
+ 144   3      
+ 145   3          case DEMO_WINDOWED_SINE:
+ 146   3            currentDemoState = DEMO_SINE;
+ 147   3            currentWaveform = sine_bits;
+ 148   3            currentTable = sineTable;
+ 149   3            break;
+ 150   3          }
+ 151   2        }
+ 152   1        else if (dir == JOYSTICK_W)
+ 153   1        {
+ 154   2          switch (currentDemoState)
+ 155   2          {
+ 156   3          case DEMO_SINE:
+ 157   3            currentDemoState = DEMO_WINDOWED_SINE;
+ 158   3            currentWaveform = windowed_sine_bits;
+ 159   3            currentTable = windowedSineTable;
+ 160   3            break;
+ 161   3      
+ 162   3          case DEMO_SQUARE:
+C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/25/2022 13:28:34 PAGE 4   
 
- 167   3            break;
- 168   3      
- 169   3          case DEMO_SAWTOOTH:
- 170   3            currentDemoState = DEMO_TRIANGLE;
- 171   3            currentWaveform = triangle_bits;
- 172   3            currentTable = triangleTable;
- 173   3            break;
- 174   3      
- 175   3          case DEMO_WINDOWED_SINE:
- 176   3            currentDemoState = DEMO_SAWTOOTH;
- 177   3            currentWaveform = sawtooth_bits;
- 178   3            currentTable = sawtoothTable;
- 179   3            break;
- 180   3          }
- 181   2        }
- 182   1      }
- 183          
- 184          //-----------------------------------------------------------------------------
- 185          // getJoystick
- 186          //-----------------------------------------------------------------------------
- 187          //
- 188          // Get new ADC sample and return joystick direction. Valid return values:
- 189          //  JOYSTICK_NONE   JOYSTICK_N   JOYSTICK_S
- 190          //  JOYSTICK_C      JOYSTICK_E   JOYSTICK_W
- 191          //
- 192          static uint8_t getJoystick(void)
- 193          {
- 194   1        uint32_t mv;
- 195   1        uint8_t dir;
- 196   1      
- 197   1        ADC0CN0_ADBUSY = 1;
- 198   1        while (!ADC0CN0_ADINT);
- 199   1        ADC0CN0_ADINT = 0;
- 200   1      
- 201   1        mv = ((uint32_t)ADC0) * 3300 / 1024;
- 202   1      
- 203   1        dir = JOYSTICK_convert_mv_to_direction(mv);
- 204   1      
- 205   1        return dir;
- 206   1      }
- 207          
- 208          //-----------------------------------------------------------------------------
- 209          // getWaitJoystick
- 210          //-----------------------------------------------------------------------------
- 211          //
- 212          // Get joystick input. If joystick was moved, wait for release. Return joystick
- 213          // direction. Valid return values:
- 214          //  JOYSTICK_NONE   JOYSTICK_N   JOYSTICK_S
- 215          //  JOYSTICK_C      JOYSTICK_E   JOYSTICK_W
+ 163   3            currentDemoState = DEMO_SINE;
+ 164   3            currentWaveform = sine_bits;
+ 165   3            currentTable = sineTable;
+ 166   3            break;
+ 167   3      
+ 168   3          case DEMO_TRIANGLE:
+ 169   3            currentDemoState = DEMO_SQUARE;
+ 170   3            currentWaveform = square_bits;
+ 171   3            currentTable = squareTable;
+ 172   3            break;
+ 173   3      
+ 174   3          case DEMO_SAWTOOTH:
+ 175   3            currentDemoState = DEMO_TRIANGLE;
+ 176   3            currentWaveform = triangle_bits;
+ 177   3            currentTable = triangleTable;
+ 178   3            break;
+ 179   3      
+ 180   3          case DEMO_WINDOWED_SINE:
+ 181   3            currentDemoState = DEMO_SAWTOOTH;
+ 182   3            currentWaveform = sawtooth_bits;
+ 183   3            currentTable = sawtoothTable;
+ 184   3            break;
+ 185   3          }
+ 186   2        }
+ 187   1      }
+ 188          
+ 189          //-----------------------------------------------------------------------------
+ 190          // getJoystick
+ 191          //-----------------------------------------------------------------------------
+ 192          //
+ 193          // Get new ADC sample and return joystick direction. Valid return values:
+ 194          //  JOYSTICK_NONE   JOYSTICK_N   JOYSTICK_S
+ 195          //  JOYSTICK_C      JOYSTICK_E   JOYSTICK_W
+ 196          //
+ 197          static uint8_t getJoystick(void)
+ 198          {
+ 199   1        uint32_t mv;
+ 200   1        uint8_t dir;
+ 201   1      
+ 202   1        ADC0CN0_ADBUSY = 1;
+ 203   1        while (!ADC0CN0_ADINT);
+ 204   1        ADC0CN0_ADINT = 0;
+ 205   1      
+ 206   1        mv = ((uint32_t)ADC0) * 3300 / 1024;
+ 207   1      
+ 208   1        dir = JOYSTICK_convert_mv_to_direction(mv);
+ 209   1      
+ 210   1        return dir;
+ 211   1      }
+ 212          
+ 213          //-----------------------------------------------------------------------------
+ 214          // getWaitJoystick
+ 215          //-----------------------------------------------------------------------------
  216          //
- 217          static uint8_t getWaitJoystick(void)
- 218          {
- 219   1        uint8_t dir, dirSave;
- 220   1      
- 221   1        dir = getJoystick();
- 222   1        dirSave = dir;
- 223   1      
- 224   1        // wait for release then transition
- 225   1        while (dir != JOYSTICK_NONE)
- 226   1        {
- 227   2          dir = getJoystick();
- 228   2        }
- 229   1      
-C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/22/2022 21:08:33 PAGE 5   
+ 217          // Get joystick input. If joystick was moved, wait for release. Return joystick
+ 218          // direction. Valid return values:
+ 219          //  JOYSTICK_NONE   JOYSTICK_N   JOYSTICK_S
+ 220          //  JOYSTICK_C      JOYSTICK_E   JOYSTICK_W
+ 221          //
+ 222          static uint8_t getWaitJoystick(void)
+ 223          {
+ 224   1        uint8_t dir, dirSave;
+ 225   1      
+C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/25/2022 13:28:34 PAGE 5   
 
- 230   1        return dirSave;
- 231   1      }
- 232          //
- 233          static void processInput(uint8_t dir)
- 234          {
- 235   1        if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
- 236   1          {
- 237   2            transitionDemoWaveform(dir);
- 238   2          }
- 239   1        if (IN1 == 1){
- 240   2            currentFreqIndex = 4;
- 241   2            phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
- 242   2        }
- 243   1        else if (IN1 == 0){
- 244   2            currentFreqIndex = 5;
- 245   2            phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
- 246   2        }
- 247   1      }
- 248          
- 249          
- 250          ///////////////////////////////////////////////////////////////////////////////
- 251          // Interrupt Service Routines
- 252          ///////////////////////////////////////////////////////////////////////////////
- 253          
- 254          SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
- 255          {
- 256   1        static uint16_t phaseAcc1 = 0;       // Holds phase accumulator
- 257   1        //static uint16_t phaseAcc2 = 0;       // Holds phase accumulator
+ 226   1        dir = getJoystick();
+ 227   1        dirSave = dir;
+ 228   1      
+ 229   1        // wait for release then transition
+ 230   1        while (dir != JOYSTICK_NONE)
+ 231   1        {
+ 232   2          dir = getJoystick();
+ 233   2        }
+ 234   1      
+ 235   1        return dirSave;
+ 236   1      }
+ 237          //
+ 238          static void processInput(uint8_t dir)
+ 239          {
+ 240   1        uint8_t i;
+ 241   1        uint8_t j;
+ 242   1      
+ 243   1        if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
+ 244   1          {
+ 245   2            transitionDemoWaveform(dir);
+ 246   2          }
+ 247   1      
+ 248   1        //check current pressed keys
+ 249   1        for (i = 0; i < NUM_VOICES; i++){
+ 250   2            if (currentFreqIndex[i] != 0){
+ 251   3                if (keys[currentFreqIndex[i] - 1] == 0){
+*** ERROR C202 IN LINE 251 OF C:\Users\markh\OneDrive\Documents\Uni\4th Year\Eng\EE4\LaserBee\LaserBeeAudio\src\function
+             -_generator.c: 'keys': undefined identifier
+ 252   4                    for (j=0; i< NUM_VOICES; j++) currentFreqIndex[j] = 0;
+ 253   4                    countPressed = 0;
+ 254   4                    break;
+ 255   4                }
+ 256   3            }
+ 257   2        }
  258   1      
- 259   1        SI_UU16_t temp;   // The temporary value that holds
- 260   1                          // value before being written
- 261   1                          // to the DAC
- 262   1        
- 263   1        TMR4CN0 &= ~TMR3CN0_TF3H__BMASK;    // Clear Timer4 overflow flag
- 264   1      
- 265   1        phaseAcc1 += phaseOffset1;            // Increment phase accumulator
- 266   1        //phaseAcc2 += phaseOffset2;            // Increment phase accumulator
+ 259   1      
+ 260   1        //check each key for pressed
+ 261   1        for (i = 0; i < NUM_KEYS; i++){
+ 262   2            if (keys[i] == 1 && countPressed < NUM_VOICES){
+*** ERROR C202 IN LINE 262 OF C:\Users\markh\OneDrive\Documents\Uni\4th Year\Eng\EE4\LaserBee\LaserBeeAudio\src\function
+             -_generator.c: 'keys': undefined identifier
+ 263   3                currentFreqIndex[countPressed] = i+1;
+ 264   3                phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMP
+             -LE_RATE_DAC;
+ 265   3            }
+ 266   2        }
  267   1      
- 268   1        // Read the table value
- 269   1        temp.u16 = currentTable[phaseAcc1 >> 8];
- 270   1      
- 271   1        // Set the value of <temp> to the next output of DAC at full-scale
- 272   1        // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be
- 273   1        // written first.
- 274   1        SFRPAGE = PG4_PAGE;
- 275   1      
- 276   1      
- 277   1        DAC3L = DAC2L = DAC1L = DAC0L = temp.u8[LSB];
- 278   1        DAC3H = DAC2H = DAC1H = DAC0H = temp.u8[MSB];
- 279   1      }
- 280          
- 281          ///////////////////////////////////////////////////////////////////////////////
- 282          // Driver Function
- 283          ///////////////////////////////////////////////////////////////////////////////
- 284          
- 285          void FunctionGenerator_main(void)
- 286          {
- 287   1        while(1)
- 288   1        {
- 289   2          processInput(getWaitJoystick());
- 290   2        }
- 291   1      }
+ 268   1      
+ 269   1      }
+ 270          
+ 271          
+ 272          ///////////////////////////////////////////////////////////////////////////////
+ 273          // Interrupt Service Routines
+ 274          ///////////////////////////////////////////////////////////////////////////////
+ 275          
+ 276          SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
+ 277          {
+ 278   1        static uint16_t phaseAcc[NUM_VOICES] = {0};       // Holds phase accumulator
+ 279   1        uint8_t i;
+ 280   1      
+ 281   1        SI_UU16_t temp;   // The temporary value that holds
+ 282   1                          // value before being written
+ 283   1                          // to the DAC
+C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/25/2022 13:28:34 PAGE 6   
 
-C51 COMPILER V9.60.0.0   FUNCTION_GENERATOR                                                01/22/2022 21:08:33 PAGE 6   
+ 284   1        
+ 285   1        TMR4CN0 &= ~TMR3CN0_TF3H__BMASK;    // Clear Timer4 overflow flag
+ 286   1      
+ 287   1        temp.u16 = 0;
+ 288   1        for (i = 0; i < NUM_VOICES; i++){
+ 289   2            phaseAcc[i] += phaseOffset[i];            // Increment phase accumulator
+ 290   2            // Read the table value
+ 291   2            temp.u16 += currentTable[phaseAcc[i] >> 8];
+ 292   2        }
+ 293   1      
+ 294   1        temp.u16 /= countPressed;
+ 295   1      
+ 296   1      
+ 297   1        // Set the value of <temp> to the next output of DAC at full-scale
+ 298   1        // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be
+ 299   1        // written first.
+ 300   1        SFRPAGE = PG4_PAGE;
+ 301   1      
+ 302   1      
+ 303   1        DAC3L = DAC2L = DAC1L = DAC0L = temp.u8[LSB];
+ 304   1        DAC3H = DAC2H = DAC1H = DAC0H = temp.u8[MSB];
+ 305   1      }
+ 306          
+ 307          ///////////////////////////////////////////////////////////////////////////////
+ 308          // Driver Function
+ 309          ///////////////////////////////////////////////////////////////////////////////
+ 310          
+ 311          void FunctionGenerator_main(void)
+ 312          {
+ 313   1        while(1)
+ 314   1        {
+ 315   2          processInput(getWaitJoystick());
+ 316   2        }
+ 317   1      }
 
-
-MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    352    ----
-   CONSTANT SIZE    =   8218    ----
-   XDATA SIZE       =     16    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =     10       3
-   IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----    ----
-   EDATA SIZE       =   ----    ----
-   HDATA SIZE       =   ----    ----
-   XDATA CONST SIZE =   ----    ----
-   FAR CONST SIZE   =   ----    ----
-END OF MODULE INFORMATION.
-
-
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  4 ERROR(S)

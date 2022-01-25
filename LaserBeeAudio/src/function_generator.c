@@ -62,10 +62,14 @@
 // Globals
 ///////////////////////////////////////////////////////////////////////////////
 
-// Pins
-SI_SBIT(IN1, SFR_P1, 4);                  // P1.4 IN1
-//SI_SBIT(IN2, SFR_P1, 5);                  // P1.5 IN2
-//SI_SBIT(IN3, SFR_P1, 6);                  // P1.6 IN3
+//pins
+//SI_SBIT(C1, SFR_P1, 4);
+//SI_SBIT(D, SFR_P1, 5);
+//sbit Ds = 0x90^6;
+
+
+#define NUM_KEYS 3
+static sbit keys[] = {0x90^4, 0x90^5, 0x90^6};
 
 // Demo state variables
 static DemoState currentDemoState = DEMO_SINE;
@@ -75,9 +79,9 @@ static SI_VARIABLE_SEGMENT_POINTER(currentWaveform, uint8_t, const SI_SEG_CODE) 
 // Frequency selection
 #define SUPPORTED_NUM_FREQ 8
 static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA) = {
-    10L,
-    20L,
-    50L,
+    261L,
+    293L,
+    311L,
     100L,
     200L,
     440L,
@@ -86,12 +90,13 @@ static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA
 };
 
 // Current Frequency Selection
-static uint8_t currentFreqIndex = 3;
+#define NUM_VOICES 2
+static uint8_t currentFreqIndex[NUM_VOICES] = {0};
+static uint8_t countPressed = 0;
 
 // Phase offset (updated when frequency is changed)
-static uint16_t phaseOffset1 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
-//static uint16_t phaseOffset2 = 100 * PHASE_PRECISION / SAMPLE_RATE_DAC;
-//static uint16_t new_freq = 440;
+static uint16_t phaseOffset[NUM_VOICES] = {0};
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // Supporting Functions
@@ -232,18 +237,35 @@ static uint8_t getWaitJoystick(void)
 //
 static void processInput(uint8_t dir)
 {
+  uint8_t i;
+  uint8_t j;
+
   if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
     {
       transitionDemoWaveform(dir);
     }
-  if (IN1 == 1){
-      currentFreqIndex = 4;
-      phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+
+  //check current pressed keys
+  for (i = 0; i < NUM_VOICES; i++){
+      if (currentFreqIndex[i] != 0){
+          if (keys[currentFreqIndex[i] - 1] == 0){
+              for (j=0; i< NUM_VOICES; j++) currentFreqIndex[j] = 0;
+              countPressed = 0;
+              break;
+          }
+      }
   }
-  else if (IN1 == 0){
-      currentFreqIndex = 5;
-      phaseOffset1 = frequency[currentFreqIndex] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+
+
+  //check each key for pressed
+  for (i = 0; i < NUM_KEYS; i++){
+      if (keys[i] == 1 && countPressed < NUM_VOICES){
+          currentFreqIndex[countPressed] = i+1;
+          phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+      }
   }
+
+
 }
 
 
@@ -253,8 +275,8 @@ static void processInput(uint8_t dir)
 
 SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
 {
-  static uint16_t phaseAcc1 = 0;       // Holds phase accumulator
-  //static uint16_t phaseAcc2 = 0;       // Holds phase accumulator
+  static uint16_t phaseAcc[NUM_VOICES] = {0};       // Holds phase accumulator
+  uint8_t i;
 
   SI_UU16_t temp;   // The temporary value that holds
                     // value before being written
@@ -262,11 +284,15 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
   
   TMR4CN0 &= ~TMR3CN0_TF3H__BMASK;    // Clear Timer4 overflow flag
 
-  phaseAcc1 += phaseOffset1;            // Increment phase accumulator
-  //phaseAcc2 += phaseOffset2;            // Increment phase accumulator
+  temp.u16 = 0;
+  for (i = 0; i < NUM_VOICES; i++){
+      phaseAcc[i] += phaseOffset[i];            // Increment phase accumulator
+      // Read the table value
+      temp.u16 += currentTable[phaseAcc[i] >> 8];
+  }
 
-  // Read the table value
-  temp.u16 = currentTable[phaseAcc1 >> 8];
+  temp.u16 /= countPressed;
+
 
   // Set the value of <temp> to the next output of DAC at full-scale
   // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be

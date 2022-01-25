@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 1   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RENDER
@@ -63,7 +63,7 @@ line level    source
               #endif
   41          
   42          /***************************************************************************//**
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 2   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 2   
 
   43           * @brief Return the size of the string in pixels
   44           *
@@ -128,7 +128,7 @@ line level    source
  103           * @param line a line buffer to clear
  104           *        (length = ::DISP_BUF_SIZE; segment = ::RENDER_LINE_SEG)
  105           * @param xstart the starting x-position of the line segment [0, ::DISP_WIDTH)
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 3   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 3   
 
  106           * @param xstop the stopping x-position of the line segment [0, ::DISP_WIDTH)
  107           *
@@ -193,7 +193,7 @@ line level    source
  166           * top-left corner of the text block located on the LCD at
  167           * row = 4, col = 3, call:
  168           *
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 4   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 4   
 
  169           * ~~~{.c}
  170           * for (y = 0; y < FONT_HEIGHT; y++)
@@ -258,7 +258,7 @@ line level    source
                       *line16 = switchEndian(tmp);
               #else
  231   2              *line16 &= ~(0xFF00 >> posx % 8);
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 5   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 5   
 
  232   2              *line16 |= (((uint16_t)font_byte << 8) >> (posx % 8));
  233   2      #endif
@@ -323,7 +323,7 @@ line level    source
  292           * text block y = [0, ::DISP_HEIGHT-STR_HEIGHT)
  293           * @param str a null-terminated string to write
  294           * @param fontScale can be enlarged from 2x to 4x. However, if larger than 5x, this
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 6   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 6   
 
  295           *        function only renders 4x
  296           *
@@ -388,7 +388,7 @@ line level    source
                               else
                               {
                                       enlarged_font_byte = (enlarged_font_byte >> fontScale);
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 7   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 7   
 
                               }
                               font_byte = font_byte >> 1;
@@ -453,7 +453,7 @@ line level    source
                           continue;
                       }
               
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 8   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 8   
 
                       font_byte = thinfont_numeric_bits[(c - '/') + thinfont_numeric_width / 8 * posy];
               
@@ -518,7 +518,7 @@ line level    source
  481           * RR ________________________
  482           * 00|                        |
  483           * 01|                        |
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 9   
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 9   
 
  484           * 02|      _____             |
  485           * 03|     |     |< y=WIDTH   |
@@ -583,7 +583,7 @@ line level    source
                   // Figure out which character in the string is on the line at the
                   // specified y-value
                   charIndex = posy / FONT_WIDTH;
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 10  
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 10  
 
                   charRow = posy % FONT_WIDTH;
               
@@ -648,7 +648,7 @@ line level    source
  606                  uint8_t posx,
  607                  uint8_t posy,
  608                  SI_VARIABLE_SEGMENT_POINTER(sprite, uint8_t, RENDER_SPRITE_SEG),
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 11  
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 11  
 
  609                  uint8_t spriteWidth)
  610          {
@@ -713,7 +713,7 @@ line level    source
  669                  uint8_t posx,
  670                  uint8_t posy,
  671                  SI_VARIABLE_SEGMENT_POINTER(sprite, uint8_t, RENDER_SPRITE_SEG),
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 12  
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 12  
 
  672                  uint8_t spriteWidth)
  673          {
@@ -778,7 +778,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----      37
    IDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   RENDER                                                            01/22/2022 19:49:49 PAGE 13  
+C51 COMPILER V9.60.0.0   RENDER                                                            01/25/2022 13:12:37 PAGE 13  
 
    BIT SIZE         =   ----    ----
    EDATA SIZE       =   ----    ----

@@ -58,6 +58,8 @@
     <property object="P1.2" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.3" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.4" propertyId="ports.settings.skip" value="Skipped"/>
+    <property object="P1.5" propertyId="ports.settings.skip" value="Skipped"/>
+    <property object="P1.6" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.7" propertyId="ports.settings.inputmode" value="Analog"/>
     <property object="P1.7" propertyId="ports.settings.iomode" value="Analog I/O"/>
     <property object="P1.7" propertyId="ports.settings.skip" value="Skipped"/>

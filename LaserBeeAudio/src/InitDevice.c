@@ -208,13 +208,13 @@ PORTS_1_enter_DefaultMode_from_RESET (void)
    - P1.2 pin is skipped by the crossbar
    - P1.3 pin is skipped by the crossbar
    - P1.4 pin is skipped by the crossbar
-   - P1.5 pin is not skipped by the crossbar
-   - P1.6 pin is not skipped by the crossbar
+   - P1.5 pin is skipped by the crossbar
+   - P1.6 pin is skipped by the crossbar
    - P1.7 pin is skipped by the crossbar
    ***********************************************************************/
   P1SKIP = P1SKIP_B0__NOT_SKIPPED | P1SKIP_B1__SKIPPED | P1SKIP_B2__SKIPPED
-      | P1SKIP_B3__SKIPPED | P1SKIP_B4__SKIPPED | P1SKIP_B5__NOT_SKIPPED
-      | P1SKIP_B6__NOT_SKIPPED | P1SKIP_B7__SKIPPED;
+      | P1SKIP_B3__SKIPPED | P1SKIP_B4__SKIPPED | P1SKIP_B5__SKIPPED
+      | P1SKIP_B6__SKIPPED | P1SKIP_B7__SKIPPED;
   // [P1SKIP - Port 1 Skip]$
 
   // $[P1MASK - Port 1 Mask]
