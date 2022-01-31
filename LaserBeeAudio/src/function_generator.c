@@ -63,9 +63,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 //pins
+//uint8_t* C1 = 0x90^0x04; // you also changed the C1s farther down
 SI_SBIT(C1, SFR_P1, 4);
 SI_SBIT(D, SFR_P1, 5);
 SI_SBIT(Ds, SFR_P1, 6);
+
+
 
 
 #define NUM_KEYS 3
@@ -89,8 +92,8 @@ static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA
 };
 
 // Current Frequency Selection
-#define NUM_VOICES 2
-#define EMPTY 100
+#define NUM_VOICES 1
+#define EMPTY 255
 static uint8_t currentFreqIndex[NUM_VOICES] = {EMPTY};
 static uint8_t countPressed = 0;
 
@@ -226,6 +229,7 @@ static uint8_t getWaitJoystick(void)
   dir = getJoystick();
   dirSave = dir;
 
+
   // wait for release then transition
   while (dir != JOYSTICK_NONE)
   {
@@ -250,62 +254,46 @@ static void clear(){
 
 static void processInput(uint8_t dir)
 {
-  uint8_t i;
+  uint8_t i, j;
+  uint8_t keys[16];
+
+  keys[0] = C1;
+  keys[1] = D;
+  keys[2] = Ds;
+
 
   if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
     {
       transitionDemoWaveform(dir);
     }
 
+
   //check current pressed keys
-  for (i = 0; i < NUM_VOICES; i++){
-      switch (currentFreqIndex[i]){
-        case 0 :
-          if (C1) clear(); break;
-        case 1 :
-          if (D) clear(); break;
-        case 2 :
-          if (Ds) clear(); break;
-        default:
-          break;
-      }
-  }
-
-
-  //check each key for pressed
-
-  if (countPressed < NUM_VOICES){
-    uint8_t flag = 0;
-    if (!C1){
-        for (i = 0; i < NUM_VOICES; i++){
-            if (currentFreqIndex[i] == 0) flag = 1;
+    for (i = 0; i < NUM_VOICES; i++){
+        if (currentFreqIndex[i] != EMPTY){
+            if (keys[currentFreqIndex[i]] == 1){
+                clear();
+                break;
+            }
         }
-        if (!flag){
-          currentFreqIndex[countPressed] = 0;
-          phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
-        }
-        flag = 0;
     }
-    if (!D){
-        for (i = 0; i < NUM_VOICES; i++){
-                  if (currentFreqIndex[i] == 1) flag = 1;
-              }
-        if (!flag){
-        currentFreqIndex[countPressed] = 1;
-        phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+
+
+    //check each key for pressed
+    for (i = 0; i < NUM_KEYS; i++){
+        if (keys[i] == 0 && countPressed < NUM_VOICES){
+            uint8_t duplicate = 0;
+            for (j = 0; j < NUM_VOICES; j++){
+                if (currentFreqIndex[j] == i){
+                    duplicate = 1;
+                }
+            }
+            if (!duplicate){
+                currentFreqIndex[countPressed] = i;
+                phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+            }
         }
-        flag = 0;
-      }
-    if (!Ds){
-        for (i = 0; i < NUM_VOICES; i++){
-                  if (currentFreqIndex[i] == 2) flag = 1;
-              }
-        if (!flag){
-          currentFreqIndex[countPressed] = 2;
-          phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
-        }
-      }
-  }
+    }
 
 
 
