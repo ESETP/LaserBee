@@ -318,24 +318,26 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
   
   TMR4CN0 &= ~TMR3CN0_TF3H__BMASK;    // Clear Timer4 overflow flag
 
-  temp.u16 = 0;
-  for (i = 0; i < NUM_VOICES; i++){
-      phaseAcc[i] += phaseOffset[i];            // Increment phase accumulator
-      // Read the table value
-      temp.u16 += currentTable[phaseAcc[i] >> 8];
+  if (countPressed){
+    temp.u16 = 0;
+    for (i = 0; i < NUM_VOICES; i++){
+        phaseAcc[i] += phaseOffset[i];            // Increment phase accumulator
+        // Read the table value
+        temp.u16 += currentTable[phaseAcc[i] >> 8];
+    }
+
+    temp.u16 /= countPressed;
+
+
+    // Set the value of <temp> to the next output of DAC at full-scale
+    // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be
+    // written first.
+    SFRPAGE = PG4_PAGE;
+
+
+    DAC3L = DAC2L = DAC1L = DAC0L = temp.u8[LSB];
+    DAC3H = DAC2H = DAC1H = DAC0H = temp.u8[MSB];
   }
-
-  temp.u16 /= countPressed;
-
-
-  // Set the value of <temp> to the next output of DAC at full-scale
-  // amplitude. The rails are 0x000 and 0xFFF. DAC low byte must be
-  // written first.
-  SFRPAGE = PG4_PAGE;
-
-
-  DAC3L = DAC2L = DAC1L = DAC0L = temp.u8[LSB];
-  DAC3H = DAC2H = DAC1H = DAC0H = temp.u8[MSB];
 }
 
 ///////////////////////////////////////////////////////////////////////////////
