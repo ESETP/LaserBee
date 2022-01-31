@@ -92,7 +92,7 @@ static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA
 };
 
 // Current Frequency Selection
-#define NUM_VOICES 1
+#define NUM_VOICES 2
 #define EMPTY 255
 static uint8_t currentFreqIndex[NUM_VOICES] = {EMPTY};
 static uint8_t countPressed = 0;
@@ -271,7 +271,7 @@ static void processInput(uint8_t dir)
   //check current pressed keys
     for (i = 0; i < NUM_VOICES; i++){
         if (currentFreqIndex[i] != EMPTY){
-            if (keys[currentFreqIndex[i]] == 1){
+            if (keys[currentFreqIndex[i]]){
                 clear();
                 break;
             }
@@ -279,20 +279,23 @@ static void processInput(uint8_t dir)
     }
 
 
-    //check each key for pressed
-    for (i = 0; i < NUM_KEYS; i++){
-        if (keys[i] == 0 && countPressed < NUM_VOICES){
-            uint8_t duplicate = 0;
-            for (j = 0; j < NUM_VOICES; j++){
-                if (currentFreqIndex[j] == i){
-                    duplicate = 1;
-                }
-            }
-            if (!duplicate){
-                currentFreqIndex[countPressed] = i;
-                phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed++]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
-            }
-        }
+    if (countPressed < NUM_VOICES){
+      //check each key for pressed
+      for (i = 0; i < NUM_KEYS; i++){
+          if (!keys[i] && countPressed < NUM_VOICES){
+              uint8_t duplicate = 0;
+              for (j = 0; j < NUM_VOICES; j++){
+                  if (currentFreqIndex[j] == i){
+                      duplicate = 1;
+                  }
+              }
+              if (!duplicate){
+                  currentFreqIndex[countPressed] = i;
+                  phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
+                  countPressed++;
+              }
+          }
+      }
     }
 
 
