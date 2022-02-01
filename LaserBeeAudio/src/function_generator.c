@@ -255,7 +255,7 @@ static void clear(){
 static void processInput(uint8_t dir)
 {
   uint8_t i, j;
-  uint8_t keys[16];
+  uint8_t keys[NUM_KEYS];
 
   keys[0] = C1;
   keys[1] = D;
