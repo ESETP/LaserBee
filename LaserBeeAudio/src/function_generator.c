@@ -69,6 +69,10 @@ SI_SBIT(D, SFR_P1, 5);
 SI_SBIT(Ds, SFR_P1, 6);
 
 
+//function buttons
+SI_SBIT(OCT_UP, SFR_P2, 5);
+SI_SBIT(OCT_DOWN, SFR_P2, 6);
+SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
 
 
 #define NUM_KEYS 3
@@ -115,10 +119,9 @@ static uint16_t phaseOffset[NUM_VOICES] = {0};
 //
 // dir - valid arguments are: JOYSTICK_E, JOYSTICK_W
 //
-static void transitionDemoWaveform(uint8_t dir)
+static void transitionDemoWaveform(void)
 {
-  if (dir == JOYSTICK_E)
-  {
+
     switch (currentDemoState)
     {
     case DEMO_SINE:
@@ -151,92 +154,38 @@ static void transitionDemoWaveform(uint8_t dir)
       currentTable = sineTable;
       break;
     }
-  }
-  else if (dir == JOYSTICK_W)
-  {
-    switch (currentDemoState)
-    {
-    case DEMO_SINE:
-      currentDemoState = DEMO_WINDOWED_SINE;
-      currentWaveform = windowed_sine_bits;
-      currentTable = windowedSineTable;
-      break;
-
-    case DEMO_SQUARE:
-      currentDemoState = DEMO_SINE;
-      currentWaveform = sine_bits;
-      currentTable = sineTable;
-      break;
-
-    case DEMO_TRIANGLE:
-      currentDemoState = DEMO_SQUARE;
-      currentWaveform = square_bits;
-      currentTable = squareTable;
-      break;
-
-    case DEMO_SAWTOOTH:
-      currentDemoState = DEMO_TRIANGLE;
-      currentWaveform = triangle_bits;
-      currentTable = triangleTable;
-      break;
-
-    case DEMO_WINDOWED_SINE:
-      currentDemoState = DEMO_SAWTOOTH;
-      currentWaveform = sawtooth_bits;
-      currentTable = sawtoothTable;
-      break;
-    }
-  }
 }
 
+
 //-----------------------------------------------------------------------------
-// getJoystick
+// getWait
 //-----------------------------------------------------------------------------
-//
-// Get new ADC sample and return joystick direction. Valid return values:
-//  JOYSTICK_NONE   JOYSTICK_N   JOYSTICK_S
-//  JOYSTICK_C      JOYSTICK_E   JOYSTICK_W
-//
-static uint8_t getJoystick(void)
+// get value of given input and wait until t is unpressed to return.
+
+static uint8_t *getWaitFunctions(void)
 {
-  uint32_t mv;
-  uint8_t dir;
 
-  ADC0CN0_ADBUSY = 1;
-  while (!ADC0CN0_ADINT);
-  ADC0CN0_ADINT = 0;
+  uint8_t up, down, change, upSave, downSave, changeSave;
 
-  mv = ((uint32_t)ADC0) * 3300 / 1024;
+  up = OCT_UP;
+  down = OCT_DOWN;
+  change = WAVE_CHANGE;
 
-  dir = JOYSTICK_convert_mv_to_direction(mv);
-
-  return dir;
-}
-
-//-----------------------------------------------------------------------------
-// getWaitJoystick
-//-----------------------------------------------------------------------------
-//
-// Get joystick input. If joystick was moved, wait for release. Return joystick
-// direction. Valid return values:
-//  JOYSTICK_NONE   JOYSTICK_N   JOYSTICK_S
-//  JOYSTICK_C      JOYSTICK_E   JOYSTICK_W
-//
-static uint8_t getWaitJoystick(void)
-{
-  uint8_t dir, dirSave;
-
-  dir = getJoystick();
-  dirSave = dir;
-
+  upSave = up;
+  downSave = down;
+  changeSave = change;
 
   // wait for release then transition
-  while (dir != JOYSTICK_NONE)
+  while (!up || !down || !change)
   {
-    dir = getJoystick();
+    up = OCT_UP;
+    down = OCT_DOWN;
+    change = WAVE_CHANGE;
   }
 
-  return dirSave;
+  uint8_t out[] = {upSave, downSave, changeSave};
+
+  return out;
 }
 
 
@@ -252,7 +201,7 @@ static void clear(){
 }
 
 
-static void processInput(uint8_t dir)
+static void processInput(uint8_t *functions)
 {
   uint8_t i, j;
   uint8_t keys[NUM_KEYS];
@@ -261,12 +210,25 @@ static void processInput(uint8_t dir)
   keys[1] = D;
   keys[2] = Ds;
 
-
-  if ((dir == JOYSTICK_E) || (dir == JOYSTICK_W))
+  // If change then transition waveform
+  if (!functions[2])
     {
-      transitionDemoWaveform(dir);
+      transitionDemoWaveform();
     }
 
+  // If oct up then shift freq * 2
+  if (!functions[0]){
+      for (i = 0; i < NUM_KEYS; i++){
+          frequency[i] *= 2;
+      }
+  }
+
+  // If oct down then shift freq / 2
+  if (!functions[1]){
+      for (i = 0; i < NUM_KEYS; i++){
+                frequency[i] /= 2;
+            }
+  }
 
   //check current pressed keys
     for (i = 0; i < NUM_VOICES; i++){
@@ -348,6 +310,6 @@ void FunctionGenerator_main(void)
 {
   while(1)
   {
-    processInput(getWaitJoystick());
+    processInput(getWaitFunctions());
   }
 }
