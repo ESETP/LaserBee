@@ -83,16 +83,10 @@ static SI_VARIABLE_SEGMENT_POINTER(currentTable, uint16_t, const SI_SEG_CODE) = 
 static SI_VARIABLE_SEGMENT_POINTER(currentWaveform, uint8_t, const SI_SEG_CODE) = sine_bits; // current waveform picture
 
 // Frequency selection
-#define SUPPORTED_NUM_FREQ 8
-static SI_SEGMENT_VARIABLE(frequency[SUPPORTED_NUM_FREQ], uint16_t, SI_SEG_XDATA) = {
+static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
     261L,
     293L,
     311L,
-    100L,
-    200L,
-    440L,
-    1000L,
-    2000L
 };
 
 // Current Frequency Selection
@@ -166,6 +160,7 @@ static uint8_t *getWaitFunctions(void)
 {
 
   uint8_t up, down, change, upSave, downSave, changeSave;
+  uint8_t out[3];
 
   up = OCT_UP;
   down = OCT_DOWN;
@@ -183,7 +178,9 @@ static uint8_t *getWaitFunctions(void)
     change = WAVE_CHANGE;
   }
 
-  uint8_t out[] = {upSave, downSave, changeSave};
+  out[0] = upSave;
+  out[1] = downSave;
+  out[2] = changeSave;
 
   return out;
 }
