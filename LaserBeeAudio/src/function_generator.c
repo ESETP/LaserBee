@@ -7,33 +7,6 @@
 // function_generator.c
 ///////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////
-// Call Graph
-//
-// FunctionGenerator_main()
-//  |
-//  +- drawSplash()
-//  |   +- getWaitJoystick()
-//  |   |   +- getJoystick()
-//  |
-//  +- drawStaticSprites()
-//  |   +- drawScreenSprite()
-//  |
-//  +- processInput()
-//  |   +- transitionDemoWaveform()
-//  |   +- transitionDemoFrequency()
-//  |
-//  +- drawScreen()
-//  |   +- drawScreenWaveform()
-//  |   +- drawScreenFrequency()
-//  |       +- drawScreenText()
-//  |
-//  +- synchFrame()
-//
-// Timer4_ISR()
-//
-// PORTMATCH_ISR()
-//
 
 ///////////////////////////////////////////////////////////////////////////////
 // Includes
@@ -70,9 +43,9 @@ SI_SBIT(Ds, SFR_P1, 6);
 
 
 //function buttons
-SI_SBIT(OCT_UP, SFR_P2, 5);
-SI_SBIT(OCT_DOWN, SFR_P2, 6);
-SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
+SI_SBIT(OCT_UP, SFR_P2, 1);
+SI_SBIT(OCT_DOWN, SFR_P2, 2);
+SI_SBIT(WAVE_CHANGE, SFR_P2, 3);
 
 
 #define NUM_KEYS 3
@@ -159,28 +132,19 @@ static void transitionDemoWaveform(void)
 static uint8_t *getWaitFunctions(void)
 {
 
-  uint8_t up, down, change, upSave, downSave, changeSave;
+  uint8_t up, down, change;
   uint8_t out[3];
 
   up = OCT_UP;
   down = OCT_DOWN;
   change = WAVE_CHANGE;
 
-  upSave = up;
-  downSave = down;
-  changeSave = change;
+  // wait for release then return saved values
+  while (!OCT_UP || !OCT_DOWN || !WAVE_CHANGE){};
 
-  // wait for release then transition
-  while (!up || !down || !change)
-  {
-    up = OCT_UP;
-    down = OCT_DOWN;
-    change = WAVE_CHANGE;
-  }
-
-  out[0] = upSave;
-  out[1] = downSave;
-  out[2] = changeSave;
+  out[0] = up;
+  out[1] = down;
+  out[2] = change;
 
   return out;
 }

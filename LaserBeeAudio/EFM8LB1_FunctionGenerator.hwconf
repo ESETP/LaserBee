@@ -5,7 +5,6 @@
     <property object="ADC14_0" propertyId="adc14.clockconfiguration.adcclockdivider" value="2"/>
     <property object="ADC14_0" propertyId="adc14.control.resolution" value="10-Bit mode"/>
     <property object="ADC14_0" propertyId="adc14.enable.enableadc" value="Enabled"/>
-    <property object="ADC14_0" propertyId="adc14.inputselection.positiveinputselection" value="ADC0.13 (P1.7)"/>
     <property object="ADC14_0" propertyId="adc14.throughput.conversiontrackingtimesetting" value="1"/>
     <property object="ADC14_0" propertyId="adc14.view.view" value="Advanced"/>
     <property object="ADC14_0" propertyId="adc14.voltagereference.selectvoltagereference" value="VDD pin"/>
@@ -50,6 +49,7 @@
     <property object="P0.5" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P0.6" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
     <property object="P0.6" propertyId="ports.settings.outputmode" value="Push-pull"/>
+    <property object="P0.7" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.0" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
     <property object="P1.0" propertyId="ports.settings.outputmode" value="Push-pull"/>
     <property object="P1.1" propertyId="ports.settings.inputmode" value="Analog"/>
@@ -60,9 +60,10 @@
     <property object="P1.4" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.5" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.6" propertyId="ports.settings.skip" value="Skipped"/>
-    <property object="P1.7" propertyId="ports.settings.inputmode" value="Analog"/>
-    <property object="P1.7" propertyId="ports.settings.iomode" value="Analog I/O"/>
     <property object="P1.7" propertyId="ports.settings.skip" value="Skipped"/>
+    <property object="P2.0" propertyId="ports.settings.skip" value="Skipped"/>
+    <property object="P2.1" propertyId="ports.settings.skip" value="Skipped"/>
+    <property object="P2.2" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P2.3" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P2.6" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
     <property object="P2.6" propertyId="ports.settings.outputmode" value="Push-pull"/>
