@@ -326,7 +326,7 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
         temp.u16 += currentTable[phaseAcc[i] >> 8];
     }
 
-    temp.u16 /= countPressed;
+    temp.u16 /= NUM_VOICES;
 
 
     // Set the value of <temp> to the next output of DAC at full-scale
