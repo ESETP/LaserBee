@@ -63,7 +63,7 @@ static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
 };
 
 // Current Frequency Selection
-#define NUM_VOICES 2
+#define NUM_VOICES 5
 #define EMPTY 255
 static uint8_t currentFreqIndex[NUM_VOICES] = {EMPTY};
 static uint8_t countPressed = 0;
@@ -129,11 +129,10 @@ static void transitionDemoWaveform(void)
 //-----------------------------------------------------------------------------
 // get value of given input and wait until t is unpressed to return.
 
-static uint8_t *getWaitFunctions(void)
+static uint8_t *getWaitFunctions(uint8_t * out)
 {
 
   uint8_t up, down, change;
-  uint8_t out[3];
 
   up = OCT_UP;
   down = OCT_DOWN;
@@ -146,7 +145,6 @@ static uint8_t *getWaitFunctions(void)
   out[1] = down;
   out[2] = change;
 
-  return out;
 }
 
 
@@ -271,6 +269,8 @@ void FunctionGenerator_main(void)
 {
   while(1)
   {
-    processInput(getWaitFunctions());
+      uint8_t controlButtons[3];
+      getWaitFunctions(controlButtons);
+      processInput(controlButtons);
   }
 }
