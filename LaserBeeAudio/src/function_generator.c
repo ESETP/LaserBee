@@ -63,7 +63,7 @@ static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
 };
 
 // Current Frequency Selection
-#define NUM_VOICES 5
+#define NUM_VOICES 3
 #define EMPTY 255
 static uint8_t currentFreqIndex[NUM_VOICES] = {EMPTY};
 static uint8_t countPressed = 0;
@@ -104,7 +104,7 @@ static void transitionDemoWaveform(void)
       break;
 
     case DEMO_TRIANGLE:
-          currentDemoState = DEMO_SAWTOOTH;
+      currentDemoState = DEMO_SAWTOOTH;
       currentWaveform = sawtooth_bits;
       currentTable = sawtoothTable;
       break;
@@ -129,7 +129,7 @@ static void transitionDemoWaveform(void)
 //-----------------------------------------------------------------------------
 // get value of given input and wait until t is unpressed to return.
 
-static uint8_t *getWaitFunctions(uint8_t * out)
+static void *getWaitFunctions(uint8_t * out)
 {
 
   uint8_t up, down, change;
@@ -247,7 +247,7 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
         temp.u16 += currentTable[phaseAcc[i] >> 8];
     }
 
-    temp.u16 /= NUM_VOICES;
+    //temp.u16 /= NUM_VOICES;
 
 
     // Set the value of <temp> to the next output of DAC at full-scale

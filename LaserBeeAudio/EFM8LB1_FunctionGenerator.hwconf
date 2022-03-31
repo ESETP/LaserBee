@@ -4,11 +4,11 @@
     <property object="ADC14_0" propertyId="ABPeripheral.included" value="true"/>
     <property object="ADC14_0" propertyId="adc14.clockconfiguration.adcclockdivider" value="2"/>
     <property object="ADC14_0" propertyId="adc14.control.resolution" value="10-Bit mode"/>
-    <property object="ADC14_0" propertyId="adc14.enable.enableadc" value="Enabled"/>
     <property object="ADC14_0" propertyId="adc14.throughput.conversiontrackingtimesetting" value="1"/>
     <property object="ADC14_0" propertyId="adc14.view.view" value="Advanced"/>
     <property object="ADC14_0" propertyId="adc14.voltagereference.selectvoltagereference" value="VDD pin"/>
     <property object="CIP51_0" propertyId="ABPeripheral.included" value="true"/>
+    <property object="CIP51_0" propertyId="cip51.prefetchenginecontrol.flashreadtiming" value="SYSCLK is below 75 MHz"/>
     <property object="CLOCK_0" propertyId="ABPeripheral.included" value="true"/>
     <property object="CLOCK_0" propertyId="clock.clockselect.clocksourcedivider" value="SYSCLK / 1"/>
     <property object="DACGCF_0" propertyId="ABPeripheral.included" value="true"/>
