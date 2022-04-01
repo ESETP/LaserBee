@@ -33,6 +33,7 @@ enter_DefaultMode_from_RESET (void)
   DAC_3_enter_DefaultMode_from_RESET ();
   DACGCF_0_enter_DefaultMode_from_RESET ();
   VREF_0_enter_DefaultMode_from_RESET ();
+  CIP51_0_enter_DefaultMode_from_RESET ();
   CLOCK_0_enter_DefaultMode_from_RESET ();
   TIMER01_0_enter_DefaultMode_from_RESET ();
   TIMER16_3_enter_DefaultMode_from_RESET ();
@@ -128,11 +129,11 @@ PORTS_0_enter_DefaultMode_from_RESET (void)
    - P0.4 pin is skipped by the crossbar
    - P0.5 pin is skipped by the crossbar
    - P0.6 pin is not skipped by the crossbar
-   - P0.7 pin is not skipped by the crossbar
+   - P0.7 pin is skipped by the crossbar
    ***********************************************************************/
   P0SKIP = P0SKIP_B0__SKIPPED | P0SKIP_B1__SKIPPED | P0SKIP_B2__SKIPPED
       | P0SKIP_B3__SKIPPED | P0SKIP_B4__SKIPPED | P0SKIP_B5__SKIPPED
-      | P0SKIP_B6__NOT_SKIPPED | P0SKIP_B7__NOT_SKIPPED;
+      | P0SKIP_B6__NOT_SKIPPED | P0SKIP_B7__SKIPPED;
   // [P0SKIP - Port 0 Skip]$
 
   // $[P0MASK - Port 0 Mask]
@@ -169,41 +170,14 @@ PORTS_1_enter_DefaultMode_from_RESET (void)
   // [P1 - Port 1 Pin Latch]$
 
   // $[P1MDOUT - Port 1 Output Mode]
-  /***********************************************************************
-   - P1.0 output is push-pull
-   - P1.1 output is open-drain
-   - P1.2 output is open-drain
-   - P1.3 output is open-drain
-   - P1.4 output is open-drain
-   - P1.5 output is open-drain
-   - P1.6 output is open-drain
-   - P1.7 output is open-drain
-   ***********************************************************************/
-  P1MDOUT = P1MDOUT_B0__PUSH_PULL | P1MDOUT_B1__OPEN_DRAIN
-      | P1MDOUT_B2__OPEN_DRAIN | P1MDOUT_B3__OPEN_DRAIN | P1MDOUT_B4__OPEN_DRAIN
-      | P1MDOUT_B5__OPEN_DRAIN | P1MDOUT_B6__OPEN_DRAIN
-      | P1MDOUT_B7__OPEN_DRAIN;
   // [P1MDOUT - Port 1 Output Mode]$
 
   // $[P1MDIN - Port 1 Input Mode]
-  /***********************************************************************
-   - P1.0 pin is configured for digital mode
-   - P1.1 pin is configured for analog mode
-   - P1.2 pin is configured for digital mode
-   - P1.3 pin is configured for digital mode
-   - P1.4 pin is configured for digital mode
-   - P1.5 pin is configured for digital mode
-   - P1.6 pin is configured for digital mode
-   - P1.7 pin is configured for analog mode
-   ***********************************************************************/
-  P1MDIN = P1MDIN_B0__DIGITAL | P1MDIN_B1__ANALOG | P1MDIN_B2__DIGITAL
-      | P1MDIN_B3__DIGITAL | P1MDIN_B4__DIGITAL | P1MDIN_B5__DIGITAL
-      | P1MDIN_B6__DIGITAL | P1MDIN_B7__ANALOG;
   // [P1MDIN - Port 1 Input Mode]$
 
   // $[P1SKIP - Port 1 Skip]
   /***********************************************************************
-   - P1.0 pin is not skipped by the crossbar
+   - P1.0 pin is skipped by the crossbar
    - P1.1 pin is skipped by the crossbar
    - P1.2 pin is skipped by the crossbar
    - P1.3 pin is skipped by the crossbar
@@ -212,7 +186,7 @@ PORTS_1_enter_DefaultMode_from_RESET (void)
    - P1.6 pin is skipped by the crossbar
    - P1.7 pin is skipped by the crossbar
    ***********************************************************************/
-  P1SKIP = P1SKIP_B0__NOT_SKIPPED | P1SKIP_B1__SKIPPED | P1SKIP_B2__SKIPPED
+  P1SKIP = P1SKIP_B0__SKIPPED | P1SKIP_B1__SKIPPED | P1SKIP_B2__SKIPPED
       | P1SKIP_B3__SKIPPED | P1SKIP_B4__SKIPPED | P1SKIP_B5__SKIPPED
       | P1SKIP_B6__SKIPPED | P1SKIP_B7__SKIPPED;
   // [P1SKIP - Port 1 Skip]$
@@ -251,14 +225,14 @@ PORTS_2_enter_DefaultMode_from_RESET (void)
 
   // $[P2SKIP - Port 2 Skip]
   /***********************************************************************
-   - P2.0 pin is not skipped by the crossbar
-   - P2.1 pin is not skipped by the crossbar
-   - P2.2 pin is not skipped by the crossbar
+   - P2.0 pin is skipped by the crossbar
+   - P2.1 pin is skipped by the crossbar
+   - P2.2 pin is skipped by the crossbar
    - P2.3 pin is skipped by the crossbar
    ***********************************************************************/
   SFRPAGE = 0x20;
-  P2SKIP = P2SKIP_B0__NOT_SKIPPED | P2SKIP_B1__NOT_SKIPPED
-      | P2SKIP_B2__NOT_SKIPPED | P2SKIP_B3__SKIPPED;
+  P2SKIP = P2SKIP_B0__SKIPPED | P2SKIP_B1__SKIPPED | P2SKIP_B2__SKIPPED
+      | P2SKIP_B3__SKIPPED;
   // [P2SKIP - Port 2 Skip]$
 
   // $[P2MASK - Port 2 Mask]
@@ -420,6 +394,7 @@ CLOCK_0_enter_DefaultMode_from_RESET (void)
    - Clock derived from the Internal High Frequency Oscillator 0
    - SYSCLK is equal to selected clock source divided by 1
    ***********************************************************************/
+  SFRPAGE = 0x00;
   CLKSEL = CLKSEL_CLKSL__HFOSC0 | CLKSEL_CLKDIV__SYSCLK_DIV_1;
   while ((CLKSEL & CLKSEL_DIVRDY__BMASK) == CLKSEL_DIVRDY__NOT_READY)
     ;
@@ -784,10 +759,6 @@ ADC_0_enter_DefaultMode_from_RESET (void)
   // [ADC0CN1 - ADC0 Control 1]$
 
   // $[ADC0MX - ADC0 Multiplexer Selection]
-  /***********************************************************************
-   - Select ADC0.13
-   ***********************************************************************/
-  ADC0MX = ADC0MX_ADC0MX__ADC0P13;
   // [ADC0MX - ADC0 Multiplexer Selection]$
 
   // $[ADC0CF2 - ADC0 Power Control]
@@ -835,10 +806,6 @@ ADC_0_enter_DefaultMode_from_RESET (void)
   // [ADC0ASCF - ADC0 Autoscan Configuration]$
 
   // $[ADC0CN0 - ADC0 Control 0]
-  /***********************************************************************
-   - Enable ADC0 
-   ***********************************************************************/
-  ADC0CN0 |= ADC0CN0_ADEN__ENABLED;
   // [ADC0CN0 - ADC0 Control 0]$
 
 }
@@ -864,6 +831,19 @@ PORTS_3_enter_DefaultMode_from_RESET (void)
   P3MDIN = P3MDIN_B0__ANALOG | P3MDIN_B1__ANALOG | P3MDIN_B2__ANALOG
       | P3MDIN_B3__ANALOG | P3MDIN_B4__DIGITAL | P3MDIN_B7__DIGITAL;
   // [P3MDIN - Port 3 Input Mode]$
+
+}
+
+extern void
+CIP51_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[PFE0CN - Prefetch Engine Control]
+  /***********************************************************************
+   - SYSCLK < 75 MHz
+   ***********************************************************************/
+  SFRPAGE = 0x10;
+  PFE0CN = PFE0CN_FLRT__SYSCLK_BELOW_75_MHZ;
+  // [PFE0CN - Prefetch Engine Control]$
 
 }
 

@@ -36,7 +36,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 //pins
-//uint8_t* C1 = 0x90^0x04; // you also changed the C1s farther down
 SI_SBIT(C1, SFR_P2, 4);
 SI_SBIT(Cs, SFR_P2, 3);
 SI_SBIT(D, SFR_P2, 2);
@@ -48,7 +47,7 @@ SI_SBIT(G, SFR_P1, 5);
 SI_SBIT(Gs, SFR_P1, 4);
 SI_SBIT(A, SFR_P1, 3);
 SI_SBIT(As, SFR_P1, 2);
-SI_SBIT(B, SFR_P1, 1);
+SI_SBIT(B222, SFR_P2, 0); // idk why this needs the 2s
 SI_SBIT(C2, SFR_P1, 0);
 
 
@@ -196,7 +195,7 @@ static void processInput(uint8_t *functions)
   keys[8] = Gs;
   keys[9] = A;
   keys[10] = As;
-  keys[11] = B;
+  keys[11] = B222;
   keys[12] = C2;
 
   // If change then transition waveform
