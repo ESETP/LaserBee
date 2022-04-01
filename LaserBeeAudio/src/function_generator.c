@@ -39,7 +39,7 @@
 SI_SBIT(C1, SFR_P2, 4);
 SI_SBIT(Cs, SFR_P2, 3);
 SI_SBIT(D, SFR_P2, 2);
-SI_SBIT(Ds, SFR_P2, 4);
+SI_SBIT(Ds, SFR_P2, 1);
 SI_SBIT(E, SFR_P2, 0);
 SI_SBIT(F, SFR_P1, 7);
 SI_SBIT(Fs, SFR_P1, 6);
@@ -47,7 +47,7 @@ SI_SBIT(G, SFR_P1, 5);
 SI_SBIT(Gs, SFR_P1, 4);
 SI_SBIT(A, SFR_P1, 3);
 SI_SBIT(As, SFR_P1, 2);
-SI_SBIT(B222, SFR_P2, 0); // idk why this needs the 2s
+SI_SBIT(B222, SFR_P1, 1); // idk why this needs the 2s
 SI_SBIT(C2, SFR_P1, 0);
 
 
