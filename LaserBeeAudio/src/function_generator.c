@@ -37,18 +37,28 @@
 
 //pins
 //uint8_t* C1 = 0x90^0x04; // you also changed the C1s farther down
-SI_SBIT(C1, SFR_P1, 4);
-SI_SBIT(D, SFR_P1, 5);
-SI_SBIT(Ds, SFR_P1, 6);
+SI_SBIT(C1, SFR_P2, 4);
+SI_SBIT(Cs, SFR_P2, 3);
+SI_SBIT(D, SFR_P2, 2);
+SI_SBIT(Ds, SFR_P2, 4);
+SI_SBIT(E, SFR_P2, 0);
+SI_SBIT(F, SFR_P1, 7);
+SI_SBIT(Fs, SFR_P1, 6);
+SI_SBIT(G, SFR_P1, 5);
+SI_SBIT(Gs, SFR_P1, 4);
+SI_SBIT(A, SFR_P1, 3);
+SI_SBIT(As, SFR_P1, 2);
+SI_SBIT(B, SFR_P1, 1);
+SI_SBIT(C2, SFR_P1, 0);
 
 
 //function buttons
-SI_SBIT(OCT_UP, SFR_P2, 1);
-SI_SBIT(OCT_DOWN, SFR_P2, 2);
-SI_SBIT(WAVE_CHANGE, SFR_P2, 3);
+SI_SBIT(OCT_UP, SFR_P2, 6);
+SI_SBIT(OCT_DOWN, SFR_P2, 5);
+SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
 
 
-#define NUM_KEYS 3
+#define NUM_KEYS 13
 
 // Demo state variables
 static DemoState currentDemoState = DEMO_SINE;
@@ -58,8 +68,18 @@ static SI_VARIABLE_SEGMENT_POINTER(currentWaveform, uint8_t, const SI_SEG_CODE) 
 // Frequency selection
 static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
     261L,
+    277L,
     293L,
     311L,
+    329L,
+    349L,
+    370L,
+    392L,
+    415L,
+    440L,
+    466L,
+    494L,
+    523L,
 };
 
 // Current Frequency Selection
@@ -166,8 +186,18 @@ static void processInput(uint8_t *functions)
   uint8_t keys[NUM_KEYS];
 
   keys[0] = C1;
-  keys[1] = D;
-  keys[2] = Ds;
+  keys[1] = Cs;
+  keys[2] = D;
+  keys[3] = Ds;
+  keys[4] = E;
+  keys[5] = F;
+  keys[6] = Fs;
+  keys[7] = G;
+  keys[8] = Gs;
+  keys[9] = A;
+  keys[10] = As;
+  keys[11] = B;
+  keys[12] = C2;
 
   // If change then transition waveform
   if (!functions[2])
