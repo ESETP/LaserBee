@@ -14,21 +14,14 @@
 
 #include "bsp.h"
 #include "tick.h"
-#include "render.h"
-#include "joystick.h"
-#include "thinfont.h"
 #include "function_generator.h"
 #include "sine.h"
 #include "square.h"
 #include "triangle.h"
 #include "sawtooth.h"
 #include "windowed_sine.h"
-#include "nav_up.h"
-#include "nav_down.h"
-#include "nav_left.h"
-#include "nav_right.h"
 #include "waveform_tables.h"
-#include "retargetserial.h"
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -47,13 +40,13 @@ SI_SBIT(G, SFR_P1, 5);
 SI_SBIT(Gs, SFR_P1, 4);
 SI_SBIT(A, SFR_P1, 3);
 SI_SBIT(As, SFR_P1, 2);
-SI_SBIT(B222, SFR_P1, 1); // idk why this needs the 2s
+SI_SBIT(H, SFR_P1, 1); // this is cursed and changing the name seems to break it
 SI_SBIT(C2, SFR_P1, 0);
 
 
 //function buttons
-SI_SBIT(OCT_UP, SFR_P2, 6);
-SI_SBIT(OCT_DOWN, SFR_P2, 5);
+SI_SBIT(OCT_UP, SFR_P0, 6);
+SI_SBIT(OCT_DOWN, SFR_P0, 5);
 SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
 
 
@@ -84,6 +77,8 @@ static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
 // Current Frequency Selection
 #define NUM_VOICES 3
 #define EMPTY 255
+#define MIN_FREQ 70
+#define MAX_FREQ 1000
 static uint8_t currentFreqIndex[NUM_VOICES] = {EMPTY};
 static uint8_t countPressed = 0;
 
@@ -195,7 +190,7 @@ static void processInput(uint8_t *functions)
   keys[8] = Gs;
   keys[9] = A;
   keys[10] = As;
-  keys[11] = B222;
+  keys[11] = H;
   keys[12] = C2;
 
   // If change then transition waveform
@@ -205,14 +200,14 @@ static void processInput(uint8_t *functions)
     }
 
   // If oct up then shift freq * 2
-  if (!functions[0]){
+  if (!functions[0] && frequency[0] > MIN_FREQ){
       for (i = 0; i < NUM_KEYS; i++){
           frequency[i] *= 2;
       }
   }
 
   // If oct down then shift freq / 2
-  if (!functions[1]){
+  if (!functions[1] && frequency[NUM_KEYS-1] < MAX_FREQ){
       for (i = 0; i < NUM_KEYS; i++){
                 frequency[i] /= 2;
             }
@@ -285,8 +280,8 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
     SFRPAGE = PG4_PAGE;
 
 
-    DAC3L = DAC2L = DAC1L = DAC0L = temp.u8[LSB];
-    DAC3H = DAC2H = DAC1H = DAC0H = temp.u8[MSB];
+    DAC3L = DAC2L = DAC0L = temp.u8[LSB];
+    DAC3H = DAC2H = DAC0H = temp.u8[MSB];
   }
 }
 

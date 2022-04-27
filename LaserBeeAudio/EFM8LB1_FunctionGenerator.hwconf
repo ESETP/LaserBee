@@ -8,7 +8,6 @@
     <property object="ADC14_0" propertyId="adc14.view.view" value="Advanced"/>
     <property object="ADC14_0" propertyId="adc14.voltagereference.selectvoltagereference" value="VDD pin"/>
     <property object="CIP51_0" propertyId="ABPeripheral.included" value="true"/>
-    <property object="CIP51_0" propertyId="cip51.prefetchenginecontrol.flashreadtiming" value="SYSCLK is below 75 MHz"/>
     <property object="CLOCK_0" propertyId="ABPeripheral.included" value="true"/>
     <property object="CLOCK_0" propertyId="clock.clockselect.clocksourcedivider" value="SYSCLK / 1"/>
     <property object="DACGCF_0" propertyId="ABPeripheral.included" value="true"/>
@@ -19,7 +18,6 @@
     <property object="DAC_0" propertyId="dac.enable.enabledac#" value="Enabled"/>
     <property object="DAC_1" propertyId="ABPeripheral.included" value="true"/>
     <property object="DAC_1" propertyId="dac.configuration.updatetriggersource" value="Timer 4"/>
-    <property object="DAC_1" propertyId="dac.enable.enabledac#" value="Enabled"/>
     <property object="DAC_2" propertyId="ABPeripheral.included" value="true"/>
     <property object="DAC_2" propertyId="dac.configuration.updatetriggersource" value="Timer 4"/>
     <property object="DAC_2" propertyId="dac.enable.enabledac#" value="Enabled"/>
@@ -28,14 +26,11 @@
     <property object="DAC_3" propertyId="dac.enable.enabledac#" value="Enabled"/>
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
     <property object="INTERRUPT_0" propertyId="ABPeripheral.included" value="true"/>
-    <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable1.enableportmatchinterrupts" value="Enabled"/>
-    <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable1.enabletimer3interrupt" value="Enabled"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable2.enabletimer4interrupt" value="Enabled"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptpriority1high.portmatchprioritycontrolmsbinterrupt" value="High"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptpriority1high.timer3prioritycontrolmsbinterrupt" value="High"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptpriority2.timer4prioritycontrollsbinterrupt" value="High"/>
-    <property object="INTERRUPT_0" propertyId="interrupt.interruptenable.enablespi0interrupt" value="Enabled"/>
-    <property object="INTERRUPT_0" propertyId="interrupt.interruptenable.enabletimer2interrupt" value="Enabled"/>
+    <property object="INTERRUPT_0" propertyId="interrupt.interruptenable.enableallinterrupts" value="Enabled"/>
     <property object="INTERRUPT_0" propertyId="interruptenables.codegenerationoptions.generateinterruptfunctions" value="Disabled"/>
     <property object="P0.0" propertyId="ports.settings.inputmode" value="Analog"/>
     <property object="P0.0" propertyId="ports.settings.iomode" value="Analog I/O"/>
@@ -49,8 +44,10 @@
     <property object="P0.5" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P0.6" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
     <property object="P0.6" propertyId="ports.settings.outputmode" value="Push-pull"/>
+    <property object="P0.6" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P0.7" propertyId="ports.settings.skip" value="Skipped"/>
-    <property object="P1.0" propertyId="ports.settings.skip" value="Skipped"/>
+    <property object="P1.0" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
+    <property object="P1.0" propertyId="ports.settings.outputmode" value="Push-pull"/>
     <property object="P1.1" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.2" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.3" propertyId="ports.settings.skip" value="Skipped"/>
@@ -66,8 +63,6 @@
     <property object="P2.6" propertyId="ports.settings.outputmode" value="Push-pull"/>
     <property object="P3.0" propertyId="ports.settings.inputmode" value="Analog"/>
     <property object="P3.0" propertyId="ports.settings.iomode" value="Analog I/O"/>
-    <property object="P3.1" propertyId="ports.settings.inputmode" value="Analog"/>
-    <property object="P3.1" propertyId="ports.settings.iomode" value="Analog I/O"/>
     <property object="P3.2" propertyId="ports.settings.inputmode" value="Analog"/>
     <property object="P3.2" propertyId="ports.settings.iomode" value="Analog I/O"/>
     <property object="P3.3" propertyId="ports.settings.inputmode" value="Analog"/>
