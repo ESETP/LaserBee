@@ -45,8 +45,8 @@ SI_SBIT(C2, SFR_P1, 0);
 
 
 //function buttons
-SI_SBIT(OCT_UP, SFR_P0, 6);
-SI_SBIT(OCT_DOWN, SFR_P0, 5);
+SI_SBIT(OCT_UP, SFR_P2, 6);
+SI_SBIT(OCT_DOWN, SFR_P2, 5);
 SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
 
 
@@ -200,14 +200,14 @@ static void processInput(uint8_t *functions)
     }
 
   // If oct up then shift freq * 2
-  if (!functions[0] && frequency[0] > MIN_FREQ){
+  if (!functions[0] && frequency[0] < MAX_FREQ){
       for (i = 0; i < NUM_KEYS; i++){
           frequency[i] *= 2;
       }
   }
 
   // If oct down then shift freq / 2
-  if (!functions[1] && frequency[NUM_KEYS-1] < MAX_FREQ){
+  if (!functions[1] && frequency[NUM_KEYS-1] > MIN_FREQ){
       for (i = 0; i < NUM_KEYS; i++){
                 frequency[i] /= 2;
             }
