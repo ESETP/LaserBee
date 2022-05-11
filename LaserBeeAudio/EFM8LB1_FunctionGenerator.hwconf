@@ -20,10 +20,8 @@
     <property object="DAC_1" propertyId="dac.configuration.updatetriggersource" value="Timer 4"/>
     <property object="DAC_2" propertyId="ABPeripheral.included" value="true"/>
     <property object="DAC_2" propertyId="dac.configuration.updatetriggersource" value="Timer 4"/>
-    <property object="DAC_2" propertyId="dac.enable.enabledac#" value="Enabled"/>
     <property object="DAC_3" propertyId="ABPeripheral.included" value="true"/>
     <property object="DAC_3" propertyId="dac.configuration.updatetriggersource" value="Timer 4"/>
-    <property object="DAC_3" propertyId="dac.enable.enabledac#" value="Enabled"/>
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
     <property object="INTERRUPT_0" propertyId="ABPeripheral.included" value="true"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable2.enabletimer4interrupt" value="Enabled"/>
@@ -46,8 +44,7 @@
     <property object="P0.6" propertyId="ports.settings.outputmode" value="Push-pull"/>
     <property object="P0.6" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P0.7" propertyId="ports.settings.skip" value="Skipped"/>
-    <property object="P1.0" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
-    <property object="P1.0" propertyId="ports.settings.outputmode" value="Push-pull"/>
+    <property object="P1.0" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.1" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.2" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P1.3" propertyId="ports.settings.skip" value="Skipped"/>
@@ -59,14 +56,10 @@
     <property object="P2.1" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P2.2" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P2.3" propertyId="ports.settings.skip" value="Skipped"/>
-    <property object="P2.6" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
-    <property object="P2.6" propertyId="ports.settings.outputmode" value="Push-pull"/>
     <property object="P3.0" propertyId="ports.settings.inputmode" value="Analog"/>
     <property object="P3.0" propertyId="ports.settings.iomode" value="Analog I/O"/>
-    <property object="P3.2" propertyId="ports.settings.inputmode" value="Analog"/>
-    <property object="P3.2" propertyId="ports.settings.iomode" value="Analog I/O"/>
-    <property object="P3.3" propertyId="ports.settings.inputmode" value="Analog"/>
-    <property object="P3.3" propertyId="ports.settings.iomode" value="Analog I/O"/>
+    <property object="P3.1" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
+    <property object="P3.1" propertyId="ports.settings.outputmode" value="Push-pull"/>
     <property object="PBCFG_0" propertyId="pbcfg.settings.enablecrossbar" value="Enabled"/>
     <property object="SPI_0" propertyId="ABPeripheral.included" value="true"/>
     <property object="SPI_0" propertyId="spi.clockrate.spiclockfrequencyactual" value="1.021 MHz"/>

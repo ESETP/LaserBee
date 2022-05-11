@@ -15,11 +15,6 @@
 #include "bsp.h"
 #include "tick.h"
 #include "function_generator.h"
-#include "sine.h"
-#include "square.h"
-#include "triangle.h"
-#include "sawtooth.h"
-#include "windowed_sine.h"
 #include "waveform_tables.h"
 
 
@@ -49,13 +44,14 @@ SI_SBIT(OCT_UP, SFR_P2, 6);
 SI_SBIT(OCT_DOWN, SFR_P2, 5);
 SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
 
+SI_SBIT(AMP_ON, SFR_P3, 1);
+
 
 #define NUM_KEYS 13
 
 // Demo state variables
 static DemoState currentDemoState = DEMO_SINE;
 static SI_VARIABLE_SEGMENT_POINTER(currentTable, uint16_t, const SI_SEG_CODE) = sineTable; // current waveform table for DAC output
-static SI_VARIABLE_SEGMENT_POINTER(currentWaveform, uint8_t, const SI_SEG_CODE) = sine_bits; // current waveform picture
 
 // Frequency selection
 static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
@@ -107,33 +103,19 @@ static void transitionDemoWaveform(void)
     {
     case DEMO_SINE:
       currentDemoState = DEMO_SQUARE;
-      currentWaveform = square_bits;
       currentTable = squareTable;
       break;
 
     case DEMO_SQUARE:
       currentDemoState = DEMO_TRIANGLE;
-      currentWaveform = triangle_bits;
-      currentTable = triangleTable;
-      break;
-
-    case DEMO_TRIANGLE:
-      currentDemoState = DEMO_SAWTOOTH;
-      currentWaveform = sawtooth_bits;
       currentTable = sawtoothTable;
       break;
 
     case DEMO_SAWTOOTH:
       currentDemoState = DEMO_WINDOWED_SINE;
-      currentWaveform = windowed_sine_bits;
-      currentTable = windowedSineTable;
-      break;
-
-    case DEMO_WINDOWED_SINE:
-      currentDemoState = DEMO_SINE;
-      currentWaveform = sine_bits;
       currentTable = sineTable;
       break;
+
     }
 }
 
@@ -143,7 +125,7 @@ static void transitionDemoWaveform(void)
 //-----------------------------------------------------------------------------
 // get value of given input and wait until t is unpressed to return.
 
-static void *getWaitFunctions(uint8_t * out)
+static void getWaitFunctions(uint8_t * out)
 {
 
   uint8_t up, down, change;
@@ -280,8 +262,8 @@ SI_INTERRUPT_USING(TIMER4_ISR, TIMER4_IRQn, 1)
     SFRPAGE = PG4_PAGE;
 
 
-    DAC3L = DAC2L = DAC0L = temp.u8[LSB];
-    DAC3H = DAC2H = DAC0H = temp.u8[MSB];
+    DAC0L = temp.u8[LSB];
+    DAC0H = temp.u8[MSB];
   }
 }
 
