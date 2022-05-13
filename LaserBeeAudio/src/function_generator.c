@@ -107,12 +107,12 @@ static void transitionDemoWaveform(void)
       break;
 
     case DEMO_SQUARE:
-      currentDemoState = DEMO_TRIANGLE;
+      currentDemoState = DEMO_SAWTOOTH;
       currentTable = sawtoothTable;
       break;
 
     case DEMO_SAWTOOTH:
-      currentDemoState = DEMO_WINDOWED_SINE;
+      currentDemoState = DEMO_SINE;
       currentTable = sineTable;
       break;
 
