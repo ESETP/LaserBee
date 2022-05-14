@@ -4,7 +4,7 @@
 
 ## Microcontroller details
 
-The microcontroller being used is Silabs' efm8lb1.
+The microcontroller being used is Silabs' EFM8LB11F32E-B-QSOP24.
 
 ## Flashing
 ### Building the project
