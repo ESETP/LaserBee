@@ -51,7 +51,8 @@ typedef enum {
 	DEMO_SQUARE,
 	DEMO_TRIANGLE,
 	DEMO_SAWTOOTH,
-	DEMO_WINDOWED_SINE
+	DEMO_WINDOWED_SINE,
+	DEMO_PIANO
 } DemoState;
 
 // Splash timeout in ms

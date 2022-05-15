@@ -44,7 +44,7 @@ SI_SBIT(OCT_UP, SFR_P2, 6);
 SI_SBIT(OCT_DOWN, SFR_P2, 5);
 SI_SBIT(WAVE_CHANGE, SFR_P0, 7);
 
-SI_SBIT(AMP_ON, SFR_P3, 1);
+SI_SBIT(AMP_ON, SFR_P0, 6);
 
 
 #define NUM_KEYS 13
@@ -112,6 +112,11 @@ static void transitionDemoWaveform(void)
       break;
 
     case DEMO_SAWTOOTH:
+      currentDemoState = DEMO_PIANO;
+      currentTable = pianoTable;
+      break;
+
+    case DEMO_PIANO:
       currentDemoState = DEMO_SINE;
       currentTable = sineTable;
       break;
@@ -153,6 +158,7 @@ static void clear(){
   }
 
   countPressed = 0;
+  AMP_ON = 0;
 }
 
 
@@ -195,7 +201,7 @@ static void processInput(uint8_t *functions)
             }
   }
 
-  //check current pressed keys
+  //check current pressed keys are still pressed
     for (i = 0; i < NUM_VOICES; i++){
         if (currentFreqIndex[i] != EMPTY){
             if (keys[currentFreqIndex[i]]){
@@ -217,6 +223,7 @@ static void processInput(uint8_t *functions)
                   }
               }
               if (!duplicate){
+                  AMP_ON = 1;
                   currentFreqIndex[countPressed] = i;
                   phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
                   countPressed++;
