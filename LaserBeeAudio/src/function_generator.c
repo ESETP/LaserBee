@@ -50,8 +50,27 @@ SI_SBIT(AMP_ON, SFR_P0, 6);
 #define NUM_KEYS 13
 
 // Demo state variables
-static DemoState currentDemoState = DEMO_SINE;
-static SI_VARIABLE_SEGMENT_POINTER(currentTable, uint16_t, const SI_SEG_CODE) = sineTable; // current waveform table for DAC output
+static DemoState currentDemoState = DEMO_SQUARE;
+static SI_VARIABLE_SEGMENT_POINTER(currentTable, uint16_t, const SI_SEG_CODE) = squareTable; // current waveform table for DAC output
+
+// Frequency selection
+static SI_SEGMENT_VARIABLE(fixed_frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
+    261L,
+    277L,
+    293L,
+    311L,
+    329L,
+    349L,
+    370L,
+    392L,
+    415L,
+    440L,
+    466L,
+    494L,
+    523L,
+};
+
+static uint8_t octave_loc = 5;
 
 // Frequency selection
 static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
@@ -158,7 +177,7 @@ static void clear(){
   }
 
   countPressed = 0;
-  AMP_ON = 0;
+  //AMP_ON = 0;
 }
 
 
@@ -189,16 +208,36 @@ static void processInput(uint8_t *functions)
 
   // If oct up then shift freq * 2
   if (!functions[0] && frequency[0] < MAX_FREQ){
-      for (i = 0; i < NUM_KEYS; i++){
-          frequency[i] *= 2;
-      }
+      octave_loc += 1;
+
+            if (octave_loc == 5){
+                for (i = 0; i < NUM_KEYS; i++){
+                        frequency[i] = fixed_frequency[i];
+                    }
+            }
+            else{
+
+              for (i = 0; i < NUM_KEYS; i++){
+                        frequency[i] *= 2;
+                    }
+            }
   }
 
   // If oct down then shift freq / 2
   if (!functions[1] && frequency[NUM_KEYS-1] > MIN_FREQ){
-      for (i = 0; i < NUM_KEYS; i++){
-                frequency[i] /= 2;
-            }
+      octave_loc -= 1;
+
+      if (octave_loc == 5){
+          for (i = 0; i < NUM_KEYS; i++){
+                  frequency[i] = fixed_frequency[i];
+              }
+      }
+      else{
+
+        for (i = 0; i < NUM_KEYS; i++){
+                  frequency[i] /= 2;
+              }
+      }
   }
 
   //check current pressed keys are still pressed
@@ -223,7 +262,7 @@ static void processInput(uint8_t *functions)
                   }
               }
               if (!duplicate){
-                  AMP_ON = 1;
+                  //AMP_ON = 1;
                   currentFreqIndex[countPressed] = i;
                   phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
                   countPressed++;
