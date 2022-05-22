@@ -1,4 +1,4 @@
-# Hiasynth Reference and Flashing
+# Hyasynth Reference and Flashing
 
 ### Team 1: James Campbell, Angus Campbell, Matthew Cooke, Mark Harley, Tom Burnip
 
@@ -26,17 +26,17 @@ You need to convert the raw .hex file to a .efm8 before flashing, using the tool
 - USB to serial programmer, also known as an FTDI chip
 - Wires
 - .efm8 file that you prepared earlier
-- Hiasynth
+- Hyasynth
 - efm8load.exe tool
 
 #### Method:
 
-1. Connect the FTDI programmer to the laser bee. Currently it's the leftmost pin on the small header for ground, rightmost for power, and second from the left for c2d, 2nd from the left of the big header for rx and 3rd from the left of the big header for tx.
+1. Connect the FTDI programmer to the laser bee (make sure it is set to 3v3). Use the leftmost pin on the small header for ground, rightmost for power, and second from the left for c2d, 2nd from the left of the big header for rx and 3rd from the left of the big header for tx.
 1. Plug the programmer into the computer, and find out what serial port it is attached to. 
-1. Set the Hiasynth to bootloader mode. This can be done by grounding the C2D pin (3.7, or the second pin from the left on the header) as the device is reset (for 50ms if you want the specifics)
+1. Set the Hyasynth to bootloader mode. This can be done by grounding the C2D pin (3.7, or the second pin from the left on the header) as the device is reset (for 50ms if you want the specifics).
 1. Optionally, find out what port the programmer is operating on. efm8load.exe will choose one for you if you do not specify, and it will probably pick the wrong one. 
-1. Run efm8load.exe with a command something like `./efm8load.exe -p PORT Filename.efm8`
-1. Reset the Hiasynth and serve.
+1. Run efm8load.exe with a command something like `./efm8load.exe -p PORT Filename.efm8`.
+1. Reset the Hyasynth and serve.
 
 ### Linux issues
 
