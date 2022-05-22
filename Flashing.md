@@ -18,7 +18,7 @@ As far as my testing goes, this part of the process, and flashing, only works on
 
 The next parts of the process require some more tools that Silabs provides. These can be downloaded [here](https://www.silabs.com/documents/public/example-code/AN945SW.zip)
 
-You need to convert the raw .hex file to a .efm8 before flashing, using the tool hex2boot.exe, located under \lstinline|/AN945SW/Tools/Windows/|. Run this using powershell or cmd with a command something like this \lstinline|.\hex2boot.exe input_file.hex -o Filename.efm8 |. The full details and documentation of this utility are available in section 6 [here.](https://www.silabs.com/documents/public/application-notes/an945-efm8-factory-bootloader-user-guide.pdf)
+You need to convert the raw .hex file to a .efm8 before flashing, using the tool hex2boot.exe, located under `/AN945SW/Tools/Windows/`. Run this using powershell or cmd with a command something like this `.\hex2boot.exe input_file.hex -o Filename.efm8`. The full details and documentation of this utility are available in section 6 [here.](https://www.silabs.com/documents/public/application-notes/an945-efm8-factory-bootloader-user-guide.pdf)
 
 ### Flashing
 #### Ingredients:
