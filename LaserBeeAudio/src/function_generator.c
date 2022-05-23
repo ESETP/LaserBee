@@ -1,8 +1,3 @@
-/**************************************************************************//**
- * Copyright (c) 2015 by Silicon Laboratories Inc. All rights reserved.
- *
- * http://developer.silabs.com/legal/version/v11/Silicon_Labs_Software_License_Agreement.txt
- *****************************************************************************/
 ///////////////////////////////////////////////////////////////////////////////
 // function_generator.c
 ///////////////////////////////////////////////////////////////////////////////
@@ -35,7 +30,7 @@ SI_SBIT(G, SFR_P1, 5);
 SI_SBIT(Gs, SFR_P1, 4);
 SI_SBIT(A, SFR_P1, 3);
 SI_SBIT(As, SFR_P1, 2);
-SI_SBIT(H, SFR_P1, 1); // this is cursed and changing the name seems to break it
+SI_SBIT(H, SFR_P1, 1); // H German standard, needs to be used because B is a system macro
 SI_SBIT(C2, SFR_P1, 0);
 
 
@@ -70,7 +65,8 @@ static SI_SEGMENT_VARIABLE(fixed_frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = 
     523L,
 };
 
-static uint8_t octave_loc = 5;
+#define CENTRE_OCT 5
+static uint8_t octave_loc = CENTRE_OCT;
 
 // Frequency selection
 static SI_SEGMENT_VARIABLE(frequency[NUM_KEYS], uint16_t, SI_SEG_XDATA) = {
@@ -110,10 +106,6 @@ static uint16_t phaseOffset[NUM_VOICES] = {0};
 //-----------------------------------------------------------------------------
 //
 // Change function/waveform.
-// Left  - change function order: sine < square < triangle < sawtooth < windowed sine
-// Right - change function order: sine > square > triangle > sawtooth > windowed sine
-//
-// dir - valid arguments are: JOYSTICK_E, JOYSTICK_W
 //
 static void transitionDemoWaveform(void)
 {
@@ -147,8 +139,8 @@ static void transitionDemoWaveform(void)
 //-----------------------------------------------------------------------------
 // getWait
 //-----------------------------------------------------------------------------
-// get value of given input and wait until t is unpressed to return.
-
+// get value of given input and wait until it is unpressed to return.
+//
 static void getWaitFunctions(uint8_t * out)
 {
 
@@ -167,7 +159,11 @@ static void getWaitFunctions(uint8_t * out)
 
 }
 
-
+//-----------------------------------------------------------------------------
+// clear
+//-----------------------------------------------------------------------------
+// empty the currently playing note arrays and set countPressed = 0
+//
 static void clear(){
   uint8_t i;
 
@@ -177,10 +173,15 @@ static void clear(){
   }
 
   countPressed = 0;
-  //AMP_ON = 0;
+  AMP_ON = 0;
 }
 
-
+//-----------------------------------------------------------------------------
+// processInput
+//-----------------------------------------------------------------------------
+// main control flow of program. Handle function button presses and then add
+// newly pressed keys to the array if there is space.
+//
 static void processInput(uint8_t *functions)
 {
   uint8_t i, j;
@@ -210,7 +211,7 @@ static void processInput(uint8_t *functions)
   if (!functions[0] && frequency[0] < MAX_FREQ){
       octave_loc += 1;
 
-            if (octave_loc == 5){
+            if (octave_loc == CENTRE_OCT){
                 for (i = 0; i < NUM_KEYS; i++){
                         frequency[i] = fixed_frequency[i];
                     }
@@ -227,7 +228,7 @@ static void processInput(uint8_t *functions)
   if (!functions[1] && frequency[NUM_KEYS-1] > MIN_FREQ){
       octave_loc -= 1;
 
-      if (octave_loc == 5){
+      if (octave_loc == CENTRE_OCT){
           for (i = 0; i < NUM_KEYS; i++){
                   frequency[i] = fixed_frequency[i];
               }
@@ -262,7 +263,7 @@ static void processInput(uint8_t *functions)
                   }
               }
               if (!duplicate){
-                  //AMP_ON = 1;
+                  AMP_ON = 1;
                   currentFreqIndex[countPressed] = i;
                   phaseOffset[countPressed] = frequency[currentFreqIndex[countPressed]] * PHASE_PRECISION / SAMPLE_RATE_DAC;
                   countPressed++;
